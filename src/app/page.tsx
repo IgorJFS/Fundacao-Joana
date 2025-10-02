@@ -1,103 +1,280 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Heart, Users, HandHeart, TrendingUp } from "lucide-react";
+import heroImage from "@/assets/hero-children.jpg";
+import volunteersImage from "@/assets/volunteers-helping.jpg";
+import handsImage from "@/assets/hands-together.jpg";
 import Image from "next/image";
+import LogoMarquee from "@/components/logo-carousel";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const stats = [
+    { icon: Heart, value: "15.000+", label: "Vidas Impactadas" },
+    { icon: Users, value: "500+", label: "Voluntários Ativos" },
+    { icon: HandHeart, value: "2.000+", label: "Doações Recebidas" },
+    { icon: TrendingUp, value: "13 Anos", label: "Fazendo a Diferença" },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  const achievements = [
+    {
+      title: "Educação para Todos",
+      description:
+        "Mais de 3.000 crianças receberam material escolar e apoio educacional em 2024.",
+      image: heroImage,
+    },
+    {
+      title: "Alimentação Solidária",
+      description:
+        "Distribuímos mais de 50 mil refeições para famílias em situação de vulnerabilidade.",
+      image: volunteersImage,
+    },
+    {
+      title: "Saúde e Bem-estar",
+      description:
+        "Realizamos 1.200 atendimentos médicos e psicológicos gratuitos.",
+      image: handsImage,
+    },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-hero py-20 md:py-32">
+          <div className="absolute inset-0 opacity-10">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={heroImage}
+              alt=""
+              className="w-full h-full object-cover"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground animate-fade-in">
+                Transforme Vidas com Sua Doação
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in">
+                Cada contribuição faz a diferença para milhares de pessoas.
+                Juntos, construímos um futuro melhor para todos.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+                <Link href="/doacao">
+                  <Button
+                    size="lg"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-medium w-full sm:w-auto"
+                  >
+                    Fazer Doação
+                  </Button>
+                </Link>
+                <a
+                  href="https://wa.me/5511999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto"
+                  >
+                    Seja Voluntário
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {stats.map((stat, index) => (
+                <Card
+                  key={index}
+                  className="text-center hover:shadow-soft transition-shadow"
+                >
+                  <CardContent className="pt-6">
+                    <stat.icon className="h-8 w-8 mx-auto mb-3 text-primary" />
+                    <p className="text-3xl font-bold text-foreground mb-1">
+                      {stat.value}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {stat.label}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Instituições Parceiras */}
+        <section className="py-12 bg-secondary border-y border-border">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                Instituições que Confiam na Nossa Fundação
+              </h2>
+              <p className="text-muted-foreground">
+                Apoiados e reconhecidos por órgãos públicos
+              </p>
+            </div>
+            <LogoMarquee />
+          </div>
+        </section>
+
+        {/* Achievements Section */}
+        <section className="py-16 bg-secondary">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Nossas Conquistas em 2024
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Veja como suas doações estão transformando vidas e construindo
+                um futuro melhor.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {achievements.map((achievement, index) => (
+                <Card
+                  key={index}
+                  className="overflow-hidden hover:shadow-medium transition-shadow"
+                >
+                  <div className="aspect-video overflow-hidden">
+                    <Image
+                      src={achievement.image}
+                      alt={achievement.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">
+                      {achievement.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {achievement.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Como Chegar Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  Visite Nossa Sede
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Estamos de portas abertas para receber você, voluntários e
+                  doações presenciais.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Informações de Contato */}
+                <Card>
+                  <CardContent className="p-6 space-y-6">
+                    <div>
+                      <h3 className="font-semibold text-lg mb-4">
+                        📍 Endereço
+                      </h3>
+                      <p className="text-muted-foreground">
+                        R. Vassouras, Lote 20 - Quadra 16
+                        <br />
+                        Jardim Mariléa
+                        <br />
+                        Rio das Ostras - RJ
+                        <br />
+                        CEP: 28890-000
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold text-lg mb-4">
+                        🕒 Horário de Funcionamento
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Segunda a Sexta: 8h às 18h
+                        <br />
+                        Sábado: 8h às 12h
+                        <br />
+                        Domingo: Fechado
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold text-lg mb-4">📞 Contato</h3>
+                      <p className="text-muted-foreground">
+                        Telefone: (22) 1234-5678
+                        <br />
+                        WhatsApp: (22) 91234-5678
+                        <br />
+                        Email: contato@fundacaojoanna.org.br
+                      </p>
+                    </div>
+
+                    <a
+                      href="https://www.google.com/maps/dir//R.+Vassouras,+Lote+20+-+Quadra+16+-+Jardim+Maril%C3%A9a,+Rio+das+Ostras+-+RJ,+28890-000"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button className="w-full" variant="outline">
+                        Abrir no Google Maps
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+
+                {/* Mapa */}
+                <Card className="overflow-hidden">
+                  <CardContent className="p-0 h-full">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!4v1759306537451!6m8!1m7!1sD7yGkO9TPswgLzK_sp4csA!2m2!1d-22.50166265609518!2d-41.93095581335224!3f14.819350323818071!4f3.228379886412796!5f0.7820865974627469"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0, minHeight: "400px" }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Localização da Fundação Joanna - Rio das Ostras"
+                    ></iframe>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-hero">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Sua Doação Faz a Diferença
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Cada real doado vai diretamente para quem mais precisa. Seja parte
+              dessa transformação hoje.
+            </p>
+            <Link href="/doacao">
+              <Button
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground cursor-pointer shadow-medium"
+              >
+                Doe Agora
+              </Button>
+            </Link>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
