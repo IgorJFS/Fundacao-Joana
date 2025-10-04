@@ -6,7 +6,7 @@ All colors MUST be HSL.
 
 @theme {
   /* Cores principais */
-  --color-background: hsl(0 0% 100%);
+  --color-background: hsl(200 30% 98%);
   --color-foreground: hsl(210 20% 20%);
 
   --color-card: hsl(0 0% 100%);

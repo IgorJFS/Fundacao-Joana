@@ -340,7 +340,7 @@ export default function Doacao() {
         </div>
 
         {/* Doação de Itens Section */}
-        <section className="py-16 bg-secondary border-t border-border">
+        <section className="py-16 mt-28 bg-secondary border-t border-border">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">

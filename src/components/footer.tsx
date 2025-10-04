@@ -4,7 +4,7 @@ import Logo from "@/components/logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary border-t border-border mt-20">
+    <footer className="bg-accent-foreground  border-t border-border">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
@@ -14,8 +14,8 @@ export default function Footer() {
               <span className="text-lg font-bold">Fundação Joanna</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              Transformando vidas através da solidariedade e do amor ao próximo
-              desde 2010.
+              A Fundação Joanna de Ângelis, é uma entidade de Direito Privado,
+              sem fins lucrativos.
             </p>
           </div>
 
@@ -49,10 +49,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/colaboradores"
+                  href="/apoiadores"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Nossos Colaboradores
+                  Nossos Apoiadores
                 </Link>
               </li>
             </ul>

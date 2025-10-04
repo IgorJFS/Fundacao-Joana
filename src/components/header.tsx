@@ -18,7 +18,7 @@ export default function Header() {
     { path: "/nossahistoria", label: "Nossa História" },
     { path: "/doacao", label: "Doação" },
     { path: "/voluntarios", label: "Voluntários" },
-    { path: "/colaboradores", label: "Colaboradores" },
+    { path: "/apoiadores", label: "Apoiadores" },
   ];
 
   const visibleLinks = navLinks.slice(0, 3);

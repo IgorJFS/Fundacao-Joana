@@ -62,11 +62,10 @@ export default function NossaHistoria() {
 
                 <h2 className="text-3xl font-bold mb-4 mt-12">Nossa Missão</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Trabalhamos incansavelmente para promover dignidade, educação,
-                  saúde e oportunidades para famílias e crianças em situação de
-                  vulnerabilidade. Através de programas educacionais,
-                  distribuição de alimentos, atendimento médico gratuito e apoio
-                  psicológico, construímos pontes para um futuro melhor.
+                  Captar recursos materiais e humanos e aplicá-los para promover
+                  iniciativas relacionadas a prática de valores morais, éticos,
+                  religiosos, educacionais e de assistência para a promoção
+                  social, na formação do homem de bem.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
@@ -101,39 +100,95 @@ export default function NossaHistoria() {
                 </div>
 
                 <h2 className="text-3xl font-bold mb-4 mt-12">
-                  Nossos Valores
+                  Valores da Fundação Joanna de Ângelis
                 </h2>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
+                    <span className="text-primary font-bold">I)</span>
+                    <span>
+                      <strong className="text-foreground">ACOLHER:</strong>{" "}
+                      Receber com afeto, carinho e alegria a todos que aqui
+                      adentrarem;
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">II)</span>
                     <span>
                       <strong className="text-foreground">
-                        Solidariedade:
+                        TRABALHAR EM EQUIPE:
                       </strong>{" "}
-                      Acreditamos no poder da união e da empatia
+                      Atuar com entusiasmo, comprometimento, disciplina, afeto e
+                      espírito de equipe otimizando o tempo doado por cada SER
+                      (Voluntário);
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
+                    <span className="text-primary font-bold">III)</span>
+                    <span>
+                      <strong className="text-foreground">DISCIPLINA:</strong>{" "}
+                      Agir respeitando as normas e regulamentos garantindo a
+                      satisfação de todos envolvidos, contribuindo para o bom
+                      funcionamento da FJA;
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">IV)</span>
                     <span>
                       <strong className="text-foreground">
-                        Transparência:
+                        RESPEITAR/VALORIZAR:
                       </strong>{" "}
-                      Prestamos contas de cada doação recebida
+                      Compreender e respeitar as diferenças buscando conhecer a
+                      importância de cada atitude e zelar por seus atos e
+                      palavras, procurando fazer de sua vida um exemplo de
+                      respeito ao próximo;
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
+                    <span className="text-primary font-bold">V)</span>
                     <span>
-                      <strong className="text-foreground">Respeito:</strong>{" "}
-                      Tratamos todos com dignidade e compaixão
+                      <strong className="text-foreground">
+                        AMAR AO PRÓXIMO:
+                      </strong>{" "}
+                      Estimular a vivência;
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">•</span>
+                    <span className="text-primary font-bold">VI)</span>
                     <span>
-                      <strong className="text-foreground">Compromisso:</strong>{" "}
-                      Dedicamos nosso melhor para causar impacto real
+                      <strong className="text-foreground">ACREDITAR:</strong>{" "}
+                      Ter a coragem de acreditar que possuímos os requisitos
+                      necessários, em nosso interior, para ser a diferença para
+                      o meu próximo (SER);
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">VII)</span>
+                    <span>
+                      <strong className="text-foreground">
+                        CAPACITAR E EDUCAR:
+                      </strong>{" "}
+                      Propiciar condições para o desenvolvimento do SER;
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">VIII)</span>
+                    <span>
+                      <strong className="text-foreground">EVOLUIR:</strong>{" "}
+                      Sempre na direção do crescimento social, profissional;
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">IX)</span>
+                    <span>
+                      <strong className="text-foreground">PERSEVERAR:</strong>{" "}
+                      Com entusiasmo no desenvolvimento do SER;
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">X)</span>
+                    <span>
+                      <strong className="text-foreground">INTEGRAR:</strong> O
+                      SER consigo mesmo, com sua família;
                     </span>
                   </li>
                 </ul>
