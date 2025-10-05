@@ -1,9 +1,10 @@
-import { getColaboradores } from "@/lib/mock-data";
+import { getDoadoresEternizados } from "@/lib/mock-data";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart } from "lucide-react";
 
 export default async function Apoiadores() {
-  const apoiadores = await getColaboradores();
+  // Busca apenas doadores que optaram por eternizar o nome
+  const apoiadores = await getDoadoresEternizados();
 
   // Ordenar alfabeticamente
   const apoiadoresOrdenados = [...apoiadores].sort((a, b) =>
@@ -25,14 +26,14 @@ export default async function Apoiadores() {
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Agradecemos de coração a cada pessoa e empresa que acredita e
-                contribui mensalmente com nosso trabalho
+                contribui com nosso trabalho
               </p>
               <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full shadow-soft">
                 <span className="text-3xl font-bold text-primary">
                   {apoiadores.length}
                 </span>
                 <span className="text-muted-foreground font-medium">
-                  apoiadores comprometidos
+                  pessoas que apoiaram
                 </span>
               </div>
             </div>
@@ -82,15 +83,15 @@ export default async function Apoiadores() {
                       Muito Obrigado! ❤️
                     </h3>
                     <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-                      Cada contribuição mensal nos permite continuar
-                      transformando vidas e levando esperança para quem mais
-                      precisa. Vocês são essenciais para nossa missão!
+                      Cada contribuição nos permite continuar transformando
+                      vidas e levando esperança para quem mais precisa. Vocês
+                      são essenciais para nossa missão!
                     </p>
                     <a
                       href="/doacao"
                       className="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground px-8 py-3 font-medium hover:bg-accent/90 transition-colors shadow-medium"
                     >
-                      Quero Apoiar a Fundação
+                      Quero Fazer uma Doação
                     </a>
                   </CardContent>
                 </Card>

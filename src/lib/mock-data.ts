@@ -289,8 +289,11 @@ export async function getVoluntarios(): Promise<Voluntario[]> {
   return voluntariosMock;
 }
 
-export async function getColaboradores(): Promise<Colaborador[]> {
+// Retorna apenas doadores que optaram por eternizar o nome
+export async function getDoadoresEternizados(): Promise<Colaborador[]> {
   await new Promise((resolve) => setTimeout(resolve, 500));
+  // Filtra apenas os que têm eternizar_nome = true
+  // Por enquanto retorna todos do mock (na integração real, filtrar no Supabase)
   return colaboradoresMock;
 }
 

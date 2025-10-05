@@ -42,7 +42,7 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-gradient-hero py-20 md:py-32">
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 opacity-70">
             <Image
               src={heroImage}
               alt=""
@@ -54,7 +54,7 @@ export default function Home() {
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground animate-fade-in">
                 Transforme Vidas com Sua Doação
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in">
+              <p className="text-lg md:text-xl text-foreground mb-8 animate-fade-in">
                 Cada contribuição faz a diferença para milhares de pessoas.
                 Juntos, construímos um futuro melhor para todos.
               </p>
