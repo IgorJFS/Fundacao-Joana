@@ -1,4 +1,12 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Youtube,
+  Linkedin,
+} from "lucide-react";
 import Link from "next/link";
 import Logo from "@/components/logo";
 
@@ -11,12 +19,57 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Logo width={50} height={50} />
-              <span className="text-lg font-bold">Fundação Joanna</span>
+              <span className="text-lg font-bold">
+                Fundação Joanna de Ângelis
+              </span>
             </div>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground text-sm mb-4">
               A Fundação Joanna de Ângelis, é uma entidade de Direito Privado,
               sem fins lucrativos.
             </p>
+            <h4 className="text-muted-foreground text-sm mb-2 font-semibold">
+              Siga-nos nas redes sociais
+            </h4>
+
+            {/* Social Media */}
+            <div className="flex items-center gap-3">
+              <Link
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-[#1877F2] text-white hover:bg-[#1460c7] rounded-full transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </Link>
+              <Link
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#FCAF45] text-white hover:opacity-80 rounded-full transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </Link>
+              <Link
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-[#FF0000] text-white hover:bg-[#cc0000] rounded-full transition-all duration-300"
+                aria-label="Youtube"
+              >
+                <Youtube className="h-5 w-5" />
+              </Link>
+              <Link
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-[#0A66C2] text-white hover:bg-[#004182] rounded-full transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </Link>
+            </div>
           </div>
 
           {/* Quick Links */}

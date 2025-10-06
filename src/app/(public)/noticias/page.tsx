@@ -11,37 +11,62 @@ const noticias = [
       "Conselho de Direitos da Criança e do Adolescente dá posse a novos membros",
     resumo:
       "O Conselho Municipal dos Direitos da Criança e do Adolescente (CMDCA) de Rio das Ostras deu posse e elegeu a presidência na tarde desta terça-feira, dia 20. A reunião foi realizada na sede da Secretaria Municipal de Assistência Social e os novos membros vão atuar no biênio 2025/2026.",
-    data: "15 de Dezembro, 2024",
+    data: "21 de Maio, 2025",
     imagemUrl: "/noticia1.jpg",
     linkExterno:
       "https://www.riodasostras.rj.gov.br/conselho-de-direitos-da-crianca-e-do-adolescente-de-rio-das-ostras-da-posse-a-novos-membros/",
   },
   {
     id: 2,
-    titulo: "Parceria com universidade traz novos voluntários",
+    titulo: "Município dá início à Pré-Conferência de Assistência Social",
     resumo:
-      "Acordo firmado com universidade local amplia o time de voluntários da fundação e traz novas perspectivas.",
-    data: "1 de Dezembro, 2024",
+      "Começou nesta quarta-feira, dia 14, a Pré-Conferência Municipal de Assistência Social de Rio das Ostras. Com o tema “20 Anos do SUAS: Construção Social e Resistência”, o evento é uma preparação para os debates da Conferência Municipal, que acontece no mês de junho.",
+    data: "14 de Maio, 2025",
     imagemUrl: "/noticia3.jpeg",
-    linkExterno: "https://exemplo.com/noticia-3",
+    linkExterno:
+      "https://www.riodasostras.rj.gov.br/municipio-da-inicio-a-pre-conferencia-de-assistencia-social/",
   },
   {
     id: 3,
-    titulo: "Parceria com universidade traz novos voluntários",
+    titulo:
+      "Portal da Assistência: CMDCA. Conselho Municipal dos Direitos da Criança e do Adolescente",
     resumo:
-      "Acordo firmado com universidade local amplia o time de voluntários da fundação e traz novas perspectivas.",
-    data: "1 de Dezembro, 2024",
+      "O CMDCA é por sua natureza órgão Normativo, Consultivo, Deliberativo e Controlador da política de promoção, atendimento e de defesa dos direitos da Criança e do Adolescente.",
+    data: "30 de Julho, 2022",
     imagemUrl: "/noticia4.jpeg",
-    linkExterno: "https://exemplo.com/noticia-4",
+    linkExterno: "https://www.riodasostras.rj.gov.br/cmdca/",
   },
   {
     id: 4,
-    titulo: "Parceria com universidade traz novos voluntários",
+    titulo:
+      "Rio das Ostras empossa Conselheiros Municipais de Assistência Social",
     resumo:
-      "Acordo firmado com universidade local amplia o time de voluntários da fundação e traz novas perspectivas.",
-    data: "1 de Dezembro, 2024",
+      "Os novos conselheiros do Conselho Municipal de Assistência Social de Rio das Ostras tomaram posse na manhã nesta terça, dia 14, no auditório da sede da Secretaria de Educação, Esporte e Lazer. Titulares e Suplentes assumiram os cargos para as cadeiras de representação governamental e não governamental. Ao todo, foram 20 empossados, que atuarão no biênio 2021/2022.",
+    data: "14 de Janeiro, 2020",
     imagemUrl: "/noticia5.jpg",
-    linkExterno: "https://exemplo.com/noticia-3",
+    linkExterno:
+      "https://www.riodasostras.rj.gov.br/cmdca-empossa-novos-conselheiros/",
+  },
+  {
+    id: 5,
+    titulo:
+      "Rio das Ostras realiza Fórum das Entidades e Organizações Não Governamentais",
+    resumo:
+      "Nesta sexta-feira, dia 28 de março, o Conselho Municipal de Direitos da Criança e do Adolescente (CMDCA) realizou o Fórum Municipal das Entidades e Organizações Não Governamentais que atuam na Política de Atendimento aos Direitos da Criança e do Adolescente, na Câmara Municipal, em Verdes Mares.",
+    data: "28 de Março, 2025",
+    imagemUrl: "/noticia6.jpg",
+    linkExterno:
+      "https://www.riodasostras.rj.gov.br/rio-das-ostras-realiza-forum-das-entidades-e-organizacoes-nao-governamentais-em-defesa-da-crianca-e-do-adolescente/",
+  },
+  {
+    id: 6,
+    titulo: "Rio das Ostras recebe doações de cestas básicas e hortaliças",
+    resumo:
+      "Famílias de Rio das Ostras em situação de vulnerabilidade social que participam de atividades em instituições socioassistenciais e de projetos e de programas da Assistência Social são contempladas com distribuição de alimentos não perecíveis e de hortaliças.",
+    data: "2 de Setembro, 2021",
+    imagemUrl: "/noticia2.jpg",
+    linkExterno:
+      "https://www.riodasostras.rj.gov.br/rio-das-ostras-recebe-doacoes-de-cestas-basicas-e-hortalicas/",
   },
 ];
 
@@ -86,9 +111,7 @@ export default function NoticiasPage() {
                     }}
                   />
                   {/* Fallback visual */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10">
-                    <ExternalLink className="w-12 h-12 text-muted-foreground/30" />
-                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10"></div>
                 </div>
               </div>
 
