@@ -1,6 +1,7 @@
 import { getDoadoresEternizados } from "@/lib/mock-data";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart } from "lucide-react";
+import { ApoiadoresList } from "@/components/apoiadores-list";
 
 export default async function Apoiadores() {
   // Busca apenas doadores que optaram por eternizar o nome
@@ -12,15 +13,12 @@ export default async function Apoiadores() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-page">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-hero py-20">
+        <section className=" py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm mb-6">
-                <Heart className="w-8 h-8 text-white fill-white" />
-              </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Nossos Apoiadores
               </h1>
@@ -33,7 +31,7 @@ export default async function Apoiadores() {
                   {apoiadores.length}
                 </span>
                 <span className="text-muted-foreground font-medium">
-                  pessoas que apoiaram
+                  pessoas que ajudaram vidas
                 </span>
               </div>
             </div>
@@ -44,43 +42,15 @@ export default async function Apoiadores() {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <Card className="border-2 shadow-medium">
-                <CardContent className="p-8 md:p-12">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {apoiadoresOrdenados.map((apoiador, index) => (
-                      <div key={apoiador.id} className="group relative">
-                        <div className="flex items-start gap-3 p-4 rounded-lg hover:bg-secondary/50 transition-all duration-200 hover:scale-105">
-                          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-cyan-500 flex items-center justify-center text-white font-bold shadow-soft">
-                            {apoiador.nome_completo.charAt(0).toUpperCase()}
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                              {apoiador.nome_completo}
-                            </p>
-                            <p className="text-xs text-muted-foreground mt-1">
-                              Desde{" "}
-                              {new Date(
-                                apoiador.data_inicio
-                              ).toLocaleDateString("pt-BR", {
-                                month: "short",
-                                year: "numeric",
-                              })}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <ApoiadoresList apoiadores={apoiadoresOrdenados} />
 
               {/* Mensagem de Agradecimento */}
               <div className="mt-12 text-center">
-                <Card className="bg-gradient-to-br from-primary/5 to-cyan-500/5 border-primary/20">
+                <Card className="bg-gradient-to-r from-primary/10 to-accent/10">
                   <CardContent className="p-8">
                     <Heart className="w-12 h-12 text-primary mx-auto mb-4" />
                     <h3 className="text-2xl font-bold mb-3">
-                      Muito Obrigado! ❤️
+                      Muito Obrigado! 💖
                     </h3>
                     <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
                       Cada contribuição nos permite continuar transformando

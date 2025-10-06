@@ -7,10 +7,10 @@ import Image from "next/image";
 
 export default function NossaHistoria() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex bg-gradient-page flex-col">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-hero py-16">
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -207,7 +207,7 @@ export default function NossaHistoria() {
               </div>
 
               {/* CTA */}
-              <Card className="mt-12 bg-gradient-hero border-none">
+              <Card className="mt-12 bg-gradient-to-r from-primary/10 to-accent/10 border-none">
                 <CardContent className="p-8 text-center">
                   <h3 className="text-2xl font-bold mb-4">
                     Faça Parte Desta História
@@ -219,7 +219,7 @@ export default function NossaHistoria() {
                   <Link href="/doacao">
                     <Button
                       size="lg"
-                      className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-medium"
+                      className="bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-medium"
                     >
                       Fazer Doação Agora
                     </Button>

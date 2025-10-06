@@ -18,12 +18,11 @@ export default function Header() {
     { path: "/nossahistoria", label: "Nossa História" },
     { path: "/noticias", label: "Notícias" },
     { path: "/doacao", label: "Doação" },
-    { path: "/voluntarios", label: "Voluntários" },
     { path: "/apoiadores", label: "Apoiadores" },
   ];
 
-  const visibleLinks = navLinks.slice(0, 3);
-  const menuLinks = navLinks.slice(3);
+  const visibleLinks = navLinks.slice(0, 4);
+  const menuLinks = navLinks.slice(0);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur border-b border-border shadow-sm">
@@ -58,7 +57,7 @@ export default function Header() {
 
           <div className="flex items-center gap-2">
             <Link href="/doacao" className="hidden md:block">
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-soft">
+              <Button className="bg-cyan-500 hover:bg-cyan-600 text-white shadow-soft">
                 Doar Agora
               </Button>
             </Link>

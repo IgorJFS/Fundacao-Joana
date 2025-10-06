@@ -38,11 +38,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-page">
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-gradient-hero py-20 md:py-32">
-          <div className="absolute inset-0 opacity-70">
+          <div className="absolute inset-0 opacity-80">
             <Image
               src={heroImage}
               alt=""
@@ -86,13 +86,13 @@ export default function Home() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-background">
+        <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid  grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
                 <Card
                   key={index}
-                  className="text-center hover:shadow-soft transition-shadow"
+                  className="text-center bg-card hover:shadow-soft transition-shadow"
                 >
                   <CardContent className="pt-6">
                     <stat.icon className="h-8 w-8 mx-auto mb-3 text-primary" />
@@ -110,7 +110,7 @@ export default function Home() {
         </section>
 
         {/* Instituições Parceiras */}
-        <section className="py-12 bg-secondary border-y border-border">
+        <section className="py-12  border-y border-border">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold mb-2">
@@ -125,7 +125,7 @@ export default function Home() {
         </section>
 
         {/* Achievements Section */}
-        <section className="py-16 bg-secondary">
+        <section className="py-16 ">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -141,7 +141,7 @@ export default function Home() {
               {achievements.map((achievement, index) => (
                 <Card
                   key={index}
-                  className="overflow-hidden hover:shadow-medium transition-shadow"
+                  className="overflow-hidden bg-gradient-card hover:shadow-medium transition-shadow"
                 >
                   <div className="aspect-video overflow-hidden">
                     <Image
@@ -165,7 +165,7 @@ export default function Home() {
         </section>
 
         {/* Como Chegar Section */}
-        <section className="py-16 bg-background">
+        <section className="py-16 border-y border-border">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -255,7 +255,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-hero">
+        <section className="py-20">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Sua Doação Faz a Diferença
