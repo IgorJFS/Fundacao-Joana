@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -57,12 +57,30 @@ const mockDoacoes = [
 ];
 
 export default function DoacoesManager() {
+  const [doacoes, setDoacoes] = useState<typeof mockDoacoes>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDonation, setSelectedDonation] = useState<
     (typeof mockDoacoes)[0] | null
   >(null);
 
-  const filteredDoacoes = mockDoacoes.filter(
+  // Carregar doações do localStorage
+  useEffect(() => {
+    const doacoesStr = localStorage.getItem("doacoes");
+    if (doacoesStr) {
+      try {
+        const doacoesLocal = JSON.parse(doacoesStr);
+        // Combinar doações do localStorage com mock data
+        setDoacoes([...doacoesLocal, ...mockDoacoes]);
+      } catch (error) {
+        console.error("Erro ao carregar doações:", error);
+        setDoacoes(mockDoacoes);
+      }
+    } else {
+      setDoacoes(mockDoacoes);
+    }
+  }, []);
+
+  const filteredDoacoes = doacoes.filter(
     (doacao) =>
       doacao.donor_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       doacao.cpf_cnpj.includes(searchTerm)

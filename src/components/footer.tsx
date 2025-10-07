@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   Mail,
   Phone,
@@ -9,8 +12,56 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Logo from "@/components/logo";
+import { toast } from "sonner";
+import { z } from "zod";
+
+const emailSchema = z.string().email("Email inválido");
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Validar email
+      emailSchema.parse(email);
+
+      // Salvar no localStorage (temporário até ter backend)
+      const newsletters = localStorage.getItem("newsletter_subscribers");
+      const subscribers: string[] = newsletters ? JSON.parse(newsletters) : [];
+
+      // Verificar se já está cadastrado
+      if (subscribers.includes(email)) {
+        toast.info("Este email já está cadastrado na newsletter!");
+        setEmail("");
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Adicionar novo subscriber
+      subscribers.push(email);
+      localStorage.setItem(
+        "newsletter_subscribers",
+        JSON.stringify(subscribers)
+      );
+
+      toast.success(
+        "Email cadastrado com sucesso! Obrigado por se inscrever! 💙"
+      );
+      setEmail("");
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast.error("Por favor, insira um email válido.");
+      } else {
+        toast.error("Erro ao cadastrar email. Tente novamente.");
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <footer className="bg-accent-foreground  border-t border-border">
       <div className="container mx-auto px-4 py-12">
@@ -94,10 +145,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/voluntarios"
+                  href="/noticias"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Seja Voluntário
+                  Notícias
                 </Link>
               </li>
               <li>
@@ -136,18 +187,25 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground mb-4">
               Fique por dentro das nossas campanhas
             </p>
-            <form className="flex flex-col sm:flex-row gap-2">
+            <form
+              onSubmit={handleNewsletterSubmit}
+              className="flex flex-col sm:flex-row gap-2"
+            >
               <input
                 type="email"
                 placeholder="seu@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1 px-3 py-2 bg-background border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                disabled={isSubmitting}
+                className="flex-1 px-3 py-2 bg-background border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <button
                 type="submit"
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
+                disabled={isSubmitting}
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary/90 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Cadastrar
+                {isSubmitting ? "Enviando..." : "Cadastrar"}
               </button>
             </form>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Card,
   CardContent,
@@ -46,7 +46,31 @@ const mockAlertas: Alerta[] = [
 ];
 
 export default function AlertasManager() {
-  const [alertas, setAlertas] = useState<Alerta[]>(mockAlertas);
+  const [alertas, setAlertas] = useState<Alerta[]>([]);
+
+  // Carregar alertas do localStorage ao montar
+  useEffect(() => {
+    const alertasStr = localStorage.getItem("alertas");
+    if (alertasStr) {
+      try {
+        setAlertas(JSON.parse(alertasStr));
+      } catch (error) {
+        console.error("Erro ao carregar alertas:", error);
+        setAlertas(mockAlertas);
+        localStorage.setItem("alertas", JSON.stringify(mockAlertas));
+      }
+    } else {
+      // Inicializar com dados mock na primeira vez
+      setAlertas(mockAlertas);
+      localStorage.setItem("alertas", JSON.stringify(mockAlertas));
+    }
+  }, []);
+
+  // Salvar no localStorage sempre que alertas mudar
+  const salvarAlertas = (novosAlertas: Alerta[]) => {
+    setAlertas(novosAlertas);
+    localStorage.setItem("alertas", JSON.stringify(novosAlertas));
+  };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingAlerta, setEditingAlerta] = useState<Alerta | null>(null);
   const [formData, setFormData] = useState({
@@ -81,11 +105,10 @@ export default function AlertasManager() {
 
     if (editingAlerta) {
       // Editar
-      setAlertas(
-        alertas.map((a) =>
-          a.id === editingAlerta.id ? { ...a, ...formData } : a
-        )
+      const novosAlertas = alertas.map((a) =>
+        a.id === editingAlerta.id ? { ...a, ...formData } : a
       );
+      salvarAlertas(novosAlertas);
       toast.success("Alerta atualizado com sucesso!");
     } else {
       // Verificar se já existe um alerta ativo
@@ -98,13 +121,15 @@ export default function AlertasManager() {
 
       // Adicionar
       const newAlerta: Alerta = {
-        id: String(alertas.length + 1),
+        id: String(Date.now()),
         ...formData,
         ativo: true,
         data_criacao: new Date().toISOString().split("T")[0],
       };
-      setAlertas([...alertas, newAlerta]);
-      toast.success("Alerta criado com sucesso!");
+      salvarAlertas([...alertas, newAlerta]);
+      toast.success(
+        "Alerta criado com sucesso! Agora está visível no site público."
+      );
     }
 
     handleCloseModal();
@@ -121,9 +146,10 @@ export default function AlertasManager() {
       return;
     }
 
-    setAlertas(
-      alertas.map((a) => (a.id === id ? { ...a, ativo: !a.ativo } : a))
+    const novosAlertas = alertas.map((a) =>
+      a.id === id ? { ...a, ativo: !a.ativo } : a
     );
+    salvarAlertas(novosAlertas);
 
     toast.success(
       `Alerta ${alerta?.ativo ? "desativado" : "ativado"} com sucesso!`
@@ -132,7 +158,7 @@ export default function AlertasManager() {
 
   const handleDelete = (id: string) => {
     if (confirm("Tem certeza que deseja excluir este alerta?")) {
-      setAlertas(alertas.filter((a) => a.id !== id));
+      salvarAlertas(alertas.filter((a) => a.id !== id));
       toast.success("Alerta excluído com sucesso!");
     }
   };
