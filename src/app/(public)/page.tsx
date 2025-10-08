@@ -88,23 +88,54 @@ export default function Home() {
         {/* Stats Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid  grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <Card
-                  key={index}
-                  className="text-center bg-card hover:shadow-soft transition-shadow"
-                >
-                  <CardContent className="pt-6">
-                    <stat.icon className="h-8 w-8 mx-auto mb-3 text-primary" />
-                    <p className="text-3xl font-bold text-foreground mb-1">
-                      {stat.value}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {stat.label}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <Card className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Heart className="w-8 h-8 text-primary" />
+                  </div>
+                  <div className="text-4xl font-bold text-primary mb-2">
+                    15.000+
+                  </div>
+                  <p className="text-muted-foreground">Vidas Impactadas</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-accent" />
+                  </div>
+                  <div className="text-4xl font-bold text-accent mb-2">
+                    500+
+                  </div>
+                  <p className="text-muted-foreground">Voluntários Ativos</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <HandHeart className="w-8 h-8 text-pink-600" />
+                  </div>
+                  <div className="text-4xl font-bold text-pink-600 mb-2">
+                    2.000+
+                  </div>
+                  <p className="text-muted-foreground">Doações Recebidas</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="w-8 h-8 text-orange-600" />
+                  </div>
+                  <div className="text-4xl font-bold text-orange-600 mb-2">
+                    13 Anos
+                  </div>
+                  <p className="text-muted-foreground">Fazendo a Diferença</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>

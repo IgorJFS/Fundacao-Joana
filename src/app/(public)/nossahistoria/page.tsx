@@ -96,10 +96,10 @@ export default function NossaHistoria() {
         </section>
 
         {/* Timeline Section */}
-        <section className="">
+        <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-12">
+            <div className="max-w-5xl mx-auto">
+              <div className="space-y-16">
                 {/* Origem */}
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-6 flex items-center gap-3">
@@ -145,12 +145,12 @@ export default function NossaHistoria() {
                   <h2 className="text-3xl font-bold mb-8 text-center">
                     O Que Fazemos
                   </h2>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                       <Image
                         src={volunteersImage}
                         alt="Voluntários em ação"
-                        className="w-full h-56 object-cover"
+                        className="w-full h-64 object-cover"
                       />
                       <CardContent className="p-6">
                         <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
@@ -166,7 +166,7 @@ export default function NossaHistoria() {
                     </Card>
 
                     <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
-                      <div className="h-56 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 flex items-center justify-center">
+                      <div className="h-64 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 flex items-center justify-center">
                         <Heart className="w-20 h-20 text-green-600 dark:text-green-400" />
                       </div>
                       <CardContent className="p-6">
@@ -181,6 +181,23 @@ export default function NossaHistoria() {
                         </p>
                       </CardContent>
                     </Card>
+
+                    <Card className="overflow-hidden hover:shadow-lg transition-shadow border-accent/20">
+                      <div className="h-64 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 flex items-center justify-center">
+                        <Users className="w-20 h-20 text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <CardContent className="p-6">
+                        <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
+                          <Users className="w-5 h-5 text-primary" />
+                          Assistência Social
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          Oferecemos apoio integral às famílias, com atendimento
+                          psicológico, orientação jurídica e encaminhamento para
+                          serviços essenciais.
+                        </p>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
               </div>
@@ -191,7 +208,7 @@ export default function NossaHistoria() {
         {/* Valores Section - Redesenhado */}
         <section className="py-20 bg-gradient-to-b from-secondary/50 to-transparent">
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   Nossos 10 Valores Fundamentais
@@ -201,29 +218,29 @@ export default function NossaHistoria() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {valores.map((valor, index) => {
                   const Icon = valor.icon;
                   return (
                     <Card
                       key={index}
-                      className="hover:shadow-lg transition-all hover:scale-[1.02] border-2 hover:border-primary/50"
+                      className="hover:shadow-lg transition-all hover:border-primary/50"
                     >
-                      <CardContent className="p-6">
-                        <div className="flex items-start gap-4">
-                          <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                            <Icon className="w-6 h-6 text-primary" />
+                      <CardContent className="p-4 md:p-6">
+                        <div className="flex items-start gap-3 md:gap-4">
+                          <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                            <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                           </div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-2">
-                              <span className="text-primary font-bold text-sm">
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start gap-2 mb-1 md:mb-2">
+                              <span className="text-primary font-bold text-xs md:text-sm flex-shrink-0">
                                 {String(index + 1).padStart(2, "0")}
                               </span>
-                              <h3 className="font-bold text-lg">
+                              <h3 className="font-bold text-base md:text-lg">
                                 {valor.titulo}
                               </h3>
                             </div>
-                            <p className="text-muted-foreground leading-relaxed">
+                            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                               {valor.descricao}
                             </p>
                           </div>
@@ -242,75 +259,86 @@ export default function NossaHistoria() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <Card className="overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-purple-50/50 to-blue-50/50 dark:from-purple-900/10 dark:to-blue-900/10">
-                <CardContent className="p-8 md:p-12">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <Info className="w-7 h-7 text-white" />
+                <CardContent className="p-6 md:p-10">
+                  <div className="flex items-start gap-3 md:gap-4 mb-6">
+                    <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <Info className="w-6 h-6 md:w-7 md:h-7 text-white" />
                     </div>
                     <div>
-                      <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                      <h2 className="text-2xl md:text-3xl font-bold mb-2">
                         Curiosidade
                       </h2>
-                      <p className="text-lg text-muted-foreground">
+                      <p className="text-base md:text-lg text-muted-foreground">
                         Quem foi Joanna de Ângelis?
                       </p>
                     </div>
                   </div>
 
-                  <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <p className="text-lg">
-                      <strong className="text-foreground">
-                        Joanna de Ângelis
-                      </strong>{" "}
-                      é uma entidade espiritual muito respeitada no espiritismo
-                      brasileiro. Segundo a doutrina espírita, ela foi{" "}
-                      <strong className="text-foreground">
-                        madre superiora de um convento na Espanha
-                      </strong>{" "}
-                      durante o século XVI e dedicou sua vida ao amor ao próximo
-                      e à caridade.
-                    </p>
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    {/* Imagem */}
+                    <div className="w-full md:w-48 flex-shrink-0 mx-auto md:mx-0">
+                      <div className="relative w-40 md:w-48 mx-auto">
+                        <Image
+                          src="/JoannaAngelis.jpg"
+                          alt="Joanna de Ângelis"
+                          width={192}
+                          height={240}
+                          className="rounded-xl shadow-lg border-2 border-primary/20"
+                        />
+                      </div>
+                    </div>
 
-                    <p className="text-lg">
-                      Após sua desencarnação, Joanna de Ângelis passou a atuar
-                      como{" "}
-                      <strong className="text-foreground">
-                        mentora espiritual
-                      </strong>
-                      , transmitindo mensagens de amor, sabedoria e elevação
-                      moral através da psicografia, principalmente por meio do
-                      médium brasileiro{" "}
-                      <strong className="text-foreground">
-                        Divaldo Pereira Franco
-                      </strong>
-                      .
-                    </p>
+                    {/* Texto */}
+                    <div className="flex-1 space-y-3 text-muted-foreground leading-relaxed text-sm md:text-base">
+                      <p>
+                        <strong className="text-foreground">
+                          Joanna de Ângelis
+                        </strong>{" "}
+                        é uma entidade espiritual muito respeitada no
+                        espiritismo brasileiro. Segundo a doutrina espírita, ela
+                        foi{" "}
+                        <strong className="text-foreground">
+                          madre superiora de um convento na Espanha
+                        </strong>{" "}
+                        durante o século XVI e dedicou sua vida ao amor ao
+                        próximo e à caridade.
+                      </p>
 
-                    <Card className="bg-white/50 dark:bg-gray-900/50 border-none mt-6">
-                      <CardContent className="p-6">
-                        <blockquote className="text-lg italic border-l-4 border-primary pl-6">
-                          &quot;O amor é a essência da vida, e através dele
-                          podemos transformar o mundo. Cada gesto de bondade,
-                          cada mão estendida, cada palavra de conforto
-                          representa um passo na direção da evolução
-                          espiritual.&quot;
-                        </blockquote>
-                        <p className="mt-4 text-sm text-primary font-semibold">
-                          — Ensinamento atribuído a Joanna de Ângelis
-                        </p>
-                      </CardContent>
-                    </Card>
+                      <p>
+                        Após sua desencarnação, passou a atuar como{" "}
+                        <strong className="text-foreground">
+                          mentora espiritual
+                        </strong>
+                        , transmitindo mensagens através da psicografia pelo
+                        médium{" "}
+                        <strong className="text-foreground">
+                          Divaldo Pereira Franco
+                        </strong>
+                        .
+                      </p>
 
-                    <p className="text-lg">
-                      Nossa fundação leva seu nome como inspiração para seguir
-                      os{" "}
-                      <strong className="text-foreground">
-                        princípios de amor incondicional, caridade e dedicação
-                        ao próximo
-                      </strong>
-                      . Seus ensinamentos sobre compaixão, educação moral e
-                      auxílio aos necessitados são a base de tudo o que fazemos.
-                    </p>
+                      <Card className="bg-white/50 dark:bg-gray-900/50 border-none">
+                        <CardContent className="p-4">
+                          <blockquote className="text-sm md:text-base italic border-l-4 border-primary pl-4">
+                            &quot;O amor é a essência da vida, e através dele
+                            podemos transformar o mundo.&quot;
+                          </blockquote>
+                          <p className="mt-2 text-xs text-primary font-semibold">
+                            — Joanna de Ângelis
+                          </p>
+                        </CardContent>
+                      </Card>
+
+                      <p>
+                        Nossa fundação leva seu nome como inspiração para seguir
+                        os{" "}
+                        <strong className="text-foreground">
+                          princípios de amor incondicional, caridade e dedicação
+                          ao próximo
+                        </strong>
+                        .
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -395,16 +423,28 @@ export default function NossaHistoria() {
                     seguindo os ensinamentos de Joanna de Ângelis. Juntos,
                     podemos fazer ainda mais!
                   </p>
-                  <Link href="/doacao">
-                    <Button
-                      size="lg"
-                      variant="secondary"
-                      className="text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform"
-                    >
-                      <Heart className="w-5 h-5 mr-2" />
-                      Fazer Doação Agora
-                    </Button>
-                  </Link>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Link href="/doacao">
+                      <Button
+                        size="lg"
+                        variant="secondary"
+                        className="text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform w-full sm:w-auto"
+                      >
+                        <Heart className="w-5 h-5 mr-2" />
+                        Fazer Doação Agora
+                      </Button>
+                    </Link>
+                    <Link href="/contato">
+                      <Button
+                        size="lg"
+                        variant="secondary"
+                        className="text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform w-full sm:w-auto"
+                      >
+                        <HandHeart className="w-5 h-5 mr-2" />
+                        Quero Ser Voluntário
+                      </Button>
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
             </div>
