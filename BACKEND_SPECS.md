@@ -739,8 +739,203 @@ ALLOWED_ORIGINS=https://fundacaojoanna.org,https://www.fundacaojoanna.org
 - Logs de consentimento para newsletter
 - Política de retenção de dados (ex: 5 anos)
 
+## 🔄 Migração de Supabase (Dev → Produção)
+
+### Cenário: Desenvolver no Supabase pessoal do dev, depois migrar para conta da Fundação
+
+#### ✅ O que é fácil de migrar (só mudar .env):
+
+- **Frontend**: Apenas atualizar `SUPABASE_URL` e `SUPABASE_ANON_KEY`
+- **Backend**: Atualizar `SUPABASE_SERVICE_KEY`
+- **Código**: Nenhuma alteração necessária no código
+
+#### ⚠️ O que precisa ser migrado manualmente:
+
+1. **Estrutura do Banco de Dados**
+
+   - Exportar schema SQL do projeto dev
+   - Executar no projeto de produção via Supabase SQL Editor
+   - OU usar Supabase CLI migrations
+
+2. **Dados** (se já tiver doações/voluntários no dev)
+
+   - Exportar via SQL: `pg_dump` ou Supabase Dashboard
+   - Importar no projeto de produção
+   - ⚠️ **ATENÇÃO**: Não migrar dados sensíveis de teste!
+
+3. **Configurações de Auth**
+
+   - Replicar configurações no Dashboard:
+     - JWT expiry (30 dias)
+     - Email templates
+     - Rate limiting
+     - Allowed redirect URLs
+
+4. **Edge Functions** (se usar)
+
+   - Re-deploy das functions no novo projeto
+   - Atualizar secrets/env vars das functions
+
+5. **Storage Buckets** (se usar para fotos futuramente)
+
+   - Recriar buckets com mesmas policies
+   - Migrar arquivos (ou começar limpo)
+
+6. **Policies (RLS)**
+   - Já vêm com o schema SQL
+   - Revisar se funcionam corretamente
+
+#### 📋 Checklist de Migração:
+
+**1. Preparação (no projeto dev):**
+
+```bash
+# Instalar Supabase CLI
+npm install -g supabase
+
+# Login no Supabase
+supabase login
+
+# Linkar projeto dev
+supabase link --project-ref seu-projeto-dev
+
+# Gerar migrations (estrutura do banco)
+supabase db dump -f schema.sql
+
+# Exportar dados (OPCIONAL - apenas se necessário)
+supabase db dump --data-only -f data.sql
+```
+
+**2. Setup do novo projeto (conta da Fundação):**
+
+- Criar novo projeto no Supabase Dashboard
+- Copiar `SUPABASE_URL` e `SUPABASE_ANON_KEY`
+- Copiar `SUPABASE_SERVICE_KEY` (Settings > API)
+
+**3. Aplicar estrutura do banco:**
+
+```bash
+# Via Supabase Dashboard:
+# SQL Editor > New Query > Colar schema.sql > Run
+
+# OU via CLI:
+supabase link --project-ref projeto-producao
+supabase db push
+```
+
+**4. Configurar Auth no Dashboard:**
+
+- Settings > Authentication > JWT Settings
+  - JWT expiry: 2592000 (30 dias)
+  - Refresh token lifetime: 30 dias
+- Settings > Authentication > Email Auth
+  - Habilitar email/password
+  - Configurar email templates (boas-vindas, reset senha)
+- Settings > Authentication > URL Configuration
+  - Site URL: `https://fundacaojoanna.org`
+  - Redirect URLs: adicionar domínios permitidos
+
+**5. Atualizar variáveis de ambiente:**
+
+**.env (frontend e backend):**
+
+```env
+# ANTES (projeto dev)
+SUPABASE_URL=https://xyz123dev.supabase.co
+SUPABASE_ANON_KEY=eyJhbGc...dev...
+
+# DEPOIS (projeto produção)
+SUPABASE_URL=https://abc789prod.supabase.co
+SUPABASE_ANON_KEY=eyJhbGc...prod...
+SUPABASE_SERVICE_KEY=eyJhbGc...prod...service...
+```
+
+**6. Criar primeiro admin:**
+
+```sql
+-- No SQL Editor do Supabase de produção:
+
+-- 1. Criar usuário via Dashboard (Authentication > Users > Add User)
+--    Email: admin@fundacaojoanna.org
+--    Password: senha_super_segura_temporaria
+--    Copiar o UUID gerado
+
+-- 2. Adicionar na tabela admins:
+INSERT INTO public.admins (id, nome_completo, ativo)
+VALUES ('UUID_DO_USUARIO_CRIADO', 'Admin Fundação', true);
+```
+
+**7. Testar tudo:**
+
+- ✅ Login do admin funciona
+- ✅ RLS policies funcionam (admin vê dados, público não vê)
+- ✅ Newsletter subscription funciona
+- ✅ Doações podem ser criadas (testar com gateway em modo sandbox)
+- ✅ Voluntários aparecem na página pública
+
+#### 💰 Custos:
+
+**Plano Free do Supabase (suficiente para começar):**
+
+- 500 MB database
+- 1 GB file storage
+- 2 GB bandwidth
+- 50,000 monthly active users
+- Unlimited API requests
+
+**Se precisar de mais (Plano Pro - $25/mês):**
+
+- 8 GB database
+- 100 GB file storage
+- 250 GB bandwidth
+- 100,000 monthly active users
+- Suporte prioritário
+
+#### 🚨 Cuidados Importantes:
+
+1. **Não migrar dados de teste**: Doações falsas, emails de teste, etc
+2. **Trocar senha do primeiro admin**: Após primeiro login em produção
+3. **Configurar backup**: Supabase Free faz backup de 7 dias, Pro de 30 dias
+4. **Testar em staging primeiro**: Se possível, criar projeto intermediário para testes
+5. **Documentar credenciais**: Guardar chaves em gerenciador de senhas (1Password, Bitwarden)
+6. **Configurar domínio customizado** (opcional): Pode usar domínio próprio para Supabase
+
+#### 🔧 Supabase CLI - Fluxo Recomendado:
+
+```bash
+# Desenvolvimento (projeto dev)
+supabase init
+supabase link --project-ref projeto-dev
+# Fazer alterações no banco via SQL Editor ou migrations
+supabase db pull  # Baixar mudanças
+
+# Quando estiver pronto para produção:
+supabase link --project-ref projeto-producao
+supabase db push  # Aplicar todas as migrations
+
+# Manter sincronizado depois:
+# Fazer mudanças sempre via migrations no dev
+# Commitar migrations no Git
+# Aplicar em produção: supabase db push
+```
+
+#### 📝 Resumo - É só mudar .env?
+
+**Resposta curta**: Quase! Se o banco estiver vazio em produção.
+
+**Resposta completa**:
+
+1. ✅ Código: Só mudar .env (fácil)
+2. ⚠️ Banco de dados: Precisa migrar estrutura (médio - uma vez só)
+3. ⚠️ Configurações Auth: Precisa replicar (fácil - copiar configs)
+4. ⚠️ Primeiro admin: Precisa criar manualmente (fácil)
+5. ✅ Dados: Começar limpo em produção (recomendado)
+
+**Estimativa de tempo**: 30 minutos a 1 hora para migração completa.
+
 ---
 
-**Versão**: 1.0  
+**Versão**: 1.1  
 **Data**: 08/10/2025  
+**Última Atualização**: 08/10/2025 (Adicionada seção de migração Supabase)  
 **Autor**: Especificações para desenvolvimento do backend da Fundação Joanna de Ângelis
