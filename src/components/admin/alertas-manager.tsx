@@ -330,7 +330,8 @@ export default function AlertasManager() {
                 <AlertCircle className="h-12 w-12 mx-auto mb-4 opacity-50" />
                 <p className="text-lg font-medium">Nenhum alerta criado</p>
                 <p className="text-sm">
-                  Clique em "Criar Alerta" para adicionar um novo alerta
+                  Clique em &quot;Criar Alerta&quot; para adicionar um novo
+                  alerta
                 </p>
               </div>
             </CardContent>
