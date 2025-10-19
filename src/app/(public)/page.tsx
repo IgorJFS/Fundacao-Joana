@@ -7,18 +7,47 @@ import volunteersImage from "@/assets/volunteers-helping.jpg";
 import handsImage from "@/assets/hands-together.jpg";
 import Image from "next/image";
 import LogoMarquee from "@/components/logo-carousel";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 export default function Home() {
   const stats = [
-    { icon: Heart, value: "15.000+", label: "Vidas Impactadas" },
-    { icon: Users, value: "500+", label: "Voluntários Ativos" },
-    { icon: HandHeart, value: "2.000+", label: "Doações Recebidas" },
-    { icon: TrendingUp, value: "13 Anos", label: "Fazendo a Diferença" },
+    {
+      icon: Heart,
+      value: 1000,
+      suffix: "+",
+      label: "Vidas Impactadas",
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+    },
+    {
+      icon: Users,
+      value: 130,
+      suffix: "+",
+      label: "Voluntários Ativos",
+      color: "text-accent",
+      bgColor: "bg-accent/10",
+    },
+    {
+      icon: HandHeart,
+      value: 2000,
+      suffix: "+",
+      label: "Doações Recebidas",
+      color: "text-pink-600",
+      bgColor: "bg-pink-500/10",
+    },
+    {
+      icon: TrendingUp,
+      value: 23,
+      suffix: " Anos",
+      label: "Fazendo a Diferença",
+      color: "text-orange-600",
+      bgColor: "bg-orange-500/10",
+    },
   ];
 
   const achievements = [
     {
-      title: "Educação para Todos",
+      title: "Projeto AmanhãSER",
       description:
         "Mais de 3.000 crianças receberam material escolar e apoio educacional em 2024.",
       image: heroImage,
@@ -32,7 +61,7 @@ export default function Home() {
     {
       title: "Saúde e Bem-estar",
       description:
-        "Realizamos 1.200 atendimentos médicos e psicológicos gratuitos.",
+        "Realizamos múltiplos atendimentos médicos e psicológicos gratuitos.",
       image: handsImage,
     },
   ];
@@ -42,7 +71,7 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-gradient-hero py-20 md:py-32">
-          <div className="absolute inset-0 opacity-80">
+          <div className="absolute inset-0 opacity-100">
             <Image
               src={heroImage}
               alt=""
@@ -51,10 +80,10 @@ export default function Home() {
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground animate-fade-in">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white animate-fade-in">
                 Transforme Vidas com Sua Doação
               </h1>
-              <p className="text-lg md:text-xl text-foreground mb-8 animate-fade-in">
+              <p className="text-lg md:text-xl text-white mb-8 animate-fade-in">
                 Cada contribuição faz a diferença para milhares de pessoas.
                 Juntos, construímos um futuro melhor para todos.
               </p>
@@ -89,53 +118,31 @@ export default function Home() {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Heart className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="text-4xl font-bold text-primary mb-2">
-                    15.000+
-                  </div>
-                  <p className="text-muted-foreground">Vidas Impactadas</p>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-accent" />
-                  </div>
-                  <div className="text-4xl font-bold text-accent mb-2">
-                    500+
-                  </div>
-                  <p className="text-muted-foreground">Voluntários Ativos</p>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <HandHeart className="w-8 h-8 text-pink-600" />
-                  </div>
-                  <div className="text-4xl font-bold text-pink-600 mb-2">
-                    2.000+
-                  </div>
-                  <p className="text-muted-foreground">Doações Recebidas</p>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <TrendingUp className="w-8 h-8 text-orange-600" />
-                  </div>
-                  <div className="text-4xl font-bold text-orange-600 mb-2">
-                    13 Anos
-                  </div>
-                  <p className="text-muted-foreground">Fazendo a Diferença</p>
-                </CardContent>
-              </Card>
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <Card
+                    key={index}
+                    className="text-center hover:shadow-lg transition-shadow"
+                  >
+                    <CardContent className="p-8">
+                      <div
+                        className={`w-16 h-16 ${stat.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}
+                      >
+                        <Icon className={`w-8 h-8 ${stat.color}`} />
+                      </div>
+                      <div className={`text-4xl font-bold ${stat.color} mb-2`}>
+                        <AnimatedCounter
+                          end={stat.value}
+                          suffix={stat.suffix}
+                          duration={3000}
+                        />
+                      </div>
+                      <p className="text-muted-foreground">{stat.label}</p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -160,7 +167,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Nossas Conquistas em 2024
+                Nossas Conquistas em 23 Anos
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Veja como suas doações estão transformando vidas e construindo
