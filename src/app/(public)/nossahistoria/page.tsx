@@ -387,7 +387,7 @@ export default function NossaHistoria() {
                       <Star className="w-8 h-8 text-green-600" />
                     </div>
                     <div className="text-4xl font-bold text-green-600 mb-2">
-                      13 anos
+                      21 anos
                     </div>
                     <p className="text-muted-foreground">de Dedicação</p>
                   </CardContent>
@@ -395,7 +395,7 @@ export default function NossaHistoria() {
               </div>
 
               <p className="text-lg text-muted-foreground text-center leading-relaxed">
-                Ao longo de <strong className="text-foreground">13 anos</strong>{" "}
+                Ao longo de <strong className="text-foreground">21 anos</strong>{" "}
                 de atuação, já impactamos positivamente mais de{" "}
                 <strong className="text-foreground">15.000 vidas</strong>. Com a
                 ajuda de nossos{" "}

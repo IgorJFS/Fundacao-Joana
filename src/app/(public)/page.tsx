@@ -37,7 +37,7 @@ export default function Home() {
     },
     {
       icon: TrendingUp,
-      value: 23,
+      value: 21,
       suffix: " Anos",
       label: "Fazendo a Diferença",
       color: "text-orange-600",
@@ -251,11 +251,12 @@ export default function Home() {
                     <div>
                       <h3 className="font-semibold text-lg mb-4">📞 Contato</h3>
                       <p className="text-muted-foreground">
-                        Telefone: (22) 1234-5678
-                        <br />
                         WhatsApp: (22) 91234-5678
                         <br />
-                        Email: contato@fundacaojoanna.org.br
+                        Email: funjodangelis@yahoo.com.br
+                        <br />
+                        <br />
+                        CNPJ: 06.261.897/0001-93
                       </p>
                     </div>
 

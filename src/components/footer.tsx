@@ -9,6 +9,7 @@ import {
   Instagram,
   Youtube,
   Linkedin,
+  Building,
 } from "lucide-react";
 import Link from "next/link";
 import Logo from "@/components/logo";
@@ -168,17 +169,22 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 mt-0.5 text-primary" />
-                <span>contato@fundacaojoanna.org.br</span>
+                <span>funjodangelis@yahoo.com.br</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 mt-0.5 text-primary" />
-                <span>(11) 1234-5678</span>
+                <span>(22) 99938-2357</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 text-primary" />
-                <span>São Paulo, SP - Brasil</span>
+                <span>Rio das Ostras, RJ - Brasil</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                <Building className="h-4 w-4 mt-0.5 text-primary" />
+                <span>CNPJ: 06.261.897/0001-93</span>
               </li>
             </ul>
+            
           </div>
 
           {/* Email Subscription */}

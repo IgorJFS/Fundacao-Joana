@@ -111,8 +111,12 @@ Jardim Mariléa, Rio das Ostras - RJ
 CEP: 28890-000
 
 **Contato**:  
-📧 Email: contato@fundacaojoanna.org.br  
+📧 Email: funjodangelis@yahoo.com.br  
 📱 WhatsApp: (22) 91234-5678
+
+**Informações Legais**:  
+🏢 CNPJ: 06.261.897/0001-93  
+📅 Ano de Fundação: 2004
 
 ---
 

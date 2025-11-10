@@ -80,6 +80,35 @@ export default function Doacao() {
                   </button>
                 </div>
 
+                {/* Aviso de Doação de Itens */}
+                <Card className="bg-gradient-to-r from-amber-50 to-orange-50 border-orange-200">
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-foreground mb-1">
+                          💝 Prefere doar itens?
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          Aceitamos roupas, alimentos, materiais escolares e
+                          muito mais!
+                        </p>
+                      </div>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                          document
+                            .getElementById("doacao-itens")
+                            ?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        className="whitespace-nowrap"
+                      >
+                        Ver opções
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+
                 {/* PIX Payment Info */}
                 {paymentMethod === "pix" && (
                   <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
@@ -197,7 +226,10 @@ export default function Doacao() {
         </div>
 
         {/* Doação de Itens Section */}
-        <section className="py-16 mt-28 bg-secondary border-t border-border">
+        <section
+          id="doacao-itens"
+          className="py-16 mt-28 bg-secondary border-t border-border"
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -302,7 +334,7 @@ export default function Doacao() {
                       </a>
 
                       <p className="text-xs text-muted-foreground text-center">
-                        📞 Dúvidas? Ligue: (22) 1234-5678
+                        📞 Dúvidas? Mande mensagem para: (22) 99938-2357
                       </p>
                     </CardContent>
                   </Card>
