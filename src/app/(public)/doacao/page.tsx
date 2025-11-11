@@ -89,7 +89,7 @@ export default function Doacao() {
                           💝 Prefere doar itens?
                         </p>
                         <p className="text-xs text-muted-foreground">
-                          Aceitamos roupas, alimentos, materiais escolares e
+                          Aceitamos roupas, alimentos, materiais de higiene e
                           muito mais!
                         </p>
                       </div>

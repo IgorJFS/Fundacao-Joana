@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface Apoiador {
   id: string;
@@ -31,6 +32,23 @@ export function ApoiadoresList({ apoiadores }: ApoiadoresListProps) {
 
   return (
     <>
+      {/* Botão Flutuante - Mostrar apenas quando expandido */}
+      {isExpanded && (
+        <div className="fixed bottom-8 right-8 z-50 animate-in fade-in slide-in-from-bottom-4">
+          <Button
+            onClick={() => {
+              setIsExpanded(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            size="lg"
+            className="rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 bg-primary hover:bg-primary/90"
+          >
+            <ChevronUp className="w-5 h-5 mr-2" />
+            Recolher Lista
+          </Button>
+        </div>
+      )}
+
       <Card className="border-2 bg-card shadow-medium">
         <CardContent className="p-8 md:p-12">
           {/* Grid: 1 coluna no mobile, 2 no tablet, 3 no desktop */}
