@@ -20,7 +20,7 @@ export default function DashboardOverview({
   const stats = [
     {
       title: "Doações Recebidas",
-      value: "R$ 45.280,00",
+      value: "--------",
       icon: Heart,
       color: "text-white",
       bgColor: "bg-gradient-to-br from-green-500 to-emerald-600",
@@ -28,7 +28,7 @@ export default function DashboardOverview({
     },
     {
       title: "Voluntários Ativos",
-      value: "127",
+      value: "136",
       icon: Users,
       color: "text-white",
       bgColor: "bg-gradient-to-br from-blue-500 to-cyan-600",
@@ -36,7 +36,7 @@ export default function DashboardOverview({
     },
     {
       title: "Doações Este Mês",
-      value: "89",
+      value: "----------",
       icon: TrendingUp,
       color: "text-white",
       bgColor: "bg-gradient-to-br from-purple-500 to-pink-600",
@@ -44,7 +44,7 @@ export default function DashboardOverview({
     },
     {
       title: "Alertas Ativos",
-      value: "2",
+      value: "1",
       icon: AlertCircle,
       color: "text-white",
       bgColor: "bg-gradient-to-br from-orange-500 to-red-600",
@@ -58,7 +58,7 @@ export default function DashboardOverview({
     { name: "Ana Costa", value: "R$ 1.000,00", date: "Ontem, 18:45" },
     { name: "Pedro Oliveira", value: "R$ 150,00", date: "Ontem, 15:20" },
   ];
-
+  
   return (
     <div className="space-y-6">
       {/* Header */}

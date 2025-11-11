@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import DashboardLayout from "@/components/admin/dashboard-layout";
 import DashboardOverview from "@/components/admin/dashboard-overview";
-import DoacoesManager from "@/components/admin/doacoes-manager";
-import VoluntariosManager from "@/components/admin/voluntarios-manager";
-import RelatoriosDoacoes from "@/components/admin/relatorios-doacoes";
+import EmDesenvolvimento from "@/components/admin/em-desenvolvimento";
 import AlertasManager from "@/components/admin/alertas-manager";
 import { toast } from "sonner";
 
@@ -57,11 +55,11 @@ export default function AdminDashboard() {
       case "overview":
         return <DashboardOverview onNavigate={setActiveMenu} />;
       case "doacoes":
-        return <DoacoesManager />;
+        return <EmDesenvolvimento />;
       case "voluntarios":
-        return <VoluntariosManager />;
+        return <EmDesenvolvimento />;
       case "relatorios":
-        return <RelatoriosDoacoes />;
+        return <EmDesenvolvimento />;
       case "alertas":
         return <AlertasManager />;
       default:

@@ -31,14 +31,20 @@ export default function AdminLogin() {
     // Simula delay de autenticação
     await new Promise((resolve) => setTimeout(resolve, 500));
 
-    // Credenciais de teste: 123 / 123
-    if (credentials.username === "123" && credentials.password === "123") {
+    // Verifica credenciais usando variáveis de ambiente
+    const validUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME;
+    const validPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
+
+    if (
+      credentials.username === validUsername &&
+      credentials.password === validPassword
+    ) {
       // Salva token simples no localStorage
       localStorage.setItem("admin_token", "authenticated");
       toast.success("Login realizado com sucesso!");
       router.push("/admin/dashboard");
     } else {
-      toast.error("Credenciais inválidas. Tente: 123 / 123");
+      toast.error("Credenciais inválidas.");
       setIsLoading(false);
     }
   };
@@ -104,12 +110,7 @@ export default function AdminLogin() {
               )}
             </Button>
 
-            <div className="text-center">
-              <p className="text-xs text-muted-foreground">
-                💡 Dica: Use <strong>123</strong> / <strong>123</strong> para
-                testes
-              </p>
-            </div>
+
           </form>
         </CardContent>
       </Card>
