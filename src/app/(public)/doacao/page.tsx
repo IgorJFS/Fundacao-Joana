@@ -10,20 +10,27 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { toast } from "sonner";
-import { CreditCard, QrCode, Copy, Check } from "lucide-react";
+import { CreditCard, QrCode, Copy, Check, Building2 } from "lucide-react";
 import Image from "next/image";
 
 export default function Doacao() {
-  const [paymentMethod, setPaymentMethod] = useState<"pix" | "card">("pix");
-  const [copied, setCopied] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState<"pix" | "card" | "bank">("pix");
+  const [copied, setCopied] = useState<string | null>(null);
 
-  const pixKey = "doacao@fundacaojoanna.org.br";
+  const pixKey = "06.261.897/0001-93";
+  const bankData = {
+    cnpj: "06.261.897/0001-93",
+    nome: "Fundação Joanna de Ângelis",
+    banco: "Banco do Brasil",
+    agencia: "3315-4",
+    conta: "17031-3",
+  };
 
-  const handleCopyPix = () => {
-    navigator.clipboard.writeText(pixKey);
-    setCopied(true);
-    toast.success("Chave PIX copiada!");
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopy = (text: string, type: string) => {
+    navigator.clipboard.writeText(text);
+    setCopied(type);
+    toast.success(`${type} copiado!`);
+    setTimeout(() => setCopied(null), 2000);
   };
 
   return (
@@ -48,7 +55,7 @@ export default function Doacao() {
               </CardHeader>
               <CardContent className="space-y-6">
                 {/* Payment Method Selection */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   <button
                     onClick={() => setPaymentMethod("pix")}
                     className={`flex flex-col items-center justify-center rounded-lg border-2 p-6 transition-all ${
@@ -61,6 +68,21 @@ export default function Doacao() {
                     <span className="text-sm font-medium">PIX</span>
                     <span className="text-xs text-muted-foreground mt-1">
                       Instantâneo
+                    </span>
+                  </button>
+
+                  <button
+                    onClick={() => setPaymentMethod("bank")}
+                    className={`flex flex-col items-center justify-center rounded-lg border-2 p-6 transition-all ${
+                      paymentMethod === "bank"
+                        ? "border-primary bg-primary/5"
+                        : "border-muted hover:border-primary/50"
+                    }`}
+                  >
+                    <Building2 className="mb-3 h-8 w-8" />
+                    <span className="text-sm font-medium">Transferência</span>
+                    <span className="text-xs text-muted-foreground mt-1">
+                      Bancária
                     </span>
                   </button>
 
@@ -90,7 +112,7 @@ export default function Doacao() {
                         </p>
                         <p className="text-xs text-muted-foreground">
                           Aceitamos roupas, alimentos, materiais de higiene e
-                          muito mais!
+                          muito mais! Clique em Ver opções
                         </p>
                       </div>
                       <Button
@@ -119,30 +141,29 @@ export default function Doacao() {
                         </h3>
                         <div className="bg-white p-4 rounded-xl inline-block shadow-md">
                           <Image
-                            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020126360014BR.GOV.BCB.PIX0114doacao@fundacaojoanna.org.br5204000053039865802BR5925Fundacao Joanna de Angelis6009SAO PAULO62070503***6304"
-                            alt="QR Code PIX"
+                            src="/pixFJA.png"
+                            alt="QR Code PIX - Fundação Joanna de Ângelis"
                             width={200}
                             height={200}
                             className="w-48 h-48"
-                            unoptimized
                           />
                         </div>
                       </div>
 
                       <div className="pt-4 space-y-3">
                         <p className="text-sm text-center font-medium">
-                          Ou copie a chave PIX:
+                          Ou copie a chave PIX (CNPJ):
                         </p>
                         <div className="space-y-2">
                           <code className="block bg-white px-4 py-3 rounded-lg text-sm font-mono border border-green-200 text-center break-all">
                             {pixKey}
                           </code>
                           <Button
-                            onClick={handleCopyPix}
+                            onClick={() => handleCopy(pixKey, "Chave PIX")}
                             variant="link"
                             className="w-auto mx-auto flex gap-2"
                           >
-                            {copied ? (
+                            {copied === "Chave PIX" ? (
                               <>
                                 <Check className="h-4 w-4 text-green-600" />
                                 <span className="text-green-600">Copiado!</span>
@@ -161,6 +182,135 @@ export default function Doacao() {
                         <p className="text-center text-sm text-muted-foreground">
                           Faça sua doação via PIX! Cada contribuição faz a
                           diferença na vida de quem precisa. 💚
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* Bank Transfer Info */}
+                {paymentMethod === "bank" && (
+                  <Card className="bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-200">
+                    <CardContent className="p-6 space-y-6">
+                      <div className="text-center mb-4">
+                        <h3 className="font-semibold text-lg mb-2">
+                          Dados para Transferência Bancária
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Utilize os dados abaixo para fazer sua transferência
+                        </p>
+                      </div>
+
+                      <div className="space-y-3">
+                        {/* CNPJ */}
+                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                          <p className="text-xs text-muted-foreground mb-1">CNPJ</p>
+                          <div className="flex items-center justify-between gap-2">
+                            <code className="text-sm font-mono font-semibold">
+                              {bankData.cnpj}
+                            </code>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => handleCopy(bankData.cnpj, "CNPJ")}
+                            >
+                              {copied === "CNPJ" ? (
+                                <Check className="h-4 w-4 text-green-600" />
+                              ) : (
+                                <Copy className="h-4 w-4" />
+                              )}
+                            </Button>
+                          </div>
+                        </div>
+
+                        {/* Nome */}
+                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                          <p className="text-xs text-muted-foreground mb-1">Nome</p>
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-sm font-semibold">
+                              {bankData.nome}
+                            </span>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => handleCopy(bankData.nome, "Nome")}
+                            >
+                              {copied === "Nome" ? (
+                                <Check className="h-4 w-4 text-green-600" />
+                              ) : (
+                                <Copy className="h-4 w-4" />
+                              )}
+                            </Button>
+                          </div>
+                        </div>
+
+                        {/* Banco */}
+                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                          <p className="text-xs text-muted-foreground mb-1">Banco</p>
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-sm font-semibold">
+                              {bankData.banco}
+                            </span>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => handleCopy(bankData.banco, "Banco")}
+                            >
+                              {copied === "Banco" ? (
+                                <Check className="h-4 w-4 text-green-600" />
+                              ) : (
+                                <Copy className="h-4 w-4" />
+                              )}
+                            </Button>
+                          </div>
+                        </div>
+
+                        {/* Agência */}
+                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                          <p className="text-xs text-muted-foreground mb-1">Agência</p>
+                          <div className="flex items-center justify-between gap-2">
+                            <code className="text-sm font-mono font-semibold">
+                              {bankData.agencia}
+                            </code>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => handleCopy(bankData.agencia, "Agência")}
+                            >
+                              {copied === "Agência" ? (
+                                <Check className="h-4 w-4 text-green-600" />
+                              ) : (
+                                <Copy className="h-4 w-4" />
+                              )}
+                            </Button>
+                          </div>
+                        </div>
+
+                        {/* Conta */}
+                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                          <p className="text-xs text-muted-foreground mb-1">Conta Corrente</p>
+                          <div className="flex items-center justify-between gap-2">
+                            <code className="text-sm font-mono font-semibold">
+                              {bankData.conta}
+                            </code>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => handleCopy(bankData.conta, "Conta")}
+                            >
+                              {copied === "Conta" ? (
+                                <Check className="h-4 w-4 text-green-600" />
+                              ) : (
+                                <Copy className="h-4 w-4" />
+                              )}
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t pt-4">
+                        <p className="text-center text-sm text-muted-foreground">
+                          Após realizar a transferência, você pode nos enviar o comprovante via WhatsApp: (22) 99938-2357 💙
                         </p>
                       </div>
                     </CardContent>
@@ -313,12 +463,22 @@ export default function Doacao() {
                           <br />
                           CEP: 28890-000
                         </p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           <strong>Horário de recebimento:</strong>
                           <br />
-                          Segunda a Sexta: 8h às 18h
+                          <strong>2ª Feira:</strong> 8:30-12:00 / 13:00-17:00
                           <br />
-                          Sábado: 8h às 12h
+                          <strong>3ª Feira:</strong> 8:00-16:00
+                          <br />
+                          <strong>4ª Feira:</strong> 8:30-12:00
+                          <br />
+                          <strong>5ª Feira:</strong> 14:00-18:00
+                          <br />
+                          <strong>6ª Feira:</strong> 8:30-12:00
+                          <br />
+                          <strong>Sábado:</strong> 8:00-15:00
+                          <br />
+                          <strong>Domingo:</strong> 17:00-20:00
                         </p>
                       </div>
 

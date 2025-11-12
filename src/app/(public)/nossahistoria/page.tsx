@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import handsImage from "@/assets/hands-together.jpg";
 import volunteersImage from "@/assets/volunteers-helping.jpg";
 import Image from "next/image";
+import { Metadata } from "next";
 import {
   Heart,
   Users,
@@ -16,6 +17,17 @@ import {
   Star,
   Info,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Nossa História",
+  description: "Conheça a trajetória da Fundação Joanna de Ângelis, uma ONG que há mais de 20 anos transforma vidas em Rio das Ostras através de projetos sociais, educação e assistência comunitária.",
+  keywords: ['história', 'missão', 'valores', 'fundação', 'trajetória', 'ONG Rio das Ostras'],
+  openGraph: {
+    title: "Nossa História - Fundação Joanna de Ângelis",
+    description: "Mais de 20 anos transformando vidas em Rio das Ostras através de projetos sociais e educação",
+    type: "website",
+  },
+};
 
 export default function NossaHistoria() {
   const valores = [

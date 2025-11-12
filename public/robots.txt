@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Páginas permitidas
+Allow: /
+Allow: /nossahistoria
+Allow: /doacao
+Allow: /apoiadores
+Allow: /noticias
+
+# Bloquear área administrativa
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://fundacaojoanna.org.br/sitemap.xml

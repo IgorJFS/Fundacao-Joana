@@ -2,6 +2,18 @@ import { getDoadoresEternizados } from "@/lib/mock-data";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart } from "lucide-react";
 import { ApoiadoresList } from "@/components/apoiadores-list";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nossos Apoiadores",
+  description: "Conheça as pessoas e empresas que apoiam a Fundação Joanna de Ângelis e contribuem para transformar vidas em Rio das Ostras. Mais de 120 apoiadores que fazem a diferença.",
+  keywords: ['apoiadores', 'doadores', 'parceiros', 'contribuintes', 'solidariedade'],
+  openGraph: {
+    title: "Nossos Apoiadores - Fundação Joanna de Ângelis",
+    description: "Mais de 120 pessoas e empresas que ajudam a transformar vidas",
+    type: "website",
+  },
+};
 
 export default async function Apoiadores() {
   // Busca apenas doadores que optaram por eternizar o nome

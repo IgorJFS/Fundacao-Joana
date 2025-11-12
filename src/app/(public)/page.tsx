@@ -8,6 +8,17 @@ import handsImage from "@/assets/hands-together.jpg";
 import Image from "next/image";
 import LogoMarquee from "@/components/logo-carousel";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Início",
+  description: "Fundação Joanna de Ângelis - ONG em Rio das Ostras dedicada à assistência social, educação e desenvolvimento comunitário. Mais de 1000 vidas impactadas e 20 anos fazendo a diferença.",
+  openGraph: {
+    title: "Fundação Joanna de Ângelis - Transformando Vidas",
+    description: "ONG em Rio das Ostras com mais de 20 anos transformando vidas através de projetos sociais",
+    type: "website",
+  },
+};
 
 export default function Home() {
   const stats = [
@@ -68,6 +79,40 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-page">
+      {/* Schema.org structured data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NGO",
+            "name": "Fundação Joanna de Ângelis",
+            "alternateName": "Fundação Joanna",
+            "url": "https://fundacaojoanna.org.br",
+            "logo": "https://fundacaojoanna.org.br/logo.png",
+            "description": "ONG sem fins lucrativos que promove assistência social, educação e desenvolvimento comunitário em Rio das Ostras",
+            "foundingDate": "2004",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Rio das Ostras",
+              "addressRegion": "RJ",
+              "addressCountry": "BR"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+55-22-99938-2357",
+              "contactType": "customer service",
+              "email": "funjodangelis@yahoo.com.br",
+              "availableLanguage": "Portuguese"
+            },
+            "sameAs": [
+              "https://facebook.com/fundacaojoanna",
+              "https://instagram.com/fundacaojoanna"
+            ],
+            "nonprofitStatus": "Nonprofit501c3"
+          })
+        }}
+      />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-gradient-hero py-20 md:py-32">
@@ -239,12 +284,20 @@ export default function Home() {
                       <h3 className="font-semibold text-lg mb-4">
                         🕒 Horário de Funcionamento
                       </h3>
-                      <p className="text-muted-foreground">
-                        Segunda a Sexta: 8h às 18h
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        <strong>2ª Feira:</strong> 8:30-12:00 / 13:00-17:00
                         <br />
-                        Sábado: 8h às 12h
+                        <strong>3ª Feira:</strong> 8:00-16:00
                         <br />
-                        Domingo: Fechado
+                        <strong>4ª Feira:</strong> 8:30-12:00
+                        <br />
+                        <strong>5ª Feira:</strong> 14:00-18:00
+                        <br />
+                        <strong>6ª Feira:</strong> 8:30-12:00
+                        <br />
+                        <strong>Sábado:</strong> 8:00-15:00
+                        <br />
+                        <strong>Domingo:</strong> 17:00-20:00
                       </p>
                     </div>
 

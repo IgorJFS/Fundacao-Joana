@@ -10,6 +10,7 @@ import {
   Youtube,
   Linkedin,
   Building,
+  Clock,
 } from "lucide-react";
 import Link from "next/link";
 import Logo from "@/components/logo";
@@ -30,29 +31,26 @@ export default function Footer() {
       // Validar email
       emailSchema.parse(email);
 
-      // Salvar no localStorage (temporário até ter backend)
-      const newsletters = localStorage.getItem("newsletter_subscribers");
-      const subscribers: string[] = newsletters ? JSON.parse(newsletters) : [];
+      // Enviar para o Formspree
+      const response = await fetch("https://formspree.io/f/movyqwqe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          _subject: "Nova inscrição na Newsletter - Fundação Joanna",
+        }),
+      });
 
-      // Verificar se já está cadastrado
-      if (subscribers.includes(email)) {
-        toast.info("Este email já está cadastrado na newsletter!");
+      if (response.ok) {
+        toast.success(
+          "Email cadastrado com sucesso! Obrigado por se inscrever! 💙"
+        );
         setEmail("");
-        setIsSubmitting(false);
-        return;
+      } else {
+        toast.error("Erro ao cadastrar email. Tente novamente.");
       }
-
-      // Adicionar novo subscriber
-      subscribers.push(email);
-      localStorage.setItem(
-        "newsletter_subscribers",
-        JSON.stringify(subscribers)
-      );
-
-      toast.success(
-        "Email cadastrado com sucesso! Obrigado por se inscrever! 💙"
-      );
-      setEmail("");
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast.error("Por favor, insira um email válido.");
@@ -66,7 +64,7 @@ export default function Footer() {
   return (
     <footer className="bg-accent-foreground  border-t border-border">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -86,7 +84,7 @@ export default function Footer() {
             {/* Social Media */}
             <div className="flex items-center gap-3">
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/fundja"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-[#1877F2] text-white hover:bg-[#1460c7] rounded-full transition-all duration-300"
@@ -95,7 +93,7 @@ export default function Footer() {
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/fundacaojoanna/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#FCAF45] text-white hover:opacity-80 rounded-full transition-all duration-300"
@@ -104,22 +102,13 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
-                href="https://youtube.com"
+                href="https://www.youtube.com/@fundjoannadeangelis"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-[#FF0000] text-white hover:bg-[#cc0000] rounded-full transition-all duration-300"
                 aria-label="Youtube"
               >
                 <Youtube className="h-5 w-5" />
-              </Link>
-              <Link
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-[#0A66C2] text-white hover:bg-[#004182] rounded-full transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
               </Link>
             </div>
           </div>
@@ -184,7 +173,44 @@ export default function Footer() {
                 <span>CNPJ: 06.261.897/0001-93</span>
               </li>
             </ul>
-            
+          </div>
+
+          {/* Horário de Funcionamento */}
+          <div>
+            <h3 className="font-semibold mb-4 flex items-center gap-2">
+              <Clock className="h-4 w-4 text-primary" />
+              Horário de Funcionamento
+            </h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex justify-between">
+                <span className="font-medium">2ª Feira:</span>
+                <span className="text-right">8:30-12:00 / 13:00-17:00</span>
+              </li>
+              <li className="flex justify-between">
+                <span className="font-medium">3ª Feira:</span>
+                <span>8:00-16:00</span>
+              </li>
+              <li className="flex justify-between">
+                <span className="font-medium">4ª Feira:</span>
+                <span>8:30-12:00</span>
+              </li>
+              <li className="flex justify-between">
+                <span className="font-medium">5ª Feira:</span>
+                <span>14:00-18:00</span>
+              </li>
+              <li className="flex justify-between">
+                <span className="font-medium">6ª Feira:</span>
+                <span>8:30-12:00</span>
+              </li>
+              <li className="flex justify-between">
+                <span className="font-medium">Sábado:</span>
+                <span>8:00-15:00</span>
+              </li>
+              <li className="flex justify-between">
+                <span className="font-medium">Domingo:</span>
+                <span>17:00-20:00</span>
+              </li>
+            </ul>
           </div>
 
           {/* Email Subscription */}
