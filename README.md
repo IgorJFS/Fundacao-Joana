@@ -112,7 +112,7 @@ CEP: 28890-000
 
 **Contato**:  
 📧 Email: funjodangelis@yahoo.com.br  
-📱 WhatsApp: (22) 91234-5678
+📱 WhatsApp: (22) 99938-2357
 
 **Informações Legais**:  
 🏢 CNPJ: 06.261.897/0001-93  

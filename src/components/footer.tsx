@@ -243,11 +243,35 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>
-            © {new Date().getFullYear()} Fundação Joanna. Todos os direitos
-            reservados.
-          </p>
+        <div className="border-t border-border mt-8 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+            <p>
+              © {new Date().getFullYear()} Fundação Joanna de Ângelis. Todos os direitos
+              reservados.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/politica-privacidade"
+                className="hover:text-primary transition-colors"
+              >
+                Política de Privacidade
+              </Link>
+              <span className="hidden md:inline">•</span>
+              <Link
+                href="/termos-uso"
+                className="hover:text-primary transition-colors"
+              >
+                Termos de Uso
+              </Link>
+              <span className="hidden md:inline">•</span>
+              <Link
+                href="/transparencia"
+                className="hover:text-primary transition-colors"
+              >
+                Transparência
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

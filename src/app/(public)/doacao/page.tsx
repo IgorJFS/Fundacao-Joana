@@ -387,8 +387,9 @@ export default function Doacao() {
                   Doe Itens Presencialmente
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Além de doações financeiras, aceitamos roupas, alimentos não
-                  perecíveis, materiais escolares, brinquedos e muito mais!
+                  Além de doações financeiras, aceitamos alimentos, roupas/calçados, 
+                  itens para enxovais de bebês, tecidos, materiais de higiene pessoal, 
+                  materiais de limpeza e descartáveis!
                 </p>
               </div>
 
@@ -402,47 +403,50 @@ export default function Doacao() {
                     <CardContent className="space-y-4">
                       <div>
                         <h3 className="font-semibold mb-2 flex items-center gap-2">
-                          👕 Roupas e Calçados
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Roupas limpas e em bom estado, calçados, cobertores e
-                          lençóis.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-2 flex items-center gap-2">
                           🍎 Alimentos
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Alimentos não perecíveis (arroz, feijão, macarrão,
-                          óleo, açúcar, etc).
+                          Alimentos não perecíveis e produtos alimentícios em geral.
                         </p>
                       </div>
                       <div>
                         <h3 className="font-semibold mb-2 flex items-center gap-2">
-                          📚 Material Escolar
+                          👕 Roupas e Calçados
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Cadernos, lápis, canetas, mochilas, livros didáticos e
-                          paradidáticos.
+                          Roupas limpas e em bom estado, calçados para todas as idades.
                         </p>
                       </div>
                       <div>
                         <h3 className="font-semibold mb-2 flex items-center gap-2">
-                          🧸 Brinquedos
+                          👶 Enxovais de Bebês
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Brinquedos em bom estado, jogos educativos e materiais
-                          de recreação.
+                          Itens para enxovais de bebês (roupinhas, fraldas, cobertores, etc).
                         </p>
                       </div>
                       <div>
                         <h3 className="font-semibold mb-2 flex items-center gap-2">
-                          🧴 Higiene
+                          🧵 Tecidos
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Sabonetes, shampoo, pasta de dente, fraldas e produtos
-                          de limpeza.
+                          Tecidos diversos para confecção e artesanato.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-2 flex items-center gap-2">
+                          🧴 Materiais de Higiene Pessoal
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Sabonetes, shampoo, pasta de dente, fraldas e produtos de higiene.
+                        </p>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-2 flex items-center gap-2">
+                          🧹 Materiais de Limpeza e Descartáveis
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Produtos de limpeza, detergentes, desinfetantes e descartáveis.
                         </p>
                       </div>
                     </CardContent>

@@ -146,7 +146,7 @@ export default function Home() {
                   </Button>
                 </Link>
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5522999382357"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -308,7 +308,7 @@ export default function Home() {
                     <div>
                       <h3 className="font-semibold text-lg mb-4">📞 Contato</h3>
                       <p className="text-muted-foreground">
-                        WhatsApp: (22) 91234-5678
+                        WhatsApp: (22) 99938-2357
                         <br />
                         Email: funjodangelis@yahoo.com.br
                         <br />
