@@ -142,7 +142,7 @@ export default function Doacao() {
                         <div className="bg-white p-4 rounded-xl inline-block shadow-md">
                           <Image
                             src="/pixFJA.png"
-                            alt="QR Code PIX - Fundação Joanna de Ângelis"
+                            alt="QR Code PIX para doação - Fundação Joanna de Ângelis CNPJ 06.261.897/0001-93"
                             width={200}
                             height={200}
                             className="w-48 h-48"

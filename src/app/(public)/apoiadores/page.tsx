@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Nossos Apoiadores",
   description: "Conheça as pessoas e empresas que apoiam a Fundação Joanna de Ângelis e contribuem para transformar vidas em Rio das Ostras. Mais de 120 apoiadores que fazem a diferença.",
   keywords: ['apoiadores', 'doadores', 'parceiros', 'contribuintes', 'solidariedade'],
+  alternates: {
+    canonical: 'https://fundacaojoanna.org.br/apoiadores',
+  },
   openGraph: {
     title: "Nossos Apoiadores - Fundação Joanna de Ângelis",
     description: "Mais de 120 pessoas e empresas que ajudam a transformar vidas",

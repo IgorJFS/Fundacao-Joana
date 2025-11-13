@@ -5,6 +5,7 @@ import handsImage from "@/assets/hands-together.jpg";
 import volunteersImage from "@/assets/volunteers-helping.jpg";
 import Image from "next/image";
 import { Metadata } from "next";
+import { anos } from "@/lib/utils";
 import {
   Heart,
   Users,
@@ -22,6 +23,9 @@ export const metadata: Metadata = {
   title: "Nossa História",
   description: "Conheça a trajetória da Fundação Joanna de Ângelis, uma ONG que há mais de 20 anos transforma vidas em Rio das Ostras através de projetos sociais, educação e assistência comunitária.",
   keywords: ['história', 'missão', 'valores', 'fundação', 'trajetória', 'ONG Rio das Ostras'],
+  alternates: {
+    canonical: 'https://fundacaojoanna.org.br/nossahistoria',
+  },
   openGraph: {
     title: "Nossa História - Fundação Joanna de Ângelis",
     description: "Mais de 20 anos transformando vidas em Rio das Ostras através de projetos sociais e educação",
@@ -87,6 +91,7 @@ export default function NossaHistoria() {
       descricao: "O SER consigo mesmo, com sua família e com a sociedade",
     },
   ];
+  
 
   return (
     <div className="min-h-screen flex bg-gradient-page flex-col">
@@ -399,7 +404,7 @@ export default function NossaHistoria() {
                       <Star className="w-8 h-8 text-green-600" />
                     </div>
                     <div className="text-4xl font-bold text-green-600 mb-2">
-                      21 anos
+                      {anos} anos
                     </div>
                     <p className="text-muted-foreground">de Dedicação</p>
                   </CardContent>
@@ -407,7 +412,7 @@ export default function NossaHistoria() {
               </div>
 
               <p className="text-lg text-muted-foreground text-center leading-relaxed">
-                Ao longo de <strong className="text-foreground">21 anos</strong>{" "}
+                Ao longo de <strong className="text-foreground">{anos} anos</strong>{" "}
                 de atuação, já impactamos positivamente mais de{" "}
                 <strong className="text-foreground">15.000 vidas</strong>. Com a
                 ajuda de nossos{" "}

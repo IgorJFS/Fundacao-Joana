@@ -9,10 +9,14 @@ import Image from "next/image";
 import LogoMarquee from "@/components/logo-carousel";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { Metadata } from "next";
+import { anos } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Início",
   description: "Fundação Joanna de Ângelis - ONG em Rio das Ostras dedicada à assistência social, educação e desenvolvimento comunitário. Mais de 1000 vidas impactadas e 20 anos fazendo a diferença.",
+  alternates: {
+    canonical: 'https://fundacaojoanna.org.br',
+  },
   openGraph: {
     title: "Fundação Joanna de Ângelis - Transformando Vidas",
     description: "ONG em Rio das Ostras com mais de 20 anos transformando vidas através de projetos sociais",
@@ -48,7 +52,7 @@ export default function Home() {
     },
     {
       icon: TrendingUp,
-      value: 21,
+      value: anos,
       suffix: " Anos",
       label: "Fazendo a Diferença",
       color: "text-orange-600",
@@ -119,7 +123,7 @@ export default function Home() {
           <div className="absolute inset-0 opacity-100">
             <Image
               src={heroImage}
-              alt=""
+              alt="Crianças felizes sendo assistidas pela Fundação Joanna de Ângelis em Rio das Ostras"
               className="w-full h-full object-cover"
             />
           </div>
@@ -212,7 +216,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Nossas Conquistas em 23 Anos
+                Nossas Conquistas em {anos} Anos
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Veja como suas doações estão transformando vidas e construindo
