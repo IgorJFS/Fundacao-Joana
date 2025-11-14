@@ -94,20 +94,6 @@ export default function NossaHistoria() {
   return (
     <div className="min-h-screen flex bg-gradient-page flex-col">
       <main className="flex-1">
-        {/* Hero Section - Redesenhado */}
-        <section className="relative py-24 md:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
-          <div className="container mx-auto px-4 relative">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Sobre Nós
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Entidade de Direito Privado, sem fins lucrativos, dedicada à transformação social através de valores, educação e assistência
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Quem Somos - Redesenhado */}
         <section className="py-20 relative overflow-hidden">
