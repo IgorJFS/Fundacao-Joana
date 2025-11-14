@@ -39,7 +39,8 @@ export default function Doacao() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold mb-4">Faça Sua Doação</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">Faça Sua Doação</h1>
+              <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>
               <p className="text-muted-foreground">
                 Cada real doado faz a diferença na vida de milhares de pessoas.
                 Contribua e seja parte desta transformação!
@@ -386,6 +387,7 @@ export default function Doacao() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   Doe Itens Presencialmente
                 </h2>
+                <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Além de doações financeiras, aceitamos alimentos, roupas/calçados, 
                   itens para enxovais de bebês, tecidos, materiais de higiene pessoal, 

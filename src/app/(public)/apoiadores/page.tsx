@@ -37,6 +37,7 @@ export default async function Apoiadores() {
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Nossos Apoiadores
               </h1>
+              <div className="w-40 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>
               <p className="text-xl text-muted-foreground mb-8">
                 Agradecemos de coração a cada pessoa e empresa que acredita e
                 contribui com nosso trabalho

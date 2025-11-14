@@ -119,10 +119,10 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/nossahistoria"
+                  href="/sobre"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Nossa História
+                  Sobre Nós
                 </Link>
               </li>
               <li>
@@ -139,6 +139,14 @@ export default function Footer() {
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Notícias
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contato"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Contato
                 </Link>
               </li>
               <li>

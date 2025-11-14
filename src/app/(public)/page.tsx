@@ -123,7 +123,7 @@ export default function Home() {
               <div className="text-white">
                 <div className="inline-block mb-4">
                   <span className="bg-accent/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
-                    ✨ Transformando Vidas Desde 2004
+                    ✨ Transformando Vidas Desde 2003
                   </span>
                 </div>
                 
@@ -307,7 +307,7 @@ export default function Home() {
               ].map((projeto, index) => (
                 <Card
                   key={index}
-                  className={`group overflow-hidden border-0 shadow-large hover:shadow-colored transition-all duration-300 hover:-translate-y-2 ${
+                  className={`group overflow-hidden border-0 shadow-large hover:shadow-colored transition-all duration-300 hover:-translate-y-2 py-0 ${
                     !projeto.mobileVisible ? 'hidden md:flex md:flex-col' : ''
                   }`}
                 >
@@ -320,7 +320,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div className="absolute bottom-4 left-4 text-5xl">{projeto.icon}</div>
                   </div>
-                  <CardContent className="p-6 bg-white">
+                  <CardContent className="p-6">
                     <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
                       {projeto.title}
                     </h3>
@@ -412,6 +412,7 @@ export default function Home() {
                           <h3 className="font-bold text-lg mb-2">Contato</h3>
                           <p className="text-muted-foreground text-sm leading-relaxed">
                             WhatsApp: (22) 99938-2357<br />
+                            Telefone: (22) 2764-9273<br />
                             Email: funjodangelis@yahoo.com.br<br />
                             <br />
                             CNPJ: 06.261.897/0001-93

@@ -76,9 +76,10 @@ export default function NoticiasPage() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 md:py-16">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Notícias
           </h1>
+          <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>
           <p className="text-lg text-muted-foreground">
             Acompanhe as últimas novidades e conquistas da Fundação Joanna de
             Ângelis

@@ -15,13 +15,14 @@ export default function Header() {
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/nossahistoria", label: "Nossa História" },
+    { path: "/sobre", label: "Sobre Nós" },
     { path: "/noticias", label: "Notícias" },
     { path: "/doacao", label: "Doação" },
+    { path: "/contato", label: "Contato" },
     { path: "/apoiadores", label: "Apoiadores" },
   ];
 
-  const visibleLinks = navLinks.slice(0, 4);
+  const visibleLinks = navLinks.slice(0, 5);
   const menuLinks = navLinks.slice(0);
 
   return (

@@ -1,11 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import handsImage from "@/assets/hands-together.webp";
-import volunteersImage from "@/assets/volunteers-helping.webp";
 import Image from "next/image";
 import { Metadata } from "next";
-import { anos } from "@/lib/utils";
 import {
   Heart,
   Users,
@@ -21,15 +18,15 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Nossa História",
-  description: "Conheça a trajetória da Fundação Joanna de Ângelis, uma ONG que há mais de 20 anos transforma vidas em Rio das Ostras através de projetos sociais, educação e assistência comunitária.",
-  keywords: ['história', 'missão', 'valores', 'fundação', 'trajetória', 'ONG Rio das Ostras'],
+  title: "Sobre",
+  description: "Conheça a Fundação Joanna de Ângelis, entidade sem fins lucrativos dedicada à assistência social, educação, cultura e promoção da cidadania em Rio das Ostras.",
+  keywords: ['sobre', 'missão', 'valores', 'vocação', 'fundação', 'ONG Rio das Ostras'],
   alternates: {
-    canonical: 'https://fundacaojoanna.org.br/nossahistoria',
+    canonical: 'https://fundacaojoanna.org.br/sobre',
   },
   openGraph: {
-    title: "Nossa História - Fundação Joanna de Ângelis",
-    description: "Mais de 20 anos transformando vidas em Rio das Ostras através de projetos sociais e educação",
+    title: "Sobre - Fundação Joanna de Ângelis",
+    description: "Entidade de assistência social transformando vidas através de valores morais, éticos e educacionais",
     type: "website",
   },
 };
@@ -97,131 +94,131 @@ export default function NossaHistoria() {
   return (
     <div className="min-h-screen flex bg-gradient-page flex-col">
       <main className="flex-1">
-        {/* Hero Section - Modernizado */}
-        <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+        {/* Hero Section - Redesenhado */}
+        <section className="relative py-24 md:py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Nossa História
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Sobre Nós
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-                Uma jornada de amor, solidariedade e transformação social
-                inspirada por Joanna de Ângelis
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Entidade de Direito Privado, sem fins lucrativos, dedicada à transformação social através de valores, educação e assistência
               </p>
             </div>
           </div>
         </section>
 
-        {/* Timeline Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <div className="space-y-16">
-                {/* Origem */}
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6 flex items-center gap-3">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <Sparkles className="w-6 h-6 text-primary" />
-                    </div>
-                    Como Tudo Começou
-                  </h2>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Em 2010, um grupo de voluntários dedicados se reuniu com um
-                    sonho comum: fazer a diferença na vida de pessoas em
-                    situação de vulnerabilidade social. Inspirados pelos
-                    ensinamentos de{" "}
-                    <strong className="text-foreground">
-                      Joanna de Ângelis
-                    </strong>
-                    , iniciamos pequenas ações em uma comunidade local que
-                    rapidamente cresceram e se transformaram em um movimento de
-                    solidariedade que impacta milhares de vidas.
-                  </p>
-                </div>
-
-                {/* Missão */}
-                <Card className="bg-gradient-to-br from-primary/5 to-accent/5 border-none">
-                  <CardContent className="p-8">
-                    <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
-                      <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                        <Target className="w-5 h-5 text-primary-foreground" />
-                      </div>
-                      Nossa Missão
-                    </h2>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      Captar recursos materiais e humanos e aplicá-los para
-                      promover iniciativas relacionadas à prática de valores
-                      morais, éticos, religiosos, educacionais e de assistência
-                      para a promoção social, na formação do homem de bem.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                {/* O que fazemos */}
-                <div>
-                  <h2 className="text-3xl font-bold mb-8 text-center">
-                    O Que Fazemos
-                  </h2>
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-
-                    <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
-                      <div className="h-64 bg-gradient-to-br from-accent/10 to-accent/20 flex items-center justify-center">
-                        <BookOpen className="w-20 h-20 text-accent" />
-                      </div>
-                      <CardContent className="p-6">
-                        <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-                          <BookOpen className="w-5 h-5 text-primary" />
-                          Projeto Educacional
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Oferecemos reforço escolar, material didático e bolsas
-                          de estudo para crianças e jovens carentes,
-                          proporcionando oportunidades reais de crescimento.
-                        </p>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
-                      <div className="h-64 bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
-                        <Heart className="w-20 h-20 text-amber-500" />
-                      </div>
-                      <CardContent className="p-6">
-                        <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-                          <Heart className="w-5 h-5 text-primary" />
-                          Alimentação para Todos
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Distribuímos cestas básicas e refeições diárias para
-                          famílias em situação de insegurança alimentar,
-                          garantindo dignidade e nutrição.
-                        </p>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="overflow-hidden hover:shadow-lg transition-shadow border-accent/20">
-                      <div className="h-64 bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center">
-                        <Sparkles className="w-20 h-20 text-primary" />
-                      </div>
-                      <CardContent className="p-6">
-                        <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
-                          <Users className="w-5 h-5 text-primary" />
-                          Assistência Social
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Oferecemos apoio integral às famílias, com atendimento
-                          psicológico, orientação jurídica e encaminhamento para
-                          serviços essenciais.
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
+        {/* Quem Somos - Redesenhado */}
+        <section className="py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+          <div className="container mx-auto px-4 relative">
+            <div className="max-w-6xl mx-auto">
+              {/* Header da Seção */}
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                  Quem Somos
+                </h2>
+                <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div>
               </div>
+
+              {/* Card Único - Descrição Principal */}
+              <Card className="bg-gradient-to-br from-white to-primary/5 border-primary/20 shadow-large hover:shadow-colored transition-all duration-300 mb-12">
+                <CardContent className="p-8 md:p-12">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 bg-gradient-hero rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Shield className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold">Entidade Privada Sem Fins Lucrativos</h3>
+                  </div>
+                  <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                      <p>
+                      A <strong className="text-foreground">Fundação Joanna de Ângelis</strong> é uma entidade de Direito Privado sem fins lucrativos, de promoção de <strong className="text-foreground">Assistência Social, da Cultura, do Voluntariado, do Combate à Pobreza, da Segurança Alimentar e Nutricional</strong>, da Ética, da Paz, da Cidadania, dos Direitos Humanos, da Proteção ao Meio Ambiente, da Recreação e Desporto e da <strong className="text-foreground">Proteção à Criança e ao Adolescente</strong>.
+                    </p>
+                    <p>
+                      Fundada em 2003, inspirados pelos ensinamentos de <strong className="text-foreground">Joanna de Ângelis</strong>, trabalhamos incansavelmente para promover a transformação social através de ações concretas que impactam milhares de vidas em Rio das Ostras e região.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Card Grande - Áreas de Atuação */}
+              <Card className="bg-white border-none shadow-large hover:shadow-colored transition-shadow">
+                <CardContent className="p-8 md:p-10">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-14 h-14 bg-gradient-accent rounded-xl flex items-center justify-center">
+                      <Sparkles className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold">Nossas Frentes de Atuação</h3>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {[
+                      { icon: Heart, text: "Assistência Social", color: "text-rose-600", bgColor: "bg-rose-50", borderColor: "border-rose-200" },
+                      { icon: BookOpen, text: "Cultura e Educação", color: "text-purple-600", bgColor: "bg-purple-50", borderColor: "border-purple-200" },
+                      { icon: HandHeart, text: "Voluntariado", color: "text-pink-600", bgColor: "bg-pink-50", borderColor: "border-pink-200" },
+                      { icon: Users, text: "Combate à Pobreza", color: "text-indigo-600", bgColor: "bg-indigo-50", borderColor: "border-indigo-200" },
+                      { icon: Heart, text: "Segurança Alimentar", color: "text-amber-600", bgColor: "bg-amber-50", borderColor: "border-amber-200" },
+                      { icon: Shield, text: "Proteção de Crianças", color: "text-blue-600", bgColor: "bg-blue-50", borderColor: "border-blue-200" },
+                      { icon: Sparkles, text: "Direitos Humanos", color: "text-teal-600", bgColor: "bg-teal-50", borderColor: "border-teal-200" },
+                      { icon: Users, text: "Serviço Comunitário", color: "text-green-600", bgColor: "bg-green-50", borderColor: "border-green-200" },
+                      { icon: Star, text: "Orientação Espiritual", color: "text-violet-600", bgColor: "bg-violet-50", borderColor: "border-violet-200" },
+                    ].map((item, index) => {
+                      const Icon = item.icon;
+                      return (
+                        <div
+                          key={index}
+                          className={`flex items-center gap-4 p-5 rounded-xl ${item.bgColor} hover:shadow-large transition-all border-2 ${item.borderColor}`}
+                        >
+                          <Icon className={`w-7 h-7 ${item.color} flex-shrink-0`} />
+                          <span className="font-semibold text-base text-foreground">{item.text}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
+
+        {/* Missão e Vocação */}
+        <section className="py-16 bg-secondary/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+              {/* Missão */}
+              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 shadow-medium hover:shadow-large transition-shadow">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                      <Target className="w-6 h-6 text-white" />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold">Nossa Missão</h2>
+                  </div>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                    Captar recursos materiais e humanos e aplicá-los para promover iniciativas relacionadas à prática de valores morais, éticos, religiosos, educacionais e de assistência para a promoção social, na <strong className="text-foreground">formação do homem de bem</strong>.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Vocação */}
+              <Card className="bg-gradient-to-br from-accent/5 to-accent/10 border-accent/20 shadow-medium hover:shadow-large transition-shadow">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
+                      <Heart className="w-6 h-6 text-white" />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold">Nossa Vocação</h2>
+                  </div>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                    A Fundação Joanna de Ângelis poderá construir e manter serviços de natureza <strong className="text-foreground">assistencial, educacional, cultural e religiosa</strong> para os cidadãos em geral, sem distinção de qualquer espécie, podendo instalar e administrar <strong className="text-foreground">abrigos, creches, escolas, ambulatórios, hospitais, centros de convivência social e grupos espíritas</strong>, bem como estabelecimentos similares para prestação de serviços em consonância com seus fins estatutários.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
 
         {/* Valores Section - Redesenhado */}
         <section className="py-20 bg-gradient-to-b from-secondary/50 to-transparent">
@@ -231,6 +228,7 @@ export default function NossaHistoria() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   Nossos 10 Valores Fundamentais
                 </h2>
+                <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                   Princípios que guiam cada ação da Fundação Joanna de Ângelis
                 </p>
