@@ -8,6 +8,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://fundacaojoanna.org.br/termos-uso',
   },
+  openGraph: {
+    title: "Termos de Uso - Fundação Joanna de Ângelis",
+    description: "Termos e condições de uso do site da Fundação Joanna de Ângelis",
+    type: "website",
+    images: [
+      {
+        url: '/logo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Logo Fundação Joanna de Ângelis',
+      },
+    ],
+  },
 };
 
 export default function TermosUso() {

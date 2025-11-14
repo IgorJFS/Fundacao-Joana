@@ -21,8 +21,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Fundação Joanna de Ângelis - Transformando Vidas",
-    description: "ONG em Rio das Ostras com mais de 20 anos transformando vidas através de projetos sociais",
+    description: "ONG em Rio das Ostras com mais de 20 anos transformando vidas através de trabalho voluntário e doações",
     type: "website",
+    images: [
+      {
+        url: '/logo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Logo Fundação Joanna de Ângelis',
+      },
+    ],
   },
 };
 

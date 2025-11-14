@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     title: "Sobre - Fundação Joanna de Ângelis",
     description: "Entidade de assistência social transformando vidas através de valores morais, éticos e educacionais",
     type: "website",
+    images: [
+      {
+        url: '/logo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Logo Fundação Joanna de Ângelis',
+      },
+    ],
   },
 };
 

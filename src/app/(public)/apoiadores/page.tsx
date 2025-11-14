@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     title: "Nossos Apoiadores - Fundação Joanna de Ângelis",
     description: "Mais de 120 pessoas e empresas que ajudam a transformar vidas",
     type: "website",
+    images: [
+      {
+        url: '/logo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Logo Fundação Joanna de Ângelis',
+      },
+    ],
   },
 };
 

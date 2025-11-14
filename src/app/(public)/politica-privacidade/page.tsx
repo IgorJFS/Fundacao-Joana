@@ -8,6 +8,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://fundacaojoanna.org.br/politica-privacidade',
   },
+  openGraph: {
+    title: "Política de Privacidade - Fundação Joanna de Ângelis",
+    description: "Nossa política de privacidade e proteção de dados pessoais",
+    type: "website",
+    images: [
+      {
+        url: '/logo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Logo Fundação Joanna de Ângelis',
+      },
+    ],
+  },
 };
 
 export default function PoliticaPrivacidade() {

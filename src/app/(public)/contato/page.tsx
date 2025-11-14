@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     title: "Contato - Fundação Joanna de Ângelis",
     description: "Entre em contato conosco. Estamos em Rio das Ostras prontos para atender você.",
     type: "website",
+    images: [
+      {
+        url: '/logo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Logo Fundação Joanna de Ângelis',
+      },
+    ],
   },
 };
 
