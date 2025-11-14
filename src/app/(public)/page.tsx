@@ -2,9 +2,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, HandHeart, TrendingUp } from "lucide-react";
-import heroImage from "@/assets/hero-children.jpg";
-import volunteersImage from "@/assets/volunteers-helping.jpg";
-import handsImage from "@/assets/hands-together.jpg";
+import heroImage from "@/assets/hero-children.webp";
+import volunteersImage from "@/assets/volunteers-helping.webp";
+import handsImage from "@/assets/hands-together.webp";
+import saude from "@/assets/saude.webp";
+import gravida from "@/assets/gravidas.webp";
 import Image from "next/image";
 import LogoMarquee from "@/components/logo-carousel";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
@@ -57,27 +59,6 @@ export default function Home() {
       label: "De História",
       color: "text-primary",
       bgColor: "bg-primary/10",
-    },
-  ];
-
-  const achievements = [
-    {
-      title: "Projeto AmanhãSER",
-      description:
-        "Mais de 3.000 crianças receberam material escolar e apoio educacional em 2024.",
-      image: heroImage,
-    },
-    {
-      title: "Alimentação Solidária",
-      description:
-        "Distribuímos mais de 50 mil refeições para famílias em situação de vulnerabilidade.",
-      image: volunteersImage,
-    },
-    {
-      title: "Saúde e Bem-estar",
-      description:
-        "Realizamos múltiplos atendimentos médicos e psicológicos gratuitos.",
-      image: handsImage,
     },
   ];
 
@@ -297,30 +278,30 @@ export default function Home() {
               {[
                 {
                   image: volunteersImage,
-                  title: "Educação",
-                  description: "Promovemos atividades educacionais e culturais que desenvolvem habilidades e ampliam horizontes para crianças e adolescentes.",
-                  icon: "📚",
+                  title: "Assistência Social",
+                  description: "A Fundação Joanna de Ângelis oferece apoio integral às famílias em situação de vulnerabilidade, promovendo inclusão social e melhoria da qualidade de vida.",
+                  icon: "🤲",
                   mobileVisible: true,
                 },
                 {
-                  image: handsImage,
-                  title: "Saúde",
-                  description: "Oferecemos atendimentos médicos, psicológicos e odontológicos gratuitos, garantindo bem-estar e qualidade de vida para todos.",
+                  image: saude,
+                  title: "Projeto Saúde",
+                  description: "Serviço Social, Psicologia (para adultos). Psicanálise online e presencial, Nutricionista, Ginecologista, Angiologista, Clínica Médica, Reiki, Pedriatra, Podologia e Dentista. Agendamento via WhatsApp.",
                   icon: "🏥",
                   mobileVisible: true,
                 },
                 {
                   image: heroImage,
-                  title: "Assistência Social",
-                  description: "Fornecemos apoio integral às famílias em situação de vulnerabilidade, com alimentação, assistência e acompanhamento social.",
-                  icon: "🤲",
+                  title: "Projeto Educacional",
+                  description: "Aula de Reforço de Matemática e Física terça feiras das 14:00 ás 16:00. E Aula de produção textual (Foco em ENEM, concursos e etc) Quinta-feira, quinzenalmente nas primeira e terceira quinta-feira do mês, das 14:00 ás 16:00.",
+                  icon: "📚",
                   mobileVisible: true,
                 },
                 {
-                  image: volunteersImage,
-                  title: "Idosos e Gestantes",
-                  description: "Cuidado especial para idosos e gestantes em situação de vulnerabilidade, com acompanhamento dedicado e suporte integral.",
-                  icon: "👵",
+                  image: gravida,
+                  title: "Projeto AdoleSER com gravidez",
+                  description: "Funciona as terças-feiras, das 8:30 ás 13:00. A adolescente grávida terá: café da manhã, lanche, almoço e passagem no valor de R$7,50 patronicados pela FJA.",
+                  icon: "🤰",
                   mobileVisible: false,
                 },
               ].map((projeto, index) => (

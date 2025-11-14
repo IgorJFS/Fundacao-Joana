@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import handsImage from "@/assets/hands-together.jpg";
-import volunteersImage from "@/assets/volunteers-helping.jpg";
+import handsImage from "@/assets/hands-together.webp";
+import volunteersImage from "@/assets/volunteers-helping.webp";
 import Image from "next/image";
 import { Metadata } from "next";
 import { anos } from "@/lib/utils";
@@ -176,7 +176,7 @@ export default function NossaHistoria() {
                         </h3>
                         <p className="text-muted-foreground leading-relaxed">
                           Oferecemos reforço escolar, material didático e bolsas
-                          de estudo para crianças e jovens carentes,
+                          de estudo para crianças e joens carentes,
                           proporcionando oportunidades reais de crescimento.
                         </p>
                       </CardContent>
@@ -359,68 +359,6 @@ export default function NossaHistoria() {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Impacto Section */}
-        <section className="py-16 bg-secondary/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Nosso Impacto até Hoje
-                </h2>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
-                <Card className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-8">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-8 h-8 text-primary" />
-                    </div>
-                    <div className="text-4xl font-bold text-primary mb-2">
-                      15.000+
-                    </div>
-                    <p className="text-muted-foreground">Vidas Impactadas</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-8">
-                    <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <HandHeart className="w-8 h-8 text-accent" />
-                    </div>
-                    <div className="text-4xl font-bold text-accent mb-2">
-                      500+
-                    </div>
-                    <p className="text-muted-foreground">Voluntários Ativos</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-8">
-                    <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Star className="w-8 h-8 text-green-600" />
-                    </div>
-                    <div className="text-4xl font-bold text-green-600 mb-2">
-                      {anos} anos
-                    </div>
-                    <p className="text-muted-foreground">de Dedicação</p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <p className="text-lg text-muted-foreground text-center leading-relaxed">
-                Ao longo de <strong className="text-foreground">{anos} anos</strong>{" "}
-                de atuação, já impactamos positivamente mais de{" "}
-                <strong className="text-foreground">15.000 vidas</strong>. Com a
-                ajuda de nossos{" "}
-                <strong className="text-foreground">500 voluntários</strong> e
-                milhares de doadores generosos, conseguimos oferecer educação de
-                qualidade, alimentação, assistência social e muito mais. Mas
-                nossa jornada está apenas começando!
-              </p>
             </div>
           </div>
         </section>

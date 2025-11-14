@@ -12,7 +12,7 @@ const noticias = [
     resumo:
       "O Conselho Municipal dos Direitos da Criança e do Adolescente (CMDCA) de Rio das Ostras deu posse e elegeu a presidência na tarde desta terça-feira, dia 20. A reunião foi realizada na sede da Secretaria Municipal de Assistência Social e os novos membros vão atuar no biênio 2025/2026.",
     data: "21 de Maio, 2025",
-    imagemUrl: "/noticia1.jpg",
+    imagemUrl: "/noticia1.webp",
     linkExterno:
       "https://www.riodasostras.rj.gov.br/conselho-de-direitos-da-crianca-e-do-adolescente-de-rio-das-ostras-da-posse-a-novos-membros/",
   },
@@ -22,7 +22,7 @@ const noticias = [
     resumo:
       "Começou nesta quarta-feira, dia 14, a Pré-Conferência Municipal de Assistência Social de Rio das Ostras. Com o tema “20 Anos do SUAS: Construção Social e Resistência”, o evento é uma preparação para os debates da Conferência Municipal, que acontece no mês de junho.",
     data: "14 de Maio, 2025",
-    imagemUrl: "/noticia3.jpeg",
+    imagemUrl: "/noticia3.webp",
     linkExterno:
       "https://www.riodasostras.rj.gov.br/municipio-da-inicio-a-pre-conferencia-de-assistencia-social/",
   },
@@ -33,7 +33,7 @@ const noticias = [
     resumo:
       "O CMDCA é por sua natureza órgão Normativo, Consultivo, Deliberativo e Controlador da política de promoção, atendimento e de defesa dos direitos da Criança e do Adolescente.",
     data: "30 de Julho, 2022",
-    imagemUrl: "/noticia4.jpeg",
+    imagemUrl: "/noticia4.webp",
     linkExterno: "https://www.riodasostras.rj.gov.br/cmdca/",
   },
   {
@@ -43,7 +43,7 @@ const noticias = [
     resumo:
       "Os novos conselheiros do Conselho Municipal de Assistência Social de Rio das Ostras tomaram posse na manhã nesta terça, dia 14, no auditório da sede da Secretaria de Educação, Esporte e Lazer. Titulares e Suplentes assumiram os cargos para as cadeiras de representação governamental e não governamental. Ao todo, foram 20 empossados, que atuarão no biênio 2021/2022.",
     data: "14 de Janeiro, 2020",
-    imagemUrl: "/noticia5.jpg",
+    imagemUrl: "/noticia5.webp",
     linkExterno:
       "https://www.riodasostras.rj.gov.br/cmdca-empossa-novos-conselheiros/",
   },
@@ -54,7 +54,7 @@ const noticias = [
     resumo:
       "Nesta sexta-feira, dia 28 de março, o Conselho Municipal de Direitos da Criança e do Adolescente (CMDCA) realizou o Fórum Municipal das Entidades e Organizações Não Governamentais que atuam na Política de Atendimento aos Direitos da Criança e do Adolescente, na Câmara Municipal, em Verdes Mares.",
     data: "28 de Março, 2025",
-    imagemUrl: "/noticia6.jpg",
+    imagemUrl: "/noticia6.webp",
     linkExterno:
       "https://www.riodasostras.rj.gov.br/rio-das-ostras-realiza-forum-das-entidades-e-organizacoes-nao-governamentais-em-defesa-da-crianca-e-do-adolescente/",
   },
@@ -64,7 +64,7 @@ const noticias = [
     resumo:
       "Famílias de Rio das Ostras em situação de vulnerabilidade social que participam de atividades em instituições socioassistenciais e de projetos e de programas da Assistência Social são contempladas com distribuição de alimentos não perecíveis e de hortaliças.",
     data: "2 de Setembro, 2021",
-    imagemUrl: "/noticia2.jpg",
+    imagemUrl: "/noticia2.webp",
     linkExterno:
       "https://www.riodasostras.rj.gov.br/rio-das-ostras-recebe-doacoes-de-cestas-basicas-e-hortalicas/",
   },
