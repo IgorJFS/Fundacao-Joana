@@ -263,13 +263,13 @@ export default function Footer() {
               >
                 Termos de Uso
               </Link>
-              <span className="hidden md:inline">•</span>
+              {/* <span className="hidden md:inline">•</span>
               <Link
                 href="/transparencia"
                 className="hover:text-primary transition-colors"
               >
                 Transparência
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
