@@ -95,7 +95,7 @@ export default function Home() {
             "url": "https://fundacaojoanna.org.br",
             "logo": "https://fundacaojoanna.org.br/logo.png",
             "description": "ONG sem fins lucrativos que promove assistência social, educação e desenvolvimento comunitário em Rio das Ostras",
-            "foundingDate": "2004",
+            "foundingDate": "2003",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Rio das Ostras",

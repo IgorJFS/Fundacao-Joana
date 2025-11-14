@@ -116,7 +116,7 @@ CEP: 28890-000
 
 **Informações Legais**:  
 🏢 CNPJ: 06.261.897/0001-93  
-📅 Ano de Fundação: 2004
+📅 Ano de Fundação: 2003
 
 ---
 
