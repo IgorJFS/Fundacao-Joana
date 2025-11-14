@@ -52,7 +52,7 @@ export default function DashboardLayout({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-100">
+    <div className="min-h-screen bg-gradient-page">
       {/* Header */}
       <header className="bg-white border-b sticky top-0 z-50 shadow-sm">
         <div className="flex items-center justify-between px-4 py-3">
@@ -118,8 +118,8 @@ export default function DashboardLayout({
                     transition-all duration-150
                     ${
                       isActive
-                        ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-md"
-                        : "hover:bg-blue-50 text-gray-700"
+                        ? "bg-gradient-hero text-white shadow-medium"
+                        : "hover:bg-primary/10 text-gray-700"
                     }
                   `}
                 >

@@ -59,7 +59,7 @@ export function ApoiadoresList({ apoiadores }: ApoiadoresListProps) {
               .map((apoiador) => (
                 <div key={apoiador.id} className="group relative lg:hidden">
                   <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/50 transition-all duration-200">
-                    <div className="flex-shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-cyan-500 flex items-center justify-center text-white font-bold shadow-soft">
+                    <div className="flex-shrink-0 w-9 h-9 rounded-full bg-gradient-hero flex items-center justify-center text-white font-bold shadow-soft">
                       {apoiador.nome_completo.charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -78,7 +78,7 @@ export function ApoiadoresList({ apoiadores }: ApoiadoresListProps) {
                 className="group relative hidden lg:block"
               >
                 <div className="flex items-center gap-3 p-4 rounded-lg hover:bg-secondary/50 transition-all duration-200 hover:scale-105">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-cyan-500 flex items-center justify-center text-white font-bold shadow-soft">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-hero flex items-center justify-center text-white font-bold shadow-soft">
                     {apoiador.nome_completo.charAt(0).toUpperCase()}
                   </div>
                   <div className="flex-1 min-w-0">

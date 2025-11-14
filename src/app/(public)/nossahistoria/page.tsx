@@ -183,8 +183,8 @@ export default function NossaHistoria() {
                     </Card>
 
                     <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
-                      <div className="h-64 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 flex items-center justify-center">
-                        <Heart className="w-20 h-20 text-green-600 dark:text-green-400" />
+                      <div className="h-64 bg-gradient-to-br from-accent/10 to-accent/20 dark:from-accent/5 dark:to-accent/10 flex items-center justify-center">
+                        <Heart className="w-20 h-20 text-accent dark:text-accent" />
                       </div>
                       <CardContent className="p-6">
                         <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
@@ -200,8 +200,8 @@ export default function NossaHistoria() {
                     </Card>
 
                     <Card className="overflow-hidden hover:shadow-lg transition-shadow border-accent/20">
-                      <div className="h-64 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 flex items-center justify-center">
-                        <Users className="w-20 h-20 text-blue-600 dark:text-blue-400" />
+                      <div className="h-64 bg-gradient-to-br from-primary/10 to-primary/20 dark:from-primary/5 dark:to-primary/10 flex items-center justify-center">
+                        <Sparkles className="w-20 h-20 text-primary dark:text-primary" />
                       </div>
                       <CardContent className="p-6">
                         <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
@@ -275,7 +275,7 @@ export default function NossaHistoria() {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <Card className="overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-purple-50/50 to-blue-50/50 dark:from-purple-900/10 dark:to-blue-900/10">
+              <Card className="overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 shadow-soft">
                 <CardContent className="p-6 md:p-10">
                   <div className="flex items-start gap-3 md:gap-4 mb-6">
                     <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center flex-shrink-0">

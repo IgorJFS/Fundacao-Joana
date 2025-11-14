@@ -103,7 +103,7 @@ export default function Doacao() {
                 </div>
 
                 {/* Aviso de Doação de Itens */}
-                <Card className="bg-gradient-to-r from-amber-50 to-orange-50 border-orange-200">
+                <Card className="bg-gradient-to-r from-secondary to-primary/5 border-primary/20 shadow-soft">
                   <CardContent className="p-4">
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex-1">
@@ -133,7 +133,7 @@ export default function Doacao() {
 
                 {/* PIX Payment Info */}
                 {paymentMethod === "pix" && (
-                  <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
+                  <Card className="bg-gradient-to-br from-accent/5 to-accent/10 border-accent/20 shadow-soft">
                     <CardContent className="p-6 space-y-6">
                       <div className="text-center">
                         <h3 className="font-semibold text-lg mb-4">
@@ -155,7 +155,7 @@ export default function Doacao() {
                           Ou copie a chave PIX (CNPJ):
                         </p>
                         <div className="space-y-2">
-                          <code className="block bg-white px-4 py-3 rounded-lg text-sm font-mono border border-green-200 text-center break-all">
+                          <code className="block bg-white px-4 py-3 rounded-lg text-sm font-mono border border-accent/30 text-center break-all shadow-soft">
                             {pixKey}
                           </code>
                           <Button
@@ -165,8 +165,8 @@ export default function Doacao() {
                           >
                             {copied === "Chave PIX" ? (
                               <>
-                                <Check className="h-4 w-4 text-green-600" />
-                                <span className="text-green-600">Copiado!</span>
+                                <Check className="h-4 w-4 text-accent" />
+                                <span className="text-accent">Copiado!</span>
                               </>
                             ) : (
                               <>
@@ -190,7 +190,7 @@ export default function Doacao() {
 
                 {/* Bank Transfer Info */}
                 {paymentMethod === "bank" && (
-                  <Card className="bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-200">
+                  <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 shadow-soft">
                     <CardContent className="p-6 space-y-6">
                       <div className="text-center mb-4">
                         <h3 className="font-semibold text-lg mb-2">
@@ -203,7 +203,7 @@ export default function Doacao() {
 
                       <div className="space-y-3">
                         {/* CNPJ */}
-                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                        <div className="bg-white p-4 rounded-lg border border-primary/30">
                           <p className="text-xs text-muted-foreground mb-1">CNPJ</p>
                           <div className="flex items-center justify-between gap-2">
                             <code className="text-sm font-mono font-semibold">
@@ -215,7 +215,7 @@ export default function Doacao() {
                               onClick={() => handleCopy(bankData.cnpj, "CNPJ")}
                             >
                               {copied === "CNPJ" ? (
-                                <Check className="h-4 w-4 text-green-600" />
+                                <Check className="h-4 w-4 text-accent" />
                               ) : (
                                 <Copy className="h-4 w-4" />
                               )}
@@ -224,7 +224,7 @@ export default function Doacao() {
                         </div>
 
                         {/* Nome */}
-                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                        <div className="bg-white p-4 rounded-lg border border-primary/30">
                           <p className="text-xs text-muted-foreground mb-1">Nome</p>
                           <div className="flex items-center justify-between gap-2">
                             <span className="text-sm font-semibold">
@@ -236,7 +236,7 @@ export default function Doacao() {
                               onClick={() => handleCopy(bankData.nome, "Nome")}
                             >
                               {copied === "Nome" ? (
-                                <Check className="h-4 w-4 text-green-600" />
+                                <Check className="h-4 w-4 text-accent" />
                               ) : (
                                 <Copy className="h-4 w-4" />
                               )}
@@ -245,7 +245,7 @@ export default function Doacao() {
                         </div>
 
                         {/* Banco */}
-                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                        <div className="bg-white p-4 rounded-lg border border-primary/30">
                           <p className="text-xs text-muted-foreground mb-1">Banco</p>
                           <div className="flex items-center justify-between gap-2">
                             <span className="text-sm font-semibold">
@@ -257,7 +257,7 @@ export default function Doacao() {
                               onClick={() => handleCopy(bankData.banco, "Banco")}
                             >
                               {copied === "Banco" ? (
-                                <Check className="h-4 w-4 text-green-600" />
+                                <Check className="h-4 w-4 text-accent" />
                               ) : (
                                 <Copy className="h-4 w-4" />
                               )}
@@ -266,7 +266,7 @@ export default function Doacao() {
                         </div>
 
                         {/* Agência */}
-                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                        <div className="bg-white p-4 rounded-lg border border-primary/30">
                           <p className="text-xs text-muted-foreground mb-1">Agência</p>
                           <div className="flex items-center justify-between gap-2">
                             <code className="text-sm font-mono font-semibold">
@@ -278,7 +278,7 @@ export default function Doacao() {
                               onClick={() => handleCopy(bankData.agencia, "Agência")}
                             >
                               {copied === "Agência" ? (
-                                <Check className="h-4 w-4 text-green-600" />
+                                <Check className="h-4 w-4 text-accent" />
                               ) : (
                                 <Copy className="h-4 w-4" />
                               )}
@@ -287,7 +287,7 @@ export default function Doacao() {
                         </div>
 
                         {/* Conta */}
-                        <div className="bg-white p-4 rounded-lg border border-blue-200">
+                        <div className="bg-white p-4 rounded-lg border border-primary/30">
                           <p className="text-xs text-muted-foreground mb-1">Conta Corrente</p>
                           <div className="flex items-center justify-between gap-2">
                             <code className="text-sm font-mono font-semibold">
@@ -299,7 +299,7 @@ export default function Doacao() {
                               onClick={() => handleCopy(bankData.conta, "Conta")}
                             >
                               {copied === "Conta" ? (
-                                <Check className="h-4 w-4 text-green-600" />
+                                <Check className="h-4 w-4 text-accent" />
                               ) : (
                                 <Copy className="h-4 w-4" />
                               )}

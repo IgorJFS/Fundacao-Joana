@@ -141,7 +141,7 @@ export default function VoluntariosManager() {
 
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-2">
-        <Card className="bg-gradient-to-br from-blue-500 to-cyan-600 border-0 shadow-lg">
+        <Card className="bg-gradient-hero border-0 shadow-large">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm font-medium text-white">
               Total de Voluntários
@@ -154,7 +154,7 @@ export default function VoluntariosManager() {
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-green-500 to-emerald-600 border-0 shadow-lg">
+        <Card className="bg-gradient-accent border-0 shadow-large">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm font-medium text-white">
               Novos Este Mês

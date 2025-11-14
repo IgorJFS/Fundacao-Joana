@@ -235,7 +235,7 @@ export default function Footer() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary/90 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary-dark transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed shadow-soft"
               >
                 {isSubmitting ? "Enviando..." : "Cadastrar"}
               </button>

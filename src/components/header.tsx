@@ -57,7 +57,7 @@ export default function Header() {
 
           <div className="flex items-center gap-2">
             <Link href="/doacao" className="hidden md:block">
-              <Button className="bg-cyan-500 hover:bg-cyan-600 text-white shadow-soft">
+              <Button className="bg-primary hover:bg-primary-dark text-white shadow-medium">
                 Doar Agora
               </Button>
             </Link>

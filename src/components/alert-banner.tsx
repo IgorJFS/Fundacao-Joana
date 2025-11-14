@@ -65,13 +65,13 @@ export default function AlertBanner() {
   const bgColor =
     alerta.tipo === "urgente"
       ? "bg-red-50 border-red-200"
-      : "bg-blue-50 border-blue-200";
+      : "bg-primary/5 border-primary/20";
 
   const textColor =
-    alerta.tipo === "urgente" ? "text-red-900" : "text-blue-900";
+    alerta.tipo === "urgente" ? "text-red-900" : "text-primary";
 
   const iconColor =
-    alerta.tipo === "urgente" ? "text-red-600" : "text-blue-600";
+    alerta.tipo === "urgente" ? "text-red-600" : "text-primary";
 
   return (
     <div

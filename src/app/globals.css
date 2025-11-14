@@ -1,66 +1,92 @@
 @import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Sistema de Design Moderno - Fundação Joanna de Ângelis
+   Paleta baseada em azul vibrante e branco, com acentos modernos
 */
 
 @theme {
-  /* Cores principais */
-  --color-background: hsl(200 30% 98%);
-  --color-foreground: hsl(210 20% 20%);
+  /* Cores Base - Backgrounds e Textos */
+  --color-background: hsl(0 0% 100%); /* Branco puro para contraste máximo */
+  --color-foreground: hsl(220 30% 15%); /* Azul escuro quase preto para textos */
 
-  --color-card: hsl(220 15% 98%); /* Era hsl(0 0% 100%) */
-  --color-card-foreground: hsl(220 25% 10%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(220 25% 20%);
 
   --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(210 20% 20%);
+  --color-popover-foreground: hsl(220 25% 20%);
 
-  --color-primary: hsl(194 53% 65%);
+  /* Azul Principal - Vibrante e Moderno (baseado na logo) */
+  --color-primary: hsl(197 71% 52%); /* Azul vibrante */
   --color-primary-foreground: hsl(0 0% 100%);
-  --color-primary-dark: hsl(194 53% 45%);
+  --color-primary-dark: hsl(197 71% 38%); /* Azul mais escuro para hover */
 
-  --color-secondary: hsl(200 25% 95%);
-  --color-secondary-foreground: hsl(210 20% 20%);
+  /* Secundário - Tons complementares */
+  --color-secondary: hsl(210 40% 96%); /* Azul muito claro */
+  --color-secondary-foreground: hsl(220 25% 20%);
 
-  --color-muted: hsl(200 25% 95%);
-  --color-muted-foreground: hsl(210 15% 50%);
+  /* Muted - Cinza azulado suave */
+  --color-muted: hsl(210 30% 94%);
+  --color-muted-foreground: hsl(220 15% 45%);
 
-  --color-accent: hsl(150 60% 45%);
+  /* Accent - Verde vibrante para CTAs */
+  --color-accent: hsl(160 84% 39%); /* Verde esmeralda moderno */
   --color-accent-foreground: hsl(0 0% 100%);
+  --color-accent-hover: hsl(160 84% 32%);
 
-  --color-destructive: hsl(0 84.2% 60.2%);
+  /* Destructive - Vermelho moderno */
+  --color-destructive: hsl(0 72% 51%);
   --color-destructive-foreground: hsl(0 0% 100%);
 
-  --color-border: hsl(194 30% 90%);
-  --color-input: hsl(194 30% 90%);
-  --color-ring: hsl(194 53% 65%);
+  /* Borders e Inputs */
+  --color-border: hsl(210 30% 88%);
+  --color-input: hsl(210 30% 90%);
+  --color-ring: hsl(197 71% 52%);
 
-  /* Border radius */
+  /* Border radius - Moderno e suave */
   --radius: 0.75rem;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 }
 
-/* Variáveis customizadas para gradientes e sombras */
+/* Variáveis customizadas para gradientes vibrantes e sombras modernas */
 :root {
+  /* Gradiente Hero - Azul vibrante com degradê dinâmico */
   --gradient-hero: linear-gradient(
     135deg,
-    hsl(194, 53%, 85%) 0%,
-    hsl(194, 53%, 65%) 100%
+    hsl(197, 71%, 52%) 0%,
+    hsl(210, 80%, 45%) 50%,
+    hsl(220, 85%, 55%) 100%
   );
+
+  /* Gradiente de Cards - Sutil e elegante */
   --gradient-card: linear-gradient(
     180deg,
     hsl(0, 0%, 100%) 0%,
-    hsl(0, 0%, 100%) 100%
+    hsl(210, 40%, 99%) 100%
   );
+
+  /* Gradiente de Página - Fundo moderno */
   --gradient-page: linear-gradient(
     180deg,
-    hsl(194, 45%, 97%) 0%,
-    hsl(180, 50%, 95%) 100%
+    hsl(210, 50%, 98%) 0%,
+    hsl(200, 40%, 97%) 50%,
+    hsl(197, 30%, 96%) 100%
   );
-  --shadow-soft: 0 4px 20px -2px hsla(194, 100%, 93%, 0.15);
-  --shadow-medium: 0 10px 30px -5px hsl(194 53% 65% / 0.25);
+
+  /* Gradiente de Accent - Para CTAs especiais */
+  --gradient-accent: linear-gradient(
+    135deg,
+    hsl(160, 84%, 39%) 0%,
+    hsl(170, 80%, 42%) 100%
+  );
+
+  /* Sombras modernas e suaves */
+  --shadow-soft: 0 2px 8px -2px hsla(220, 30%, 15%, 0.08);
+  --shadow-medium: 0 4px 16px -4px hsla(197, 71%, 52%, 0.15);
+  --shadow-large: 0 8px 32px -8px hsla(197, 71%, 52%, 0.2);
+  --shadow-colored: 0 8px 24px -6px hsla(197, 71%, 52%, 0.3);
 }
 
 /* Classes utilitárias customizadas */
@@ -77,6 +103,10 @@ All colors MUST be HSL.
     background: var(--gradient-page);
   }
 
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -84,4 +114,38 @@ All colors MUST be HSL.
   .shadow-medium {
     box-shadow: var(--shadow-medium);
   }
+
+  .shadow-large {
+    box-shadow: var(--shadow-large);
+  }
+
+  .shadow-colored {
+    box-shadow: var(--shadow-colored);
+  }
+
+  /* Efeito de hover com brilho */
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px hsla(197, 71%, 52%, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* Texto com gradiente */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(197, 71%, 52%), hsl(220, 85%, 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
+

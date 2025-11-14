@@ -39,7 +39,7 @@ export default function DashboardOverview({
       value: "----------",
       icon: TrendingUp,
       color: "text-white",
-      bgColor: "bg-gradient-to-br from-purple-500 to-pink-600",
+      bgColor: "bg-gradient-to-br from-primary via-primary-dark to-accent",
       iconBg: "bg-white/20",
     },
     {
@@ -136,14 +136,14 @@ export default function DashboardOverview({
             <CardTitle className="text-lg flex items-center gap-2">
               <span className="text-2xl">📊</span> Gerar Relatório
             </CardTitle>
-            <CardDescription className="text-indigo-600">
+            <CardDescription className="text-primary">
               Crie relatórios detalhados de doações
             </CardDescription>
           </CardHeader>
         </Card>
 
         <Card
-          className="hover:shadow-xl hover:scale-105 transition-all cursor-pointer border-0 bg-gradient-to-br from-rose-50 to-orange-50"
+          className="hover:shadow-xl hover:scale-105 transition-all cursor-pointer border-0 bg-gradient-to-br from-primary/5 to-accent/5"
           onClick={() => onNavigate?.("alertas")}
         >
           <CardHeader>

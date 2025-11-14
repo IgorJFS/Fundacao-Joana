@@ -168,7 +168,7 @@ export default function AlertasManager() {
       case "urgente":
         return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200";
       case "info":
-        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200";
+        return "bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary";
       default:
         return "bg-gray-100 text-gray-800";
     }
@@ -211,7 +211,7 @@ export default function AlertasManager() {
 
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-3">
-        <Card className="bg-gradient-to-br from-blue-500 to-cyan-600 border-0 shadow-lg">
+        <Card className="bg-gradient-hero border-0 shadow-large">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm font-medium text-white">
               Total de Alertas
@@ -224,7 +224,7 @@ export default function AlertasManager() {
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-green-500 to-emerald-600 border-0 shadow-lg">
+        <Card className="bg-gradient-accent border-0 shadow-large">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm font-medium text-white">
               Alertas Ativos
@@ -360,8 +360,8 @@ export default function AlertasManager() {
                     alerta.tipo
                   )} bg-gradient-to-r ${
                     alerta.tipo === "urgente"
-                      ? "from-yellow-50 to-transparent"
-                      : "from-blue-50 to-transparent"
+                      ? "from-accent/10 to-transparent"
+                      : "from-primary/10 to-transparent"
                   }`}
                 >
                   <div className="flex gap-3">
@@ -369,7 +369,7 @@ export default function AlertasManager() {
                       className={`h-5 w-5 flex-shrink-0 ${
                         alerta.tipo === "urgente"
                           ? "text-yellow-600"
-                          : "text-blue-600"
+                          : "text-primary"
                       }`}
                     />
                     <div>
