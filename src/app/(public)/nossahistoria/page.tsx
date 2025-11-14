@@ -17,6 +17,7 @@ import {
   HandHeart,
   Star,
   Info,
+  Book,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -163,28 +164,28 @@ export default function NossaHistoria() {
                     O Que Fazemos
                   </h2>
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                      <Image
-                        src={volunteersImage}
-                        alt="Voluntários em ação"
-                        className="w-full h-64 object-cover"
-                      />
+
+
+                    <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
+                      <div className="h-64 bg-gradient-to-br from-accent/10 to-accent/20 flex items-center justify-center">
+                        <BookOpen className="w-20 h-20 text-accent" />
+                      </div>
                       <CardContent className="p-6">
                         <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
                           <BookOpen className="w-5 h-5 text-primary" />
-                          Educação Transformadora
+                          Projeto Educacional
                         </h3>
                         <p className="text-muted-foreground leading-relaxed">
                           Oferecemos reforço escolar, material didático e bolsas
-                          de estudo para crianças e joens carentes,
+                          de estudo para crianças e jovens carentes,
                           proporcionando oportunidades reais de crescimento.
                         </p>
                       </CardContent>
                     </Card>
 
                     <Card className="overflow-hidden hover:shadow-lg transition-shadow border-primary/20">
-                      <div className="h-64 bg-gradient-to-br from-accent/10 to-accent/20 dark:from-accent/5 dark:to-accent/10 flex items-center justify-center">
-                        <Heart className="w-20 h-20 text-accent dark:text-accent" />
+                      <div className="h-64 bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+                        <Heart className="w-20 h-20 text-amber-500" />
                       </div>
                       <CardContent className="p-6">
                         <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
@@ -200,8 +201,8 @@ export default function NossaHistoria() {
                     </Card>
 
                     <Card className="overflow-hidden hover:shadow-lg transition-shadow border-accent/20">
-                      <div className="h-64 bg-gradient-to-br from-primary/10 to-primary/20 dark:from-primary/5 dark:to-primary/10 flex items-center justify-center">
-                        <Sparkles className="w-20 h-20 text-primary dark:text-primary" />
+                      <div className="h-64 bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center">
+                        <Sparkles className="w-20 h-20 text-primary" />
                       </div>
                       <CardContent className="p-6">
                         <h3 className="font-semibold text-xl mb-3 flex items-center gap-2">
@@ -275,7 +276,7 @@ export default function NossaHistoria() {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <Card className="overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 shadow-soft">
+              <Card className="overflow-hidden border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 shadow-soft">
                 <CardContent className="p-6 md:p-10">
                   <div className="flex items-start gap-3 md:gap-4 mb-6">
                     <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center flex-shrink-0">
@@ -334,7 +335,7 @@ export default function NossaHistoria() {
                         .
                       </p>
 
-                      <Card className="bg-white/50 dark:bg-gray-900/50 border-none">
+                      <Card className="bg-white/50 border-none">
                         <CardContent className="p-4">
                           <blockquote className="text-sm md:text-base italic border-l-4 border-primary pl-4">
                             &quot;O amor é a essência da vida, e através dele

@@ -166,9 +166,9 @@ export default function AlertasManager() {
   const getTipoColor = (tipo: string) => {
     switch (tipo) {
       case "urgente":
-        return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200";
+        return "bg-yellow-100 text-yellow-800";
       case "info":
-        return "bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary";
+        return "bg-primary/10 text-primary";
       default:
         return "bg-gray-100 text-gray-800";
     }

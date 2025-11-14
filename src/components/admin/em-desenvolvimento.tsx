@@ -9,8 +9,8 @@ export default function EmDesenvolvimento() {
       <Card className="max-w-md mx-auto">
         <CardHeader className="text-center space-y-4">
           <div className="flex justify-center">
-            <div className="p-4 rounded-full bg-yellow-100 dark:bg-yellow-900">
-              <Construction className="h-12 w-12 text-yellow-600 dark:text-yellow-400" />
+            <div className="p-4 rounded-full bg-yellow-100">
+              <Construction className="h-12 w-12 text-yellow-600" />
             </div>
           </div>
           <div>

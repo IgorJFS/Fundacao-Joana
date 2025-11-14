@@ -271,7 +271,7 @@ export default function RelatoriosDoacoes() {
                         key={doacao.id}
                         className={`border-b ${
                           index % 2 === 0
-                            ? "bg-gray-50 dark:bg-gray-800/50"
+                            ? "bg-gray-50"
                             : ""
                         }`}
                       >
