@@ -74,7 +74,7 @@ export default function Home() {
             "name": "Fundação Joanna de Ângelis",
             "alternateName": "Fundação Joanna",
             "url": "https://fundacaojoanna.org.br",
-            "logo": "https://fundacaojoanna.org.br/logo.png",
+            "logo": "https://fundacaojoanna.org.br/logo.webp",
             "description": "ONG sem fins lucrativos que promove assistência social, educação e desenvolvimento comunitário em Rio das Ostras",
             "foundingDate": "2003",
             "address": {

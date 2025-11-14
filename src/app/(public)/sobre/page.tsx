@@ -103,7 +103,7 @@ export default function NossaHistoria() {
               {/* Header da Seção */}
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  Quem Somos
+                  Quem Somos?
                 </h2>
                 <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div>
               </div>

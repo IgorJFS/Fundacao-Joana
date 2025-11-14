@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: 'Fundação Joanna de Ângelis',
     images: [
       {
-        url: '/logo.png',
+        url: '/logo.webp',
         width: 1200,
         height: 630,
         alt: 'Logo Fundação Joanna de Ângelis',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Fundação Joanna de Ângelis',
     description: 'ONG transformando vidas em Rio das Ostras há mais de 20 anos',
-    images: ['/logo.png'],
+    images: ['/logo.webp'],
   },
   icons: {
     icon: '/favicon.ico',
