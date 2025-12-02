@@ -29,7 +29,7 @@ const mockAlertas: Alerta[] = [
     id: "1",
     titulo: "Doações de Alimentos Urgentes",
     mensagem:
-      "Estamos precisando de doações de alimentos não perecíveis para atender 50 famílias neste mês.",
+      "Estamos precisando de doações de alimentos não perecíveis para atender 200 famílias neste mês.",
     tipo: "urgente",
     ativo: true,
     data_criacao: "2025-10-01",

@@ -15,7 +15,7 @@ import { anos } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Início",
-  description: "Fundação Joanna de Ângelis - ONG em Rio das Ostras dedicada à assistência social, educação e desenvolvimento comunitário. Mais de 1000 vidas impactadas e 20 anos fazendo a diferença.",
+  description: "Fundação Joanna de Ângelis - ONG em Rio das Ostras dedicada à assistência social, educação e desenvolvimento comunitário. Mais de 900 famílias impactadas e 22 anos fazendo a diferença.",
   alternates: {
     canonical: 'https://fundacaojoanna.org.br',
   },
@@ -38,9 +38,9 @@ export default function Home() {
   const stats = [
     {
       icon: Heart,
-      value: 1000,
+      value: 900,
       suffix: "+",
-      label: "Vidas Impactadas",
+      label: "Famílias Impactadas",
       color: "text-primary",
       bgColor: "bg-primary/10",
     },
@@ -446,7 +446,7 @@ export default function Home() {
                 <Card className="lg:col-span-3 overflow-hidden shadow-large border-0">
                   <CardContent className="p-0 h-full">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!4v1759306537451!6m8!1m7!1sD7yGkO9TPswgLzK_sp4csA!2m2!1d-22.50166265609518!2d-41.93095581335224!3f14.819350323818071!4f3.228379886412796!5f0.7820865974627469"
+                      src="https://www.google.com/maps/embed?pb=!4v1764651226313!6m8!1m7!1s2ES131dTYULvEh6Yh2BM-A!2m2!1d-22.50167289947236!2d-41.93094355159263!3f11.39317874846103!4f3.0190674857738173!5f1.088183033840005"
                       width="100%"
                       height="100%"
                       style={{ border: 0, minHeight: "600px" }}

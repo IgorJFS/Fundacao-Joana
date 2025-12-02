@@ -8,9 +8,7 @@ import {
   Facebook,
   Instagram,
   Youtube,
-  Linkedin,
   Building,
-  Clock,
 } from "lucide-react";
 import Link from "next/link";
 import Logo from "@/components/logo";
@@ -183,42 +181,27 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Horário de Funcionamento */}
+          {/* Endereço */}
           <div>
             <h3 className="font-semibold mb-4 flex items-center gap-2">
-              <Clock className="h-4 w-4 text-primary" />
-              Horário de Funcionamento
+            Endereço
             </h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li className="flex justify-between">
-                <span className="font-medium">2ª Feira:</span>
-                <span className="text-right">8:30-12:00 / 13:00-17:00</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="font-medium">3ª Feira:</span>
-                <span>8:00-16:00</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="font-medium">4ª Feira:</span>
-                <span>8:30-12:00</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="font-medium">5ª Feira:</span>
-                <span>14:00-18:00</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="font-medium">6ª Feira:</span>
-                <span>8:30-12:00</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="font-medium">Sábado:</span>
-                <span>8:00-15:00</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="font-medium">Domingo:</span>
-                <span>17:00-20:00</span>
-              </li>
-            </ul>
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p>
+                R. Vassouras, Lote 20 - Quadra 16<br />
+                Jardim Mariléa<br />
+                Rio das Ostras - RJ<br />
+                CEP: 28890-000
+              </p>
+              <a
+                href="https://www.google.com/maps/dir//R.+Vassouras,+Lote+20+-+Quadra+16+-+Jardim+Maril%C3%A9a,+Rio+das+Ostras+-+RJ,+28890-000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-primary hover:underline mt-2"
+              >
+                Ver no Google Maps →
+              </a>
+            </div>
           </div>
 
           {/* Email Subscription */}
