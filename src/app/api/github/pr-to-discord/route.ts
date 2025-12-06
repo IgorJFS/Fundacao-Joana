@@ -2,6 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL!;
 
+export async function GET() {
+  return NextResponse.json({
+    status: "online",
+    message: "GitHub Webhook Endpoint is ready",
+  });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
