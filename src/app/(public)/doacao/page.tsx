@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -39,10 +38,7 @@ export default function Doacao() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
-                💚 Sua Ajuda Transforma Vidas
-              </span>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">Faça Sua Doação</h1>
+              <h1 className="text-4xl mt-12 md:text-6xl font-bold mb-2">Faça Sua Doação</h1>
               <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>
               <p className="text-muted-foreground">
                 Cada real doado faz a diferença na vida de milhares de pessoas.
@@ -273,7 +269,7 @@ export default function Doacao() {
             <Card className="mt-8 shadow-medium border-accent/10">
               <CardContent className="p-6 space-y-4">
                 <div className="text-center pb-4 border-b border-border">
-                  <h2 className="text-xl font-bold text-accent">Por que doar?</h2>
+                  <h2 className="text-xl font-bold">Por que doar 🫶?</h2>
                 </div>
                 <div className="p-4 rounded-lg bg-rose-50 border border-rose-100">
                   <h3 className="font-semibold mb-2 text-rose-700">❤️ Transforme Vidas</h3>

@@ -26,7 +26,7 @@ export default function Header() {
   const menuLinks = navLinks.slice(0);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur border-b border-border shadow-sm">
+    <header className="fixed top-0 z-50 w-full bg-sky-50/65 backdrop-blur-md border-b border-sky-100/50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link
@@ -45,13 +45,16 @@ export default function Header() {
               <Link
                 key={link.path}
                 href={link.path}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`relative px-4 py-2 rounded-md text-sm font-medium transition-colors group ${
                   isActive(link.path)
                     ? "bg-primary text-primary-foreground"
                     : "text-foreground hover:bg-secondary"
                 }`}
               >
                 {link.label}
+                {!isActive(link.path) && (
+                  <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-[calc(100%-2rem)] group-hover:left-4"></span>
+                )}
               </Link>
             ))}
           </nav>

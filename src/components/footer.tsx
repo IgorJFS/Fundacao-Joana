@@ -118,41 +118,46 @@ export default function Footer() {
               <li>
                 <Link
                   href="/sobre"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="relative text-sm text-muted-foreground hover:text-primary transition-colors group inline-block"
                 >
                   Sobre Nós
+                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full group-hover:left-0"></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/doacao"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="relative text-sm text-muted-foreground hover:text-primary transition-colors group inline-block"
                 >
                   Fazer Doação
+                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full group-hover:left-0"></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/noticias"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="relative text-sm text-muted-foreground hover:text-primary transition-colors group inline-block"
                 >
                   Notícias
+                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full group-hover:left-0"></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/contato"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="relative text-sm text-muted-foreground hover:text-primary transition-colors group inline-block"
                 >
                   Contato
+                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full group-hover:left-0"></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/apoiadores"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="relative text-sm text-muted-foreground hover:text-primary transition-colors group inline-block"
                 >
                   Nossos Apoiadores
+                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full group-hover:left-0"></span>
                 </Link>
               </li>
             </ul>
@@ -164,7 +169,13 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 mt-0.5 text-primary" />
-                <span>funjodangelis@yahoo.com.br</span>
+                <a 
+                  href="mailto:funjodangelis@yahoo.com.br"
+                  className="relative hover:text-primary transition-colors group inline-block"
+                >
+                  funjodangelis@yahoo.com.br
+                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full group-hover:left-0"></span>
+                </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 mt-0.5 text-primary" />
@@ -197,9 +208,10 @@ export default function Footer() {
                 href="https://www.google.com/maps/dir//R.+Vassouras,+Lote+20+-+Quadra+16+-+Jardim+Maril%C3%A9a,+Rio+das+Ostras+-+RJ,+28890-000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-primary hover:underline mt-2"
+                className="relative inline-flex items-center gap-1 text-primary mt-2 group"
               >
                 Ver no Google Maps →
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-full group-hover:left-0"></span>
               </a>
             </div>
           </div>

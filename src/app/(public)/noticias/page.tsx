@@ -75,8 +75,8 @@ export default function NoticiasPage() {
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <div className="max-w-3xl mt-16 mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-2">
             Notícias
           </h1>
           <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>

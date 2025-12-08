@@ -107,7 +107,7 @@ export default function Home() {
       />
       <main className="flex-1">
         {/* Hero Section - Redesenhado */}
-        <section className="relative min-h-[85vh] md:min-h-screen flex items-center overflow-hidden">
+        <section className="relative min-h-[85vh] md:min-h-screen flex items-center overflow-hidden -mt-16 pt-16">
           {/* Background com overlay gradiente */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -115,13 +115,13 @@ export default function Home() {
               alt="Crianças felizes sendo assistidas pela Fundação Joanna de Ângelis em Rio das Ostras"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-sky-900/40 via-sky-800/20 to-transparent"></div>
           </div>
 
           {/* Elementos decorativos */}
-          <div className="absolute inset-0 z-0">
-            <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            <div className="absolute top-20 right-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl"></div>
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
@@ -129,17 +129,17 @@ export default function Home() {
               {/* Conteúdo Principal */}
               <div className="text-white">
                 <div className="inline-block mb-4">
-                  <span className="bg-accent/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
+                  <span className="bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
                     ✨ Transformando Vidas Desde 2003
                   </span>
                 </div>
                 
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                   Juntos por um
-                  <span className="block text-accent">Futuro Melhor</span>
+                  <span className="block text-sky-300">Futuro Melhor</span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
+                <p className="text-xl md:text-2xl mb-8 text-white/85 leading-relaxed">
                   Cada doação transforma vidas. Faça parte dessa mudança e 
                   ajude a construir um amanhã mais justo e solidário.
                 </p>
@@ -148,7 +148,7 @@ export default function Home() {
                   <Link href="/doacao">
                     <Button
                       size="lg"
-                      className="bg-accent hover:bg-accent-hover text-white shadow-large w-full sm:w-auto text-lg px-8 py-6 hover-glow"
+                      className="bg-sky-400 hover:bg-sky-300 text-sky-950 font-semibold shadow-lg w-full sm:w-auto text-lg px-8 py-6 transition-all hover:scale-105"
                     >
                       💙 Fazer Doação
                     </Button>
@@ -161,7 +161,7 @@ export default function Home() {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-primary text-lg px-8 py-6"
+                      className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-sky-900 text-lg px-8 py-6 transition-all"
                     >
                       🤝 Seja Voluntário
                     </Button>
@@ -169,35 +169,75 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Card flutuante com estatísticas */}
-              <div className="hidden md:block">
-                <Card className="bg-white/95 backdrop-blur-md border-0 shadow-2xl">
-                  <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold mb-6 text-foreground">Nosso Impacto</h3>
-                    <div className="space-y-6">
+              {/* Card de impacto - Design criativo */}
+              <div className="hidden md:block relative">
+                {/* Glow effect de fundo */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-sky-400/20 via-cyan-400/20 to-emerald-400/20 rounded-[2rem] blur-2xl"></div>
+                
+                <div className="relative bg-white/10 backdrop-blur-xl rounded-[2rem] p-1 border border-white/20">
+                  <div className="bg-gradient-to-br from-slate-900/80 via-sky-950/75 to-slate-900/80 backdrop-blur-sm rounded-[1.75rem] p-8">
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-8">
+                      <h3 className="text-2xl font-bold text-white">Nosso Impacto</h3>
+                      <div className="bg-white/10 p-3 rounded-2xl">
+                        <Heart className="w-6 h-6 text-sky-400" />
+                      </div>
+                    </div>
+                    
+                    {/* Stats em formato diferenciado */}
+                    <div className="space-y-4">
                       {stats.map((stat, index) => {
                         const Icon = stat.icon;
+                        const colors = [
+                          { bar: "from-sky-400 to-cyan-400", text: "text-sky-400" },
+                          { bar: "from-emerald-400 to-teal-400", text: "text-emerald-400" },
+                          { bar: "from-amber-400 to-orange-400", text: "text-amber-400" },
+                          { bar: "from-violet-400 to-purple-400", text: "text-violet-400" },
+                        ];
+                        const color = colors[index % colors.length];
+                        
                         return (
-                          <div key={index} className="flex items-center gap-4">
-                            <div className={`${stat.bgColor} p-3 rounded-xl`}>
-                              <Icon className={`w-6 h-6 ${stat.color}`} />
-                            </div>
-                            <div className="flex-1">
-                              <div className={`text-2xl font-bold ${stat.color}`}>
-                                <AnimatedCounter
-                                  end={stat.value}
-                                  suffix={stat.suffix}
-                                  duration={3000}
-                                />
+                          <div 
+                            key={index} 
+                            className="group relative bg-white/5 hover:bg-white/10 rounded-2xl p-4 transition-all duration-300 border border-white/5 hover:border-white/10"
+                          >
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-4">
+                                <div className={`p-3 rounded-xl bg-gradient-to-br ${color.bar} shadow-lg`}>
+                                  <Icon className="w-5 h-5 text-white" />
+                                </div>
+                                <div>
+                                  <p className="text-white/60 text-sm">{stat.label}</p>
+                                  <div className={`text-2xl font-bold ${color.text}`}>
+                                    <AnimatedCounter
+                                      end={stat.value}
+                                      suffix={stat.suffix}
+                                      duration={3000}
+                                    />
+                                  </div>
+                                </div>
                               </div>
-                              <p className="text-sm text-muted-foreground">{stat.label}</p>
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${color.bar} flex items-center justify-center`}>
+                                  <TrendingUp className="w-4 h-4 text-white" />
+                                </div>
+                              </div>
+                            </div>
+                            {/* Barra de progresso decorativa */}
+                            <div className="mt-3 h-1 bg-white/10 rounded-full overflow-hidden">
+                              <div 
+                                className={`h-full bg-gradient-to-r ${color.bar} rounded-full`}
+                                style={{ width: `${Math.min(100, (stat.value / 25) * 100)}%` }}
+                              ></div>
                             </div>
                           </div>
                         );
                       })}
                     </div>
-                  </CardContent>
-                </Card>
+                    
+
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -205,7 +245,7 @@ export default function Home() {
           {/* Indicador de scroll */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
             <svg
-              className="w-8 h-8 text-white/70"
+              className="w-8 h-8 text-white/60"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -225,19 +265,19 @@ export default function Home() {
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
-                  <Card key={index} className="text-center shadow-soft border-primary/10">
+                  <Card key={index} className="text-center shadow-soft border-sky-100">
                     <CardContent className="p-6">
-                      <div className={`${stat.bgColor} p-3 rounded-xl inline-flex mb-3`}>
-                        <Icon className={`w-6 h-6 ${stat.color}`} />
+                      <div className="bg-sky-100 p-3 rounded-xl inline-flex mb-3">
+                        <Icon className="w-6 h-6 text-sky-600" />
                       </div>
-                      <div className={`text-3xl font-bold ${stat.color} mb-1`}>
+                      <div className="text-3xl font-bold text-sky-700 mb-1">
                         <AnimatedCounter
                           end={stat.value}
                           suffix={stat.suffix}
                           duration={3000}
                         />
                       </div>
-                      <p className="text-xs text-muted-foreground">{stat.label}</p>
+                      <p className="text-xs text-slate-500">{stat.label}</p>
                     </CardContent>
                   </Card>
                 );
