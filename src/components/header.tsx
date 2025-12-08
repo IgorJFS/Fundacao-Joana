@@ -33,7 +33,7 @@ export default function Header() {
             href="/"
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            <Logo width={40} height={40} className="md:w-[50px] md:h-[50px]" />
+            <Logo width={40} height={40} className="md:w-[60px] md:h-[40px]" />
             <span className="text-lg md:text-xl font-bold text-foreground">
               Fundação Joanna de Ângelis
             </span>
