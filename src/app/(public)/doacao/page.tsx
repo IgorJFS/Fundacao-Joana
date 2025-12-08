@@ -34,17 +34,27 @@ export default function Doacao() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-page">
-      <main className="flex-1 py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl mt-12 md:text-6xl font-bold mb-2">Faça Sua Doação</h1>
-              <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>
-              <p className="text-muted-foreground">
-                Cada real doado faz a diferença na vida de milhares de pessoas.
-                Contribua e seja parte desta transformação!
-              </p>
+      <main className="flex-1 pt-20 md:pt-24">
+        {/* Hero Section */}
+        <section className="py-8 md:py-12">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <div className="text-center mb-8">
+                <h1 className="text-3xl md:text-6xl font-bold mb-2">Faça Sua Doação</h1>
+                <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>
+                <p className="text-muted-foreground">
+                  Cada real doado faz a diferença na vida de milhares de pessoas.
+                  Contribua e seja parte desta transformação!
+                </p>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Card de Doação */}
+        <section className="pb-12">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
 
             <Card className="shadow-large border-primary/10">
               <CardContent className="p-6 space-y-6">
@@ -295,154 +305,126 @@ export default function Doacao() {
                 </div>
               </CardContent>
             </Card>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* Doação de Itens Section */}
         <section
           id="doacao-itens"
-          className="py-16 mt-28 bg-secondary border-t border-border"
+          className="py-20 bg-white"
         >
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Doe Itens Presencialmente
+            <div className="max-w-6xl mx-auto">
+              {/* Header */}
+              <div className="text-center mb-16">
+                <span className="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold mb-4">
+                  Doação Presencial
+                </span>
+                <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-4">
+                  Prefere Doar Itens?
                 </h2>
-                <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Além de doações financeiras, aceitamos alimentos, roupas/calçados, 
-                  itens para enxovais de bebês, tecidos, materiais de higiene pessoal, 
-                  materiais de limpeza e descartáveis!
+                <p className="text-slate-600 max-w-xl mx-auto">
+                  Recebemos diversos tipos de doações na nossa sede. Sua contribuição 
+                  ajuda famílias em situação de vulnerabilidade.
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Lista de Itens Aceitos */}
-                <div className="space-y-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Itens que Aceitamos</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
+              {/* Grid de Itens */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+                {[
+                  { icon: "🍎", label: "Alimentos", desc: "Alimentos não perecíveis e produtos alimentícios em geral.", bg: "bg-orange-50 hover:bg-orange-100 border-orange-200" },
+                  { icon: "👕", label: "Roupas e Calçados", desc: "Roupas limpas e em bom estado, calçados para todas as idades.", bg: "bg-blue-50 hover:bg-blue-100 border-blue-200" },
+                  { icon: "👶", label: "Enxovais de Bebês", desc: "Roupinhas, fraldas, cobertores e itens para recém-nascidos.", bg: "bg-pink-50 hover:bg-pink-100 border-pink-200" },
+                  { icon: "🧵", label: "Tecidos", desc: "Tecidos diversos para confecção e artesanato.", bg: "bg-purple-50 hover:bg-purple-100 border-purple-200" },
+                  { icon: "🧴", label: "Higiene Pessoal", desc: "Sabonetes, shampoo, pasta de dente, fraldas e produtos de higiene.", bg: "bg-cyan-50 hover:bg-cyan-100 border-cyan-200" },
+                  { icon: "🧹", label: "Limpeza e Descartáveis", desc: "Produtos de limpeza, detergentes, desinfetantes e descartáveis.", bg: "bg-emerald-50 hover:bg-emerald-100 border-emerald-200" },
+                ].map((item, i) => (
+                  <div 
+                    key={i} 
+                    className={`${item.bg} border-2 rounded-2xl p-5 transition-all`}
+                  >
+                    <div className="flex items-start gap-4">
+                      <span className="text-3xl">{item.icon}</span>
                       <div>
-                        <h3 className="font-semibold mb-2 flex items-center gap-2">
-                          🍎 Alimentos
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Alimentos não perecíveis e produtos alimentícios em geral.
-                        </p>
+                        <h4 className="font-bold text-slate-800 mb-1">{item.label}</h4>
+                        <p className="text-sm text-slate-600">{item.desc}</p>
                       </div>
-                      <div>
-                        <h3 className="font-semibold mb-2 flex items-center gap-2">
-                          👕 Roupas e Calçados
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Roupas limpas e em bom estado, calçados para todas as idades.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-2 flex items-center gap-2">
-                          👶 Enxovais de Bebês
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Itens para enxovais de bebês (roupinhas, fraldas, cobertores, etc).
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-2 flex items-center gap-2">
-                          🧵 Tecidos
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Tecidos diversos para confecção e artesanato.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-2 flex items-center gap-2">
-                          🧴 Materiais de Higiene Pessoal
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Sabonetes, shampoo, pasta de dente, fraldas e produtos de higiene.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-2 flex items-center gap-2">
-                          🧹 Materiais de Limpeza e Descartáveis
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Produtos de limpeza, detergentes, desinfetantes e descartáveis.
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-                  <Card>
-                    <CardContent className="p-6 space-y-4">
-                      <div>
-                        <h3 className="font-semibold text-lg mb-2">
-                          📍 Como Chegar
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          R. Vassouras, Lote 20 - Quadra 16
-                          <br />
-                          Jardim Mariléa
-                          <br />
-                          Rio das Ostras - RJ
-                          <br />
-                          CEP: 28890-000
+              {/* Endereço e Mapa lado a lado */}
+              <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+                {/* Card de Informações */}
+                <div className="bg-slate-50 rounded-3xl p-8 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                      <span className="w-10 h-10 rounded-xl flex items-center justify-center text-white">📍</span>
+                      Nossa Sede
+                    </h3>
+                    
+                    <div className="space-y-4 mb-8">
+                      <div className="bg-white rounded-xl p-4">
+                        <p className="text-sm text-slate-500 mb-1">Endereço</p>
+                        <p className="font-medium text-slate-800">
+                          R. Vassouras, Lote 20 - Quadra 16<br />
+                          Jardim Mariléa, Rio das Ostras - RJ
                         </p>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          <strong>Horário de recebimento:</strong>
-                          <br />
-                          <strong>2ª Feira:</strong> 8:30-12:00 / 13:00-17:00
-                          <br />
-                          <strong>3ª Feira:</strong> 8:00-16:00
-                          <br />
-                          <strong>4ª Feira:</strong> 8:30-12:00
-                          <br />
-                          <strong>5ª Feira:</strong> 14:00-18:00
-                          <br />
-                          <strong>6ª Feira:</strong> 8:30-12:00
-                          <br />
-                          <strong>Sábado:</strong> 8:00-15:00
-                          <br />
-                          <strong>Domingo:</strong> 17:00-20:00
-                        </p>
+                      </div>
+                      
+                      <div className="bg-white rounded-xl p-4">
+                        <p className="text-sm text-slate-500 mb-3">Horários de Funcionamento</p>
+                        <div className="space-y-1.5 text-sm">
+                          {[
+                            { dia: "Segunda", hora: "8:30-12:00 / 13:00-17:00" },
+                            { dia: "Terça", hora: "8:00-16:00" },
+                            { dia: "Quarta", hora: "8:30-12:00" },
+                            { dia: "Quinta", hora: "14:00-18:00" },
+                            { dia: "Sexta", hora: "8:30-12:00" },
+                            { dia: "Sábado", hora: "8:00-15:00" },
+                            { dia: "Domingo", hora: "17:00-20:00" },
+                          ].map((item, i) => (
+                            <div key={i} className="flex justify-between items-center py-2 px-3 rounded-lg odd:bg-slate-50">
+                              <span className="text-slate-700 font-semibold">{item.dia}</span>
+                              <span className="text-teal-600 font-semibold">{item.hora}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
 
-                      <a
-                        href="https://www.google.com/maps/dir//R.+Vassouras,+Lote+20+-+Quadra+16+-+Jardim+Maril%C3%A9a,+Rio+das+Ostras+-+RJ,+28890-000"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        <Button className="w-full" size="lg">
-                          Abrir no Google Maps
-                        </Button>
-                      </a>
+                      <div className="bg-white rounded-xl p-4">
+                        <p className="text-sm text-slate-500 mb-1">Contato</p>
+                        <p className="font-medium text-teal-600">(22) 99938-2357</p>
+                      </div>
+                    </div>
+                  </div>
 
-                      <p className="text-xs text-muted-foreground text-center">
-                        📞 Dúvidas? Mande mensagem para: (22) 99938-2357
-                      </p>
-                    </CardContent>
-                  </Card>
+                  <a
+                    href="https://www.google.com/maps/dir//R.+Vassouras,+Lote+20+-+Quadra+16+-+Jardim+Maril%C3%A9a,+Rio+das+Ostras+-+RJ,+28890-000"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="w-full bg-teal-500 hover:bg-teal-600 text-white rounded-xl py-6 text-base font-semibold" size="lg">
+                      Abrir no Google Maps
+                    </Button>
+                  </a>
                 </div>
 
                 {/* Mapa */}
-                <Card className="overflow-hidden h-full">
-                  <CardContent className="p-0 h-full">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!4v1764651226313!6m8!1m7!1s2ES131dTYULvEh6Yh2BM-A!2m2!1d-22.50167289947236!2d-41.93094355159263!3f11.39317874846103!4f3.0190674857738173!5f1.088183033840005"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0, minHeight: "600px" }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Localização para Doação de Itens - Rio das Ostras"
-                    ></iframe>
-                  </CardContent>
-                </Card>
+                <div className="rounded-3xl overflow-hidden shadow-lg h-full min-h-[500px]">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!4v1764651226313!6m8!1m7!1s2ES131dTYULvEh6Yh2BM-A!2m2!1d-22.50167289947236!2d-41.93094355159263!3f11.39317874846103!4f3.0190674857738173!5f1.088183033840005"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localização da Fundação Joanna de Ângelis"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>

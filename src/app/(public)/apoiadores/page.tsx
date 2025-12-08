@@ -37,9 +37,9 @@ export default async function Apoiadores() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-page">
-      <main className="flex-1">
+      <main className="flex-1 pt-20 md:pt-24">
         {/* Hero Section */}
-        <section className=" py-20">
+        <section className="py-8 md:py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">

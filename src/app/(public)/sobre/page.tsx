@@ -101,15 +101,15 @@ export default function NossaHistoria() {
 
   return (
     <div className="min-h-screen flex bg-gradient-page flex-col">
-      <main className="flex-1">
+      <main className="flex-1 pt-20 md:pt-24">
 
         {/* Quem Somos - Redesenhado */}
-        <section className="py-20 relative overflow-hidden">
+        <section className="py-8 md:py-12 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
           <div className="container mx-auto px-4 relative">
             <div className="max-w-6xl mx-auto">
               {/* Header da Seção */}
-              <div className="text-center mt-12 mb-16">
+              <div className="text-center mb-12 md:mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">
                   Quem Somos?
                 </h2>
@@ -375,8 +375,7 @@ export default function NossaHistoria() {
                     <Link href="/doacao">
                       <Button
                         size="lg"
-                        variant="secondary"
-                        className="text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform w-full sm:w-auto"
+                        className="bg-white hover:bg-slate-100 text-teal-600 text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform w-full sm:w-auto font-bold"
                       >
                         <Heart className="w-5 h-5 mr-2" />
                         Fazer Doação Agora
@@ -385,8 +384,8 @@ export default function NossaHistoria() {
                     <Link href="/contato">
                       <Button
                         size="lg"
-                        variant="secondary"
-                        className="text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform w-full sm:w-auto"
+                        variant="outline"
+                        className="border-2 border-white/50 bg-white/10 hover:bg-white/20 text-white text-lg px-8 py-6 shadow-xl hover:scale-105 transition-transform w-full sm:w-auto font-semibold"
                       >
                         <HandHeart className="w-5 h-5 mr-2" />
                         Quero Ser Voluntário

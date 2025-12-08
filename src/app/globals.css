@@ -1,112 +1,186 @@
 @import "tailwindcss";
 
 /* Sistema de Design Moderno - Fundação Joanna de Ângelis
-   Paleta baseada em azul vibrante e branco, com acentos modernos
+   Paleta: Azul (sky/cyan) como primário + Verde (teal/emerald) como secundário
+   Um tema acolhedor e vibrante para transmitir esperança e confiança
 */
 
 @theme {
   /* Cores Base - Backgrounds e Textos */
-  --color-background: hsl(0 0% 100%); /* Branco puro para contraste máximo */
-  --color-foreground: hsl(220 30% 15%); /* Azul escuro quase preto para textos */
+  --color-background: hsl(0 0% 100%); /* Branco puro */
+  --color-foreground: hsl(215 25% 15%); /* Slate escuro para textos */
 
   --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(220 25% 20%);
+  --color-card-foreground: hsl(215 20% 20%);
 
   --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(220 25% 20%);
+  --color-popover-foreground: hsl(215 20% 20%);
 
-  /* Azul Principal - Vibrante e Moderno (baseado na logo) */
-  --color-primary: hsl(197 71% 52%); /* Azul vibrante */
+  /* === PALETA PRIMÁRIA - Azul Sky/Cyan === */
+  --color-primary: hsl(199 89% 48%); /* Sky-500 */
   --color-primary-foreground: hsl(0 0% 100%);
-  --color-primary-dark: hsl(197 71% 38%); /* Azul mais escuro para hover */
+  --color-primary-dark: hsl(200 98% 39%); /* Sky-600 */
+  --color-primary-light: hsl(198 93% 60%); /* Sky-400 */
 
-  /* Secundário - Tons complementares */
-  --color-secondary: hsl(210 40% 96%); /* Azul muito claro */
-  --color-secondary-foreground: hsl(220 25% 20%);
+  /* Variações Sky */
+  --color-sky-50: hsl(204 100% 97%);
+  --color-sky-100: hsl(204 94% 94%);
+  --color-sky-200: hsl(201 94% 86%);
+  --color-sky-300: hsl(199 95% 74%);
+  --color-sky-400: hsl(198 93% 60%);
+  --color-sky-500: hsl(199 89% 48%);
+  --color-sky-600: hsl(200 98% 39%);
+  --color-sky-700: hsl(201 96% 32%);
+  --color-sky-800: hsl(201 90% 27%);
+  --color-sky-900: hsl(202 80% 24%);
+
+  /* Variações Cyan */
+  --color-cyan-50: hsl(183 100% 96%);
+  --color-cyan-100: hsl(185 96% 90%);
+  --color-cyan-200: hsl(186 93% 82%);
+  --color-cyan-300: hsl(187 92% 69%);
+  --color-cyan-400: hsl(188 86% 53%);
+  --color-cyan-500: hsl(189 94% 43%);
+  --color-cyan-600: hsl(192 91% 36%);
+
+  /* === PALETA SECUNDÁRIA - Verde Teal/Emerald === */
+  --color-secondary: hsl(166 76% 93%); /* Teal-50 */
+  --color-secondary-foreground: hsl(166 72% 28%);
+
+  /* Variações Teal */
+  --color-teal-50: hsl(166 76% 93%);
+  --color-teal-100: hsl(167 85% 89%);
+  --color-teal-200: hsl(168 84% 78%);
+  --color-teal-300: hsl(171 77% 64%);
+  --color-teal-400: hsl(172 66% 50%);
+  --color-teal-500: hsl(173 80% 40%);
+  --color-teal-600: hsl(175 84% 32%);
+  --color-teal-700: hsl(175 77% 26%);
+
+  /* Variações Emerald */
+  --color-emerald-50: hsl(152 81% 96%);
+  --color-emerald-100: hsl(149 80% 90%);
+  --color-emerald-200: hsl(152 76% 80%);
+  --color-emerald-300: hsl(156 72% 67%);
+  --color-emerald-400: hsl(158 64% 52%);
+  --color-emerald-500: hsl(160 84% 39%);
+  --color-emerald-600: hsl(161 94% 30%);
 
   /* Muted - Cinza azulado suave */
-  --color-muted: hsl(210 30% 94%);
-  --color-muted-foreground: hsl(220 15% 45%);
+  --color-muted: hsl(210 30% 96%);
+  --color-muted-foreground: hsl(215 15% 45%);
 
-  /* Accent - Verde vibrante para CTAs */
-  --color-accent: hsl(160 84% 39%); /* Verde esmeralda moderno */
+  /* Accent - Verde esmeralda para CTAs */
+  --color-accent: hsl(160 84% 39%); /* Emerald-500 */
   --color-accent-foreground: hsl(0 0% 100%);
-  --color-accent-hover: hsl(160 84% 32%);
+  --color-accent-hover: hsl(161 94% 30%); /* Emerald-600 */
 
-  /* Destructive - Vermelho moderno */
+  /* Destructive */
   --color-destructive: hsl(0 72% 51%);
   --color-destructive-foreground: hsl(0 0% 100%);
 
   /* Borders e Inputs */
-  --color-border: hsl(210 30% 88%);
-  --color-input: hsl(210 30% 90%);
-  --color-ring: hsl(197 71% 52%);
+  --color-border: hsl(200 30% 88%);
+  --color-input: hsl(200 30% 92%);
+  --color-ring: hsl(199 89% 48%);
 
-  /* Border radius - Moderno e suave */
+  /* Border radius */
   --radius: 0.75rem;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
 }
 
-/* Variáveis customizadas para gradientes vibrantes e sombras modernas */
+/* Variáveis customizadas para gradientes e sombras */
 :root {
-  /* Gradiente Hero - Azul vibrante com degradê dinâmico */
-  --gradient-hero: linear-gradient(
-    135deg,
-    hsl(197, 71%, 52%) 0%,
-    hsl(210, 80%, 45%) 50%,
-    hsl(220, 85%, 55%) 100%
+  /* === GRADIENTES PRINCIPAIS === */
+  
+  /* Hero - Overlay para imagens */
+  --gradient-hero-overlay: linear-gradient(
+    to bottom right,
+    hsl(201 96% 32% / 0.6),    /* sky-700/60 */
+    hsl(189 94% 43% / 0.4),    /* cyan-500/40 */
+    hsl(175 84% 32% / 0.3)     /* teal-600/30 */
   );
 
-  /* Gradiente de Cards - Sutil e elegante */
-  --gradient-card: linear-gradient(
-    180deg,
-    hsl(0, 0%, 100%) 0%,
-    hsl(210, 40%, 99%) 100%
+  /* Fundos de seção */
+  --gradient-section-light: linear-gradient(
+    to bottom,
+    hsl(183 100% 96%),         /* cyan-50 */
+    hsl(204 100% 97%),         /* sky-50 */
+    hsl(166 76% 93%)           /* teal-50 */
   );
 
-  /* Gradiente de Página - Fundo moderno */
-  --gradient-page: linear-gradient(
-    180deg,
-    hsl(210, 50%, 98%) 0%,
-    hsl(200, 40%, 97%) 50%,
-    hsl(197, 30%, 96%) 100%
+  /* Gradiente de texto vibrante */
+  --gradient-text-primary: linear-gradient(
+    to right,
+    hsl(200 98% 39%),          /* sky-600 */
+    hsl(189 94% 43%),          /* cyan-500 */
+    hsl(173 80% 40%)           /* teal-500 */
   );
 
-  /* Gradiente de Accent - Para CTAs especiais */
+  /* Gradiente de texto título */
+  --gradient-text-heading: linear-gradient(
+    to right,
+    hsl(200 98% 39%),          /* sky-600 */
+    hsl(175 84% 32%),          /* teal-600 */
+    hsl(161 94% 30%)           /* emerald-600 */
+  );
+
+  /* Gradiente accent para CTAs especiais */
   --gradient-accent: linear-gradient(
-    135deg,
-    hsl(160, 84%, 39%) 0%,
-    hsl(170, 80%, 42%) 100%
+    to right,
+    hsl(158 64% 52%),          /* emerald-400 */
+    hsl(172 66% 50%),          /* teal-400 */
+    hsl(188 86% 53%)           /* cyan-400 */
   );
 
-  /* Sombras modernas e suaves */
-  --shadow-soft: 0 2px 8px -2px hsla(220, 30%, 15%, 0.08);
-  --shadow-medium: 0 4px 16px -4px hsla(197, 71%, 52%, 0.15);
-  --shadow-large: 0 8px 32px -8px hsla(197, 71%, 52%, 0.2);
-  --shadow-colored: 0 8px 24px -6px hsla(197, 71%, 52%, 0.3);
+  /* Gradiente CTA section */
+  --gradient-cta: linear-gradient(
+    to bottom right,
+    hsl(200 98% 39%),          /* sky-600 */
+    hsl(189 94% 43%),          /* cyan-500 */
+    hsl(173 80% 40%)           /* teal-500 */
+  );
+
+  /* === SOMBRAS === */
+  --shadow-soft: 0 2px 8px -2px hsla(215, 25%, 15%, 0.08);
+  --shadow-medium: 0 4px 16px -4px hsla(199, 89%, 48%, 0.15);
+  --shadow-large: 0 8px 32px -8px hsla(199, 89%, 48%, 0.2);
+  --shadow-colored: 0 8px 24px -6px hsla(199, 89%, 48%, 0.3);
+  --shadow-sky: 0 10px 25px -5px hsla(199, 89%, 48%, 0.3);
+  --shadow-teal: 0 10px 25px -5px hsla(173, 80%, 40%, 0.3);
+  --shadow-emerald: 0 10px 25px -5px hsla(160, 84%, 39%, 0.3);
 }
 
 /* Classes utilitárias customizadas */
 @layer utilities {
+  /* === BACKGROUNDS === */
+  .bg-gradient-hero-overlay {
+    background: var(--gradient-hero-overlay);
+  }
+
+  /* Gradiente azul vibrante para elementos (círculos, barras, ícones) */
   .bg-gradient-hero {
-    background: var(--gradient-hero);
+    background: linear-gradient(135deg, hsl(199 89% 48%), hsl(189 94% 43%));
   }
 
-  .bg-gradient-card {
-    background: var(--gradient-card);
-  }
-
-  .bg-gradient-page {
-    background: var(--gradient-page);
+  .bg-gradient-section {
+    background: var(--gradient-section-light);
   }
 
   .bg-gradient-accent {
     background: var(--gradient-accent);
   }
 
+  .bg-gradient-cta {
+    background: var(--gradient-cta);
+  }
+
+  /* === SOMBRAS === */
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -123,19 +197,55 @@
     box-shadow: var(--shadow-colored);
   }
 
-  /* Efeito de hover com brilho */
+  .shadow-sky {
+    box-shadow: var(--shadow-sky);
+  }
+
+  .shadow-teal {
+    box-shadow: var(--shadow-teal);
+  }
+
+  .shadow-emerald {
+    box-shadow: var(--shadow-emerald);
+  }
+
+  /* === EFEITOS DE HOVER === */
   .hover-glow {
     transition: all 0.3s ease;
   }
 
   .hover-glow:hover {
-    box-shadow: 0 0 20px hsla(197, 71%, 52%, 0.4);
+    box-shadow: 0 0 20px hsla(199, 89%, 48%, 0.4);
     transform: translateY(-2px);
   }
 
-  /* Texto com gradiente */
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-large);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* === TEXTO COM GRADIENTE === */
   .text-gradient-primary {
-    background: linear-gradient(135deg, hsl(197, 71%, 52%), hsl(220, 85%, 55%));
+    background: var(--gradient-text-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-heading {
+    background: var(--gradient-text-heading);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -146,6 +256,26 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* === DECORAÇÕES === */
+  .blur-circle {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(48px);
+    opacity: 0.2;
+  }
+
+  .blur-circle-sky {
+    background: hsl(199, 89%, 48%);
+  }
+
+  .blur-circle-teal {
+    background: hsl(173, 80%, 40%);
+  }
+
+  .blur-circle-emerald {
+    background: hsl(160, 84%, 39%);
   }
 }
 

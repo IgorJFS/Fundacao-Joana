@@ -28,10 +28,10 @@ export const metadata: Metadata = {
 export default function ContatoPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-page">
-      <main className="flex-1">
+      <main className="flex-1 pt-20 md:pt-24">
         {/* Hero Section Compacto */}
-        <section className="py-12 md:py-16">
-          <div className="container mt-16 mx-auto px-4">
+        <section className="py-8 md:py-12">
+          <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-2">
                 Entre em Contato

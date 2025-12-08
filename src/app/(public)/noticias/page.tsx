@@ -72,10 +72,10 @@ const noticias = [
 
 export default function NoticiasPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
+    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20 pt-20 md:pt-24">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="max-w-3xl mt-16 mx-auto text-center">
+      <section className="container mx-auto px-4 py-8 md:py-12">
+        <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-2">
             Notícias
           </h1>

@@ -1,15 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Heart, ChevronRight } from "lucide-react";
 import Logo from "@/components/logo";
 
 export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Detectar scroll para mudar estilo do header
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isActive = (path: string) => pathname === path;
 
@@ -22,46 +32,52 @@ export default function Header() {
     { path: "/apoiadores", label: "Apoiadores" },
   ];
 
-  const visibleLinks = navLinks.slice(0, 5);
-  const menuLinks = navLinks.slice(0);
-
   return (
-    <header className="fixed top-0 z-50 w-full bg-sky-50/65 backdrop-blur-md border-b border-sky-100/50 shadow-sm">
+    <header 
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled 
+          ? "bg-white/90 backdrop-blur-lg shadow-md border-b border-slate-200" 
+          : "bg-white/70 backdrop-blur-md border-b border-slate-100"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3"
           >
-            <Logo width={40} height={40} className="md:w-[60px] md:h-[40px]" />
-            <span className="text-lg md:text-xl font-bold text-foreground">
+            <Logo width={50} height={50} className="md:w-[65px] md:h-[55px]" />
+            <span className="text-base md:text-lg font-bold text-slate-800">
               Fundação Joanna de Ângelis
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 href={link.path}
-                className={`relative px-4 py-2 rounded-md text-sm font-medium transition-colors group ${
+                className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 group ${
                   isActive(link.path)
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground"
+                    ? "bg-sky-500 text-white"
+                    : "text-slate-700 hover:text-sky-600"
                 }`}
               >
                 {link.label}
                 {!isActive(link.path) && (
-                  <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary transition-all duration-500 ease-out group-hover:w-[calc(100%-2rem)] group-hover:left-4"></span>
+                  <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-sky-500 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)] group-hover:left-3"></span>
                 )}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
+          {/* CTA Button + Mobile Menu */}
+          <div className="flex items-center gap-3">
             <Link href="/doacao" className="hidden md:block">
-              <Button className="bg-primary hover:bg-primary-dark text-white shadow-medium">
+              <Button className="bg-emerald-500 hover:bg-emerald-600 text-white shadow-md hover:shadow-lg transition-all rounded-md px-5">
+                <Heart className="w-4 h-4 mr-2" />
                 Doar Agora
               </Button>
             </Link>
@@ -69,62 +85,66 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 hover:bg-secondary rounded-md transition-colors"
+              className="lg:hidden p-2 hover:bg-slate-100 rounded-md transition-colors"
               aria-label="Menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? (
+                <X size={24} className="text-slate-700" />
+              ) : (
+                <Menu size={24} className="text-slate-700" />
+              )}
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Navigation - Visible Links */}
-        <nav className="md:hidden flex gap-1 pb-2 overflow-x-auto -mx-2 px-2">
-          {visibleLinks.map((link) => (
-            <Link
-              key={link.path}
-              href={link.path}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium whitespace-nowrap transition-colors ${
-                isActive(link.path)
-                  ? "bg-primary text-primary-foreground"
-                  : "text-foreground hover:bg-secondary"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile Dropdown Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute left-0 right-0 top-16 bg-background border-b border-border shadow-lg">
-            <nav className="container mx-auto px-4 py-4 space-y-2">
-              {menuLinks.map((link) => (
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="lg:hidden fixed inset-0 top-16 bg-black/20 backdrop-blur-sm z-40"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          
+          {/* Menu Panel */}
+          <div className="lg:hidden absolute left-0 right-0 top-16 bg-white border-b border-slate-200 shadow-lg z-50 animate-in slide-in-from-top-2 duration-200">
+            <nav className="container mx-auto px-4 py-4">
+              <div className="space-y-1">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    href={link.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium transition-all ${
+                      isActive(link.path)
+                        ? "bg-sky-500 text-white"
+                        : "text-slate-700 hover:bg-slate-50 hover:text-sky-600"
+                    }`}
+                  >
+                    {link.label}
+                    <ChevronRight className={`w-4 h-4 ${isActive(link.path) ? "text-white" : "text-slate-400"}`} />
+                  </Link>
+                ))}
+              </div>
+              
+              {/* Mobile CTA */}
+              <div className="mt-4 pt-4 border-t border-slate-100">
                 <Link
-                  key={link.path}
-                  href={link.path}
+                  href="/doacao"
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
-                    isActive(link.path)
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground hover:bg-secondary"
-                  }`}
+                  className="block"
                 >
-                  {link.label}
+                  <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-md rounded-lg py-6 text-base font-semibold">
+                    <Heart className="w-5 h-5 mr-2" />
+                    Fazer uma Doação
+                  </Button>
                 </Link>
-              ))}
-              <Link
-                href="/doacao"
-                onClick={() => setIsMenuOpen(false)}
-                className="block"
-              >
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-soft">
-                  Doar Agora
-                </Button>
-              </Link>
+              </div>
             </nav>
           </div>
-        )}
-      </div>
+        </>
+      )}
     </header>
   );
 }

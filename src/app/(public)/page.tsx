@@ -70,7 +70,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-page">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-sky-50 via-white to-teal-50">
       {/* Schema.org structured data for SEO */}
       <script
         type="application/ld+json"
@@ -115,129 +115,52 @@ export default function Home() {
               alt="Crianças felizes sendo assistidas pela Fundação Joanna de Ângelis em Rio das Ostras"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-sky-900/40 via-sky-800/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-900/60 via-cyan-800/40 to-teal-700/30"></div>
           </div>
 
           {/* Elementos decorativos */}
           <div className="absolute inset-0 z-0 overflow-hidden">
-            <div className="absolute top-20 right-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-20 right-10 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-400/15 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-emerald-300/10 rounded-full blur-3xl"></div>
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Conteúdo Principal */}
-              <div className="text-white">
-                <div className="inline-block mb-4">
-                  <span className="bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
-                    ✨ Transformando Vidas Desde 2003
-                  </span>
-                </div>
-                
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                  Juntos por um
-                  <span className="block text-sky-300">Futuro Melhor</span>
-                </h1>
-                
-                <p className="text-xl md:text-2xl mb-8 text-white/85 leading-relaxed">
-                  Cada doação transforma vidas. Faça parte dessa mudança e 
-                  ajude a construir um amanhã mais justo e solidário.
-                </p>
+            {/* Conteúdo Principal - Centralizado no Desktop */}
+            <div className="text-white text-center max-w-4xl mx-auto">
+              
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+                Juntos por um
+                <span className="block bg-gradient-to-r from-cyan-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent">Futuro Melhor</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl lg:text-3xl mb-10 text-white/90 leading-relaxed max-w-3xl mx-auto">
+                Cada gesto de <span className="text-emerald-300 font-semibold">amor</span> transforma realidades. 
+                Faça parte dessa corrente do bem!  
+              </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/doacao">
-                    <Button
-                      size="lg"
-                      className="bg-sky-400 hover:bg-sky-300 text-sky-950 font-semibold shadow-lg w-full sm:w-auto text-lg px-8 py-6 transition-all hover:scale-105"
-                    >
-                      💙 Fazer Doação
-                    </Button>
-                  </Link>
-                  <a
-                    href="https://wa.me/5522999382357"
-                    target="_blank"
-                    rel="noopener noreferrer"
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/doacao">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 hover:from-emerald-300 hover:via-teal-300 hover:to-cyan-300 text-slate-900 font-bold shadow-xl shadow-teal-500/30 w-full sm:w-auto text-lg px-10 py-7 transition-all hover:scale-105 rounded-full"
                   >
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-sky-900 text-lg px-8 py-6 transition-all"
-                    >
-                      🤝 Seja Voluntário
-                    </Button>
-                  </a>
-                </div>
-              </div>
-
-              {/* Card de impacto - Design criativo */}
-              <div className="hidden md:block relative">
-                {/* Glow effect de fundo */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-sky-400/20 via-cyan-400/20 to-emerald-400/20 rounded-[2rem] blur-2xl"></div>
-                
-                <div className="relative bg-white/10 backdrop-blur-xl rounded-[2rem] p-1 border border-white/20">
-                  <div className="bg-gradient-to-br from-slate-900/80 via-sky-950/75 to-slate-900/80 backdrop-blur-sm rounded-[1.75rem] p-8">
-                    {/* Header */}
-                    <div className="flex items-center justify-between mb-8">
-                      <h3 className="text-2xl font-bold text-white">Nosso Impacto</h3>
-                      <div className="bg-white/10 p-3 rounded-2xl">
-                        <Heart className="w-6 h-6 text-sky-400" />
-                      </div>
-                    </div>
-                    
-                    {/* Stats em formato diferenciado */}
-                    <div className="space-y-4">
-                      {stats.map((stat, index) => {
-                        const Icon = stat.icon;
-                        const colors = [
-                          { bar: "from-sky-400 to-cyan-400", text: "text-sky-400" },
-                          { bar: "from-emerald-400 to-teal-400", text: "text-emerald-400" },
-                          { bar: "from-amber-400 to-orange-400", text: "text-amber-400" },
-                          { bar: "from-violet-400 to-purple-400", text: "text-violet-400" },
-                        ];
-                        const color = colors[index % colors.length];
-                        
-                        return (
-                          <div 
-                            key={index} 
-                            className="group relative bg-white/5 hover:bg-white/10 rounded-2xl p-4 transition-all duration-300 border border-white/5 hover:border-white/10"
-                          >
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-4">
-                                <div className={`p-3 rounded-xl bg-gradient-to-br ${color.bar} shadow-lg`}>
-                                  <Icon className="w-5 h-5 text-white" />
-                                </div>
-                                <div>
-                                  <p className="text-white/60 text-sm">{stat.label}</p>
-                                  <div className={`text-2xl font-bold ${color.text}`}>
-                                    <AnimatedCounter
-                                      end={stat.value}
-                                      suffix={stat.suffix}
-                                      duration={3000}
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                                <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${color.bar} flex items-center justify-center`}>
-                                  <TrendingUp className="w-4 h-4 text-white" />
-                                </div>
-                              </div>
-                            </div>
-                            {/* Barra de progresso decorativa */}
-                            <div className="mt-3 h-1 bg-white/10 rounded-full overflow-hidden">
-                              <div 
-                                className={`h-full bg-gradient-to-r ${color.bar} rounded-full`}
-                                style={{ width: `${Math.min(100, (stat.value / 25) * 100)}%` }}
-                              ></div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                    
-
-                  </div>
-                </div>
+                    💚 Fazer Doação
+                  </Button>
+                </Link>
+                <a
+                  href="https://wa.me/5522999382357"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto bg-white/15 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white hover:text-teal-600 text-lg px-10 py-7 transition-all hover:scale-105 rounded-full font-semibold"
+                  >
+                    🤝 Seja Voluntário
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -258,26 +181,72 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stats Section Mobile - Versão simplificada */}
-        <section className="py-12 md:hidden bg-gradient-page">
+        {/* Stats Section Desktop - Horizontal abaixo do Hero */}
+        <section className="hidden md:block py-16 bg-gradient-to-r from-sky-50 via-cyan-50 to-teal-50">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-4 gap-8 max-w-6xl mx-auto">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
+                const colors = [
+                  { bg: "from-sky-500 to-blue-500", text: "text-sky-600", border: "border-sky-200", shadow: "shadow-sky-500/20" },
+                  { bg: "from-teal-500 to-emerald-500", text: "text-teal-600", border: "border-teal-200", shadow: "shadow-teal-500/20" },
+                  { bg: "from-orange-500 to-amber-500", text: "text-orange-600", border: "border-orange-200", shadow: "shadow-orange-500/20" },
+                  { bg: "from-violet-500 to-purple-500", text: "text-violet-600", border: "border-violet-200", shadow: "shadow-violet-500/20" },
+                ];
+                const color = colors[index % colors.length];
+                
                 return (
-                  <Card key={index} className="text-center shadow-soft border-sky-100">
-                    <CardContent className="p-6">
-                      <div className="bg-sky-100 p-3 rounded-xl inline-flex mb-3">
-                        <Icon className="w-6 h-6 text-sky-600" />
+                  <div 
+                    key={index} 
+                    className={`group relative bg-white hover:bg-gradient-to-br hover:from-white hover:to-sky-50 rounded-3xl p-8 transition-all duration-500 ${color.border} border-2 shadow-xl ${color.shadow} hover:shadow-2xl hover:-translate-y-2`}
+                  >
+                    <div className="flex flex-col items-center text-center">
+                      <div className={`p-5 rounded-2xl bg-gradient-to-br ${color.bg} shadow-lg mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                        <Icon className="w-8 h-8 text-white" />
                       </div>
-                      <div className="text-3xl font-bold text-sky-700 mb-1">
+                      <div className={`text-5xl font-black ${color.text} mb-2`}>
                         <AnimatedCounter
                           end={stat.value}
                           suffix={stat.suffix}
                           duration={3000}
                         />
                       </div>
-                      <p className="text-xs text-slate-500">{stat.label}</p>
+                      <p className="text-slate-600 text-sm font-semibold">{stat.label}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section Mobile - Versão simplificada */}
+        <section className="py-12 md:hidden bg-gradient-to-b from-sky-50 to-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                const mobileColors = [
+                  { bg: "bg-gradient-to-br from-sky-100 to-blue-100", icon: "text-sky-500", text: "text-sky-600" },
+                  { bg: "bg-gradient-to-br from-teal-100 to-emerald-100", icon: "text-teal-500", text: "text-teal-600" },
+                  { bg: "bg-gradient-to-br from-orange-100 to-amber-100", icon: "text-orange-500", text: "text-orange-600" },
+                  { bg: "bg-gradient-to-br from-violet-100 to-purple-100", icon: "text-violet-500", text: "text-violet-600" },
+                ];
+                const mColor = mobileColors[index % mobileColors.length];
+                return (
+                  <Card key={index} className={`text-center shadow-lg border-0 ${mColor.bg}`}>
+                    <CardContent className="p-6">
+                      <div className="bg-white/80 p-3 rounded-xl inline-flex mb-3 shadow-sm">
+                        <Icon className={`w-6 h-6 ${mColor.icon}`} />
+                      </div>
+                      <div className={`text-3xl font-black ${mColor.text} mb-1`}>
+                        <AnimatedCounter
+                          end={stat.value}
+                          suffix={stat.suffix}
+                          duration={3000}
+                        />
+                      </div>
+                      <p className="text-xs text-slate-600 font-medium">{stat.label}</p>
                     </CardContent>
                   </Card>
                 );
@@ -287,37 +256,38 @@ export default function Home() {
         </section>
 
         {/* Instituições Parceiras - Redesenhado */}
-        <section className="py-16 bg-secondary/30">
-          <div className="container mx-auto px-4">
+        <section className="py-20 bg-gradient-to-b from-white via-slate-50 to-sky-50 relative overflow-hidden">
+          {/* Decoração de fundo */}
+          <div className="absolute top-0 left-0 w-72 h-72 bg-sky-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-12">
-              <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-                🏛️ Parceiros Oficiais
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Instituições que Confiam no Nosso Trabalho
+              <h2 className="text-3xl md:text-5xl font-black mb-4 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 bg-clip-text text-transparent">
+                Instituições que Confiam em Nós
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                 Reconhecidos e apoiados por órgãos públicos e organizações
               </p>
             </div>
-            <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 shadow-soft">
+            <div className="bg-gradient-to-r from-sky-50 via-white to-teal-50 rounded-3xl p-8 shadow-xl border border-sky-100">
               <LogoMarquee />
             </div>
           </div>
         </section>
 
         {/* Nossos Projetos Section - Redesenhado */}
-        <section className="py-20 bg-gradient-page">
-          <div className="container mx-auto px-4">
+        <section className="py-24 bg-gradient-to-b from-cyan-50 via-sky-50 to-teal-50 relative overflow-hidden">
+          {/* Elementos decorativos */}
+          <div className="absolute top-20 left-10 w-64 h-64 bg-sky-200/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-teal-200/30 rounded-full blur-3xl"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
-                💚 Conheça Nosso Trabalho
-              </span>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                Projetos que Transformam Vidas
+              <h2 className="text-3xl md:text-6xl font-black mb-4 pb-1 bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 bg-clip-text text-transparent">
+                Projetos que Transformam
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Cada projeto é cuidadosamente desenvolvido para gerar impacto real e duradouro na vida de quem mais precisa
+              <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                Cada projeto é desenvolvido com amor para gerar impacto real na vida de quem mais precisa
               </p>
             </div>
 
@@ -354,7 +324,7 @@ export default function Home() {
               ].map((projeto, index) => (
                 <Card
                   key={index}
-                  className={`group overflow-hidden border-0 shadow-large hover:shadow-colored transition-all duration-300 hover:-translate-y-2 py-0 ${
+                  className={`group overflow-hidden border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 py-0 rounded-3xl bg-white ${
                     !projeto.mobileVisible ? 'hidden md:flex md:flex-col' : ''
                   }`}
                 >
@@ -362,16 +332,17 @@ export default function Home() {
                     <Image
                       src={projeto.image}
                       alt={projeto.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 text-5xl">{projeto.icon}</div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-sky-900/70 via-teal-800/30 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 text-5xl drop-shadow-lg">{projeto.icon}</div>
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-teal-600">Em atividade</div>
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl font-black mb-3 group-hover:text-teal-600 transition-colors">
                       {projeto.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-slate-600 leading-relaxed">
                       {projeto.description}
                     </p>
                   </CardContent>
@@ -382,34 +353,29 @@ export default function Home() {
         </section>
 
         {/* Como Chegar Section - Redesenhado */}
-        <section className="py-20 bg-secondary/30">
+        <section className="py-24 bg-gradient-to-b from-white via-sky-50 to-cyan-50">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-                  📍 Nossa Localização
-                </span>
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                <h2 className="text-3xl md:text-5xl font-black mb-4 bg-gradient-to-r from-sky-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
                   Visite Nossa Sede
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Estamos de portas abertas para receber você, voluntários e doações presenciais. 
-                  Venha conhecer nosso trabalho de perto!
+                <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                  Estamos de portas abertas para receber você! 
+                  Venha conhecer nosso trabalho de perto 🤗
                 </p>
               </div>
 
               <div className="grid lg:grid-cols-5 gap-8">
                 {/* Informações de Contato - 2 colunas */}
                 <div className="lg:col-span-2 space-y-4">
-                  <Card className="shadow-medium border-primary/10 hover:shadow-large transition-shadow">
+                  <Card className="shadow-lg border-2 border-sky-100 rounded-2xl bg-white">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="bg-primary/10 p-3 rounded-xl shrink-0">
-                          <span className="text-2xl">📍</span>
-                        </div>
+                        <span className="text-3xl shrink-0">📍</span>
                         <div>
-                          <h3 className="font-bold text-lg mb-2">Endereço</h3>
-                          <p className="text-muted-foreground text-sm leading-relaxed">
+                          <h3 className="font-black text-lg mb-2 text-slate-800">Endereço</h3>
+                          <p className="text-slate-600 text-sm leading-relaxed">
                             R. Vassouras, Lote 20 - Quadra 16<br />
                             Jardim Mariléa<br />
                             Rio das Ostras - RJ<br />
@@ -420,27 +386,25 @@ export default function Home() {
                     </CardContent>
                   </Card>
 
-                  <Card className="shadow-medium border-accent/10 hover:shadow-large transition-shadow">
+                  <Card className="shadow-lg border-2 border-teal-100 rounded-2xl bg-white">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="bg-accent/10 p-3 rounded-xl shrink-0">
-                          <span className="text-2xl">🕒</span>
-                        </div>
+                        <span className="text-3xl shrink-0">🕒</span>
                         <div className="flex-1">
-                          <h3 className="font-bold text-lg mb-3">Horário de Funcionamento</h3>
-                          <div className="space-y-1 text-sm">
+                          <h3 className="font-black text-lg mb-3 text-slate-800">Horário de Funcionamento</h3>
+                          <div className="space-y-1.5 text-sm">
                             {[
-                              { dia: "2ª Feira", hora: "8:30-12:00 / 13:00-17:00" },
-                              { dia: "3ª Feira", hora: "8:00-16:00" },
-                              { dia: "4ª Feira", hora: "8:30-12:00" },
-                              { dia: "5ª Feira", hora: "14:00-18:00" },
-                              { dia: "6ª Feira", hora: "8:30-12:00" },
+                              { dia: "Segunda", hora: "8:30-12:00 / 13:00-17:00" },
+                              { dia: "Terça", hora: "8:00-16:00" },
+                              { dia: "Quarta", hora: "8:30-12:00" },
+                              { dia: "Quinta", hora: "14:00-18:00" },
+                              { dia: "Sexta", hora: "8:30-12:00" },
                               { dia: "Sábado", hora: "8:00-15:00" },
                               { dia: "Domingo", hora: "17:00-20:00" },
                             ].map((item, i) => (
-                              <div key={i} className="flex justify-between py-1 border-b border-border/50 last:border-0">
-                                <span className="font-medium text-foreground">{item.dia}</span>
-                                <span className="text-muted-foreground">{item.hora}</span>
+                              <div key={i} className="flex justify-between items-center py-2 px-3 rounded-lg odd:bg-teal-50">
+                                <span className="font-semibold text-slate-700">{item.dia}</span>
+                                <span className="text-teal-600 font-semibold">{item.hora}</span>
                               </div>
                             ))}
                           </div>
@@ -449,20 +413,15 @@ export default function Home() {
                     </CardContent>
                   </Card>
 
-                  <Card className="shadow-medium border-primary/10 hover:shadow-large transition-shadow">
+                  <Card className="shadow-lg border-2 border-emerald-100 rounded-2xl bg-white">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="bg-primary/10 p-3 rounded-xl shrink-0">
-                          <span className="text-2xl">📞</span>
-                        </div>
+                        <span className="text-3xl shrink-0">📞</span>
                         <div>
-                          <h3 className="font-bold text-lg mb-2">Contato</h3>
-                          <p className="text-muted-foreground text-sm leading-relaxed">
-                            WhatsApp: (22) 99938-2357<br />
+                          <h3 className="font-black text-lg mb-2 text-slate-800">Contato</h3>
+                          <p className="text-slate-600 text-sm leading-relaxed">
+                            <span className="text-emerald-600 font-bold">WhatsApp: (22) 99938-2357</span><br />
                             Telefone: (22) 2764-9273<br />
-                            Email: funjodangelis@yahoo.com.br<br />
-                            <br />
-                            CNPJ: 06.261.897/0001-93
                           </p>
                         </div>
                       </div>
@@ -475,68 +434,63 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="block"
                   >
-                    <Button className="w-full bg-gradient-hero text-white shadow-medium hover:shadow-large hover-glow" size="lg">
+                    <Button className="w-full bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-400 hover:to-cyan-400 text-white shadow-xl shadow-sky-500/30 hover:shadow-2xl font-bold rounded-xl" size="lg">
                       📍 Abrir no Google Maps
                     </Button>
                   </a>
                 </div>
 
                 {/* Mapa - 3 colunas */}
-                <Card className="lg:col-span-3 overflow-hidden shadow-large border-0">
-                  <CardContent className="p-0 h-full">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!4v1764651226313!6m8!1m7!1s2ES131dTYULvEh6Yh2BM-A!2m2!1d-22.50167289947236!2d-41.93094355159263!3f11.39317874846103!4f3.0190674857738173!5f1.088183033840005"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0, minHeight: "600px" }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Localização da Fundação Joanna - Rio das Ostras"
-                      className="rounded-xl"
-                    ></iframe>
-                  </CardContent>
-                </Card>
+                <div className="lg:col-span-3 overflow-hidden rounded-2xl shadow-xl">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!4v1764651226313!6m8!1m7!1s2ES131dTYULvEh6Yh2BM-A!2m2!1d-22.50167289947236!2d-41.93094355159263!3f11.39317874846103!4f3.0190674857738173!5f1.088183033840005"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, minHeight: "600px" }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localização da Fundação Joanna - Rio das Ostras"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA Section - Redesenhado */}
-        <section className="py-24 bg-gradient-hero relative overflow-hidden">
+        <section className="py-32 bg-gradient-to-br from-sky-600 via-cyan-500 to-teal-500 relative overflow-hidden">
           {/* Decorative elements */}
-          <div className="absolute inset-0 bg-grid-white/5"></div>
-          <div className="absolute top-20 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl"></div>
+          <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='white'/%3E%3C/svg%3E\")" }}></div>
+          <div className="absolute top-20 left-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl"></div>
           
           <div className="container mx-auto px-4 text-center relative z-10">
             <div className="max-w-4xl mx-auto">
-              <span className="inline-block px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
-                💚 Faça Parte Dessa História
-              </span>
-              <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-                Sua Doação Faz a Diferença
+              <h2 className="text-4xl md:text-7xl font-black mb-6 text-white drop-shadow-lg">
+                Sua Doação<br />Faz a Diferença
               </h2>
-              <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed">
                 Cada real doado vai diretamente para quem mais precisa. 
-                Seja parte dessa transformação hoje e ajude a construir um futuro melhor.
+                Seja parte dessa transformação hoje! 🌟
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Link href="/doacao">
                   <Button
                     size="lg"
-                    className="bg-accent hover:bg-accent/90 text-white shadow-colored hover:shadow-large hover-glow text-lg px-8 py-6"
+                    className="bg-white hover:bg-slate-100 text-teal-600 shadow-2xl hover:shadow-3xl text-xl px-12 py-8 rounded-full font-black transition-all hover:scale-105"
                   >
-                    💝 Doe Agora
+                    💚 Doe Agora
                   </Button>
                 </Link>
-                <Link href="/nossahistoria">
+                <Link href="/sobre">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm text-lg px-8 py-6"
+                    className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/50 backdrop-blur-sm text-xl px-12 py-8 rounded-full font-bold transition-all hover:scale-105"
                   >
-                    📖 Conheça Nossa História
+                    📖 Nossa História
                   </Button>
                 </Link>
               </div>
