@@ -1,6 +1,6 @@
 # ❤️ Fundação Joanna - Website Oficial
 
-Link para o site: https://fundacao-joana.vercel.app/
+Link para o site: https://fundacaojoanna.org.br
 
 Website institucional da Fundação Joanna de Ângelis, uma ONG brasileira localizada em Rio das Ostras - RJ.
 

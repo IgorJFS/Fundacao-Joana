@@ -9,7 +9,7 @@ export default function manifest() {
     theme_color: '#0EA5E9',
     icons: [
       {
-        src: '/logoSemFundo.png',
+        src: './logoSemFundo.png',
         sizes: 'any',
         type: 'image/png',
       },

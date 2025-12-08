@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, HandHeart, TrendingUp } from "lucide-react";
 import heroImage from "@/assets/hero-children.webp";
 import volunteersImage from "@/assets/volunteers-helping.webp";
-import handsImage from "@/assets/hands-together.webp";
 import saude from "@/assets/saude.webp";
 import gravida from "@/assets/gravidas.webp";
 import Image from "next/image";

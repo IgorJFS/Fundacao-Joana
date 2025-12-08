@@ -1,14 +1,17 @@
 User-agent: *
 Allow: /
 
-# Páginas permitidas
+# Páginas públicas permitidas
 Allow: /
-Allow: /nossahistoria
+Allow: /sobre
 Allow: /doacao
 Allow: /apoiadores
 Allow: /noticias
+Allow: /contato
+Allow: /politica-privacidade
+Allow: /termos-uso
 
-# Bloquear área administrativa
+# Bloquear área administrativa e API
 Disallow: /admin/
 Disallow: /api/
 

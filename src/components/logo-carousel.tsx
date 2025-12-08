@@ -6,10 +6,9 @@ import Image from "next/image";
 const partnerLogos = [
   { id: 1, name: "Governo Federal", src: "/GovernoFederal.webp" },
   { id: 2, name: "Governo do Estado do Rio de Janeiro", src: "/GovernoRJ.webp" },
-  { id: 3, name: "UNICEF", src: "/unicef-logo.webp" },
-  { id: 4, name: "Prefeitura do Rio de Janeiro", src: "/PrefeituraRO.webp" },
-  { id: 5, name: "CMDCA", src: "/cmdca.webp" },
-  { id: 6, name: "Ministério Público", src: "/mp.webp" },
+  { id: 3, name: "Prefeitura do Rio de Janeiro", src: "/PrefeituraRO.webp" },
+  { id: 4, name: "CMDCA", src: "/cmdca.webp" },
+  { id: 5, name: "Ministério Público", src: "/mp.webp" },
 ];
 
 // Duplica os logos para criar um loop infinito suave
