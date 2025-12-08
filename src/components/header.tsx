@@ -48,7 +48,7 @@ export default function Header() {
                 className={`relative px-4 py-2 rounded-md text-sm font-medium transition-colors group ${
                   isActive(link.path)
                     ? "bg-primary text-primary-foreground"
-                    : "text-foreground hover:bg-secondary"
+                    : "text-foreground"
                 }`}
               >
                 {link.label}
