@@ -59,8 +59,11 @@ export const metadata: Metadata = {
     images: ['/logo.webp'],
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/logoSemFundo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/logoSemFundo.png', type: 'image/png', sizes: '192x192' },
+    ],
+    shortcut: '/favicon.ico',
     apple: '/logoSemFundo.png',
   },
   verification: {

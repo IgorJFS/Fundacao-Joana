@@ -76,7 +76,7 @@ export default function Header() {
           {/* CTA Button + Mobile Menu */}
           <div className="flex items-center gap-3">
             <Link href="/doacao" className="hidden md:block">
-              <Button className="bg-emerald-500 hover:bg-emerald-600 text-white shadow-md hover:shadow-lg transition-all rounded-md px-5">
+              <Button className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white shadow-lg shadow-teal-500/30 hover:shadow-xl hover:shadow-teal-500/40 transition-all rounded-full px-6 font-bold">
                 <Heart className="w-4 h-4 mr-2" />
                 Doar Agora
               </Button>
@@ -135,7 +135,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className="block"
                 >
-                  <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-md rounded-lg py-6 text-base font-semibold">
+                  <Button className="w-full bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white shadow-lg shadow-teal-500/30 rounded-lg py-6 text-base font-bold">
                     <Heart className="w-5 h-5 mr-2" />
                     Fazer uma Doação
                   </Button>

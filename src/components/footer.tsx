@@ -24,7 +24,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-slate-900 border-t border-slate-800">
+    <footer className="bg-gradient-to-b from-slate-800 to-slate-700 border-t border-sky-200/20">
       <div className="container mx-auto px-4 py-10">
         {/* Main Grid - 5 colunas no desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -36,7 +36,7 @@ export default function Footer() {
                 Fundação Joanna de Ângelis
               </h3>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-4">
+            <p className="text-slate-300 text-sm leading-relaxed mb-4">
               Entidade sem fins lucrativos dedicada à assistência social, 
               educação e cidadania em Rio das Ostras.
             </p>
@@ -82,7 +82,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-sky-400 transition-colors text-sm"
+                    className="text-slate-300 hover:text-teal-400 transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -96,19 +96,19 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-3 text-sm">
               Contato
             </h4>
-            <ul className="space-y-2 text-sm text-slate-400">
+            <ul className="space-y-2 text-sm text-slate-300">
               <li className="flex items-start gap-2">
-                <Mail className="w-4 h-4 mt-0.5 text-sky-500 shrink-0" />
-                <a href="mailto:funjodangelis@yahoo.com.br" className="hover:text-sky-400 transition-colors">
+                <Mail className="w-4 h-4 mt-0.5 text-teal-400 shrink-0" />
+                <a href="mailto:funjodangelis@yahoo.com.br" className="hover:text-teal-400 transition-colors">
                   funjodangelis@yahoo.com.br
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="w-4 h-4 mt-0.5 text-sky-500 shrink-0" />
+                <Phone className="w-4 h-4 mt-0.5 text-teal-400 shrink-0" />
                 <span>(22) 99938-2357</span>
               </li>
               <li className="flex items-start gap-2">
-                <Building className="w-4 h-4 mt-0.5 text-sky-500 shrink-0" />
+                <Building className="w-4 h-4 mt-0.5 text-teal-400 shrink-0" />
                 <span>CNPJ: 06.261.897/0001-93</span>
               </li>
             </ul>
@@ -119,8 +119,8 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-3 text-sm">
               Endereço
             </h4>
-            <div className="flex items-start gap-2 text-sm text-slate-400 mb-3">
-              <MapPin className="w-4 h-4 mt-0.5 text-sky-500 shrink-0" />
+            <div className="flex items-start gap-2 text-sm text-slate-300 mb-3">
+              <MapPin className="w-4 h-4 mt-0.5 text-teal-400 shrink-0" />
               <div>
                 <p>R. Vassouras, Lote 20</p>
                 <p>Jardim Mariléa</p>
@@ -131,7 +131,7 @@ export default function Footer() {
               href="https://www.google.com/maps/dir//R.+Vassouras,+Lote+20+-+Quadra+16+-+Jardim+Maril%C3%A9a,+Rio+das+Ostras+-+RJ,+28890-000"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 text-sm transition-colors"
+              className="inline-flex items-center gap-1 text-teal-400 hover:text-teal-300 text-sm transition-colors"
             >
               <ExternalLink className="w-3 h-3" />
               Google Maps
@@ -140,18 +140,21 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section - Copyright */}
-        <div className="mt-8 pt-6 border-t border-slate-800">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
+        <div className="mt-8 pt-6 border-t border-slate-600">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-400">
             <div className="flex items-center gap-1">
-              <Heart className="w-3 h-3 text-rose-500" />
-              <span>© {new Date().getFullYear()} Fundação Joanna de Ângelis</span>
+              <Heart className="w-3 h-3 text-rose-400" />
+              <span>© {new Date().getFullYear()} Fundação Joanna de Ângelis - Todos os direitos reservados</span>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/politica-privacidade" className="hover:text-sky-400 transition-colors">
+              <Link href="/politica-privacidade" className="hover:text-teal-400 transition-colors">
                 Privacidade
               </Link>
-              <Link href="/termos-uso" className="hover:text-sky-400 transition-colors">
+              <Link href="/termos-uso" className="hover:text-teal-400 transition-colors">
                 Termos
+              </Link>
+              <Link href="/transparencia" className="hover:text-teal-400 transition-colors">
+                Transparência
               </Link>
             </div>
           </div>

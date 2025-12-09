@@ -10,6 +10,7 @@ Allow: /noticias
 Allow: /contato
 Allow: /politica-privacidade
 Allow: /termos-uso
+Allow: /transparencia
 
 # Bloquear área administrativa e API
 Disallow: /admin/
