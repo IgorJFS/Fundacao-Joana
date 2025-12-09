@@ -72,15 +72,16 @@ const noticias = [
 
 export default function NoticiasPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20 pt-20 md:pt-24">
+    <div className="min-h-screen flex flex-col bg-gradient-page">
+      <main className="flex-1 pt-16 md:pt-20">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-8 md:py-12">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-2">
+          <h1 className="font-heading text-4xl md:text-6xl font-extrabold mb-4 text-gradient">
             Notícias
           </h1>
-          <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div><br/>
-          <p className="text-lg text-muted-foreground">
+          <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div>
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto">
             Acompanhe as últimas novidades e conquistas da Fundação Joanna de
             Ângelis
           </p>
@@ -167,6 +168,7 @@ export default function NoticiasPage() {
           </div>
         </div>
       </section>
+      </main>
     </div>
   );
 }

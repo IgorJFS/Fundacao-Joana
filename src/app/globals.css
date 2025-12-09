@@ -5,6 +5,13 @@
    Um tema acolhedor e vibrante para transmitir esperança e confiança
 */
 
+/* === FONTES === */
+@theme {
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
 @theme {
   /* Cores Base - Backgrounds e Textos */
   --color-background: hsl(0 0% 100%); /* Branco puro */
@@ -158,9 +165,43 @@
 
 /* Classes utilitárias customizadas */
 @layer utilities {
+  /* === FONTES === */
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* === TÍTULOS COM GRADIENTE === */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(200 98% 39%), hsl(189 94% 43%), hsl(173 80% 40%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-warm {
+    background: linear-gradient(135deg, hsl(173 80% 40%), hsl(160 84% 39%), hsl(158 64% 52%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   /* === BACKGROUNDS === */
   .bg-gradient-hero-overlay {
     background: var(--gradient-hero-overlay);
+  }
+
+  /* Gradiente suave para páginas internas */
+  .bg-gradient-page {
+    background: linear-gradient(
+      to bottom,
+      hsl(204 100% 97%),         /* sky-50 */
+      hsl(210 30% 98%),          /* quase branco azulado */
+      hsl(166 76% 97%)           /* teal-50 mais claro */
+    );
   }
 
   /* Gradiente azul vibrante para elementos (círculos, barras, ícones) */

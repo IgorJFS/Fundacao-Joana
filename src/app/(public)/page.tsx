@@ -129,7 +129,7 @@ export default function Home() {
             {/* Conteúdo Principal - Centralizado no Desktop */}
             <div className="text-white text-center max-w-4xl mx-auto">
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+              <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
                 Juntos por um
                 <span className="block bg-gradient-to-r from-cyan-300 via-teal-300 to-emerald-300 bg-clip-text text-transparent">Futuro Melhor</span>
               </h1>
@@ -262,7 +262,7 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-5xl font-black mb-4 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 bg-clip-text text-transparent">
+              <h2 className="font-heading text-3xl md:text-5xl font-extrabold mb-4 text-gradient">
                 Instituições que Confiam em Nós
               </h2>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
@@ -283,7 +283,7 @@ export default function Home() {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-6xl font-black mb-4 pb-1 bg-gradient-to-r from-sky-600 via-teal-600 to-emerald-600 bg-clip-text text-transparent">
+              <h2 className="font-heading text-3xl md:text-6xl font-extrabold mb-4 text-gradient">
                 Projetos que Transformam
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mx-auto">
@@ -357,7 +357,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-black mb-4 bg-gradient-to-r from-sky-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
+                <h2 className="font-heading text-3xl md:text-5xl font-extrabold mb-4 text-gradient">
                   Visite Nossa Sede
                 </h2>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto">
@@ -468,7 +468,7 @@ export default function Home() {
           
           <div className="container mx-auto px-4 text-center relative z-10">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-7xl font-black mb-6 text-white drop-shadow-lg">
+              <h2 className="font-heading text-4xl md:text-7xl font-extrabold mb-6 text-white drop-shadow-lg">
                 Sua Doação<br />Faz a Diferença
               </h2>
               <p className="text-xl md:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed">

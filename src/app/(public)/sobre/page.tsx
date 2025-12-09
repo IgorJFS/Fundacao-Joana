@@ -101,7 +101,7 @@ export default function NossaHistoria() {
 
   return (
     <div className="min-h-screen flex bg-gradient-page flex-col">
-      <main className="flex-1 pt-20 md:pt-24">
+      <main className="flex-1 pt-16 md:pt-20">
 
         {/* Quem Somos - Redesenhado */}
         <section className="py-8 md:py-12 relative overflow-hidden">
@@ -110,7 +110,7 @@ export default function NossaHistoria() {
             <div className="max-w-6xl mx-auto">
               {/* Header da Seção */}
               <div className="text-center mb-12 md:mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <h2 className="font-heading text-4xl md:text-5xl font-extrabold mb-4 text-gradient">
                   Quem Somos?
                 </h2>
                 <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div>

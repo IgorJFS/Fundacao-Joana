@@ -28,15 +28,18 @@ export const metadata: Metadata = {
 export default function ContatoPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-page">
-      <main className="flex-1 pt-20 md:pt-24">
+      <main className="flex-1 pt-16 md:pt-20">
         {/* Hero Section Compacto */}
         <section className="py-8 md:py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-2">
+              <h1 className="font-heading text-4xl md:text-6xl font-extrabold mb-4 text-gradient">
                 Entre em Contato
               </h1>
-              <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full mb-4"></div>
+              <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div>
+              <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto">
+                Estamos sempre prontos para ajudar. Entre em contato conosco!
+              </p>
             </div>
           </div>
         </section>

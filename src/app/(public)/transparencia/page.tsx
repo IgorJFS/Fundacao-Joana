@@ -13,14 +13,12 @@ export const metadata: Metadata = {
 export default function Transparencia() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-page">
-      <main className="flex-1 pt-20 py-16">
+      <main className="flex-1 pt-16 md:pt-20">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-              <Eye className="h-8 w-8 text-primary" />
-            </div>
-            <h1 className="text-4xl font-bold mb-4">Transparência</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h1 className="font-heading text-4xl md:text-5xl font-extrabold mb-4 text-gradient">Transparência</h1>
+            <div className="w-24 h-1 bg-gradient-hero mx-auto rounded-full"></div>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
               Comprometidos com a transparência e prestação de contas, apresentamos informações 
               sobre nossas atividades, finanças e impacto social.
             </p>
