@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Transparencia() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-page">
-      <main className="flex-1 py-16">
+      <main className="flex-1 pt-20 py-16">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">

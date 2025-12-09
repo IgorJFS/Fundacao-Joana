@@ -42,7 +42,6 @@ export default function PoliticaPrivacidade() {
             <CardContent className="p-8 space-y-8">
               <section>
                 <div className="flex items-center gap-3 mb-4">
-                  <Eye className="h-6 w-6 text-primary" />
                   <h2 className="text-2xl font-semibold">Introdução</h2>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">

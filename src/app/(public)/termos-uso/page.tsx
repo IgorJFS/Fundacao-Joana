@@ -42,7 +42,6 @@ export default function TermosUso() {
             <CardContent className="p-8 space-y-8">
               <section>
                 <div className="flex items-center gap-3 mb-4">
-                  <AlertCircle className="h-6 w-6 text-primary" />
                   <h2 className="text-2xl font-semibold">Aceitação dos Termos</h2>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">

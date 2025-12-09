@@ -36,8 +36,8 @@ export default function Header() {
     <header 
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isScrolled 
-          ? "bg-white/90 backdrop-blur-lg shadow-md border-b border-slate-200" 
-          : "bg-white/70 backdrop-blur-md border-b border-slate-100"
+          ? "bg-white/20 backdrop-blur-lg shadow-md" 
+          : "bg-white/30 backdrop-blur-lg shadow-sm"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -62,7 +62,7 @@ export default function Header() {
                 className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 group ${
                   isActive(link.path)
                     ? "bg-sky-500 text-white"
-                    : "text-slate-700 hover:text-sky-600"
+                    : "text-slate-900 "
                 }`}
               >
                 {link.label}
