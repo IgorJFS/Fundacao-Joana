@@ -9,7 +9,6 @@
 @theme {
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
 @theme {
@@ -168,10 +167,6 @@
   /* === FONTES === */
   .font-heading {
     font-family: var(--font-heading);
-  }
-
-  .font-display {
-    font-family: var(--font-display);
   }
 
   /* === TÍTULOS COM GRADIENTE === */

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Nunito, Playfair_Display } from "next/font/google";
+import { Poppins, Nunito } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/next";
@@ -8,21 +8,16 @@ import { Analytics } from "@vercel/analytics/next";
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700"],
+  display: "swap",
 });
 
 // Fonte para títulos e destaques - limpa e impactante
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-
-// Fonte elegante para títulos especiais/citações
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -92,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${nunito.variable} ${poppins.variable} ${playfair.variable} font-sans antialiased`}
+        className={`${nunito.variable} ${poppins.variable} font-sans antialiased`}
       >
         <Toaster position="top-right" richColors />
         {children}
